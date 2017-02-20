@@ -1,0 +1,6 @@
+.toolbar__wrapper {
+    display: block;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}

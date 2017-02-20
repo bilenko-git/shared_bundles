@@ -1,0 +1,10 @@
+.balance__info-icon {
+    width: 19px;
+    height: 19px;
+}
+
+.balance__info-icon .icon {
+    width: 19px;
+    height: 19px;
+    background-size: 100% 100%;
+}

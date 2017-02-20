@@ -1,0 +1,13 @@
+.pc-block {
+	display: block;
+	position: relative;
+	/* min-height: 88px; */
+	margin-top: 44px;
+	width: 100%;
+}
+@media screen and (min-width: 1280px) {
+	.pc-block {
+		display: table;
+		position: relative;
+	}
+}

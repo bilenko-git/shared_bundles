@@ -1,0 +1,14 @@
+.toolbar__group {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	height: 36px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	justify-content: space-between;
+}
+.toolbar__group .control-group {
+	text-align: right;
+	display: flex;
+	align-items: center;
+}

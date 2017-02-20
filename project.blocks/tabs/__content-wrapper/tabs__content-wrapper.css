@@ -1,0 +1,5 @@
+.tabs__content-wrapper {
+    display: block;
+    text-align: right;
+    min-height: 38px;
+}

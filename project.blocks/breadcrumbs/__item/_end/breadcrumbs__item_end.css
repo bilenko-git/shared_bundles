@@ -1,0 +1,7 @@
+.breadcrumbs__item_end .link {
+    color: rgb(173, 173, 173);
+    outline: none;
+}
+.breadcrumbs__item_end .link_hovered {
+	text-decoration: none;
+}

@@ -1,0 +1,19 @@
+.button_search {
+    display: inline-block;
+    width: 35px;
+    height: 24px;
+    border-radius: 0px 3px 3px 0px;
+    border: 1px solid #C5C5C5;
+    z-index: 1;
+    background-color: #d2d2d2;
+    opacity: 0.6;
+    cursor: pointer;
+    outline: none;
+}
+.button_search .icon {
+    width: 22px;
+}
+
+.button_search:hover {
+    background: url(/assets/img/ser.png) no-repeat 2px -4px, #E7E7E7;
+}

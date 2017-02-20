@@ -1,0 +1,27 @@
+.pc-block__content_closed {
+	display: block;
+	position: relative;
+	height: auto;
+	max-height: 0;
+	overflow: hidden;
+	/* opacity: 0; */
+	padding: 0 30px;
+	/* visibility:hidden; */
+	animation: contentSlideDown .3s ease-out;
+	/* 	-webkit-transition: height .2s ease;
+		-moz-transition: height .2s ease;
+		-ms-transition: height .2s ease;
+		-o-transition: height .2s ease;
+		transition: height .2s ease; */
+}
+
+@keyframes contentSlideDown {
+	from {
+		max-height:1500px;
+		padding: 30px 0 0 0;
+	}
+	to {
+		max-height: 0;
+		padding: 30px 0 0 0;
+	}
+}

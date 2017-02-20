@@ -1,0 +1,14 @@
+.product {
+    display: flex;
+    height: 227px;
+    box-sizing: border-box;
+    padding: 10px;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.product-list__item.menu__item_hovered .product	{
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 0px 1px #b5b5b5, inset 0px 0px 0px 2px #e8e8e8;
+}

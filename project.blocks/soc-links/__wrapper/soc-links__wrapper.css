@@ -1,0 +1,6 @@
+.soc-links__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    vertical-align: middle;
+}

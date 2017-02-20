@@ -1,0 +1,19 @@
+.button_help {
+    font-size: 15px;
+    height: 24px;
+    line-height: 22px;
+    display: inline-block;
+    border-radius: 2px;
+    text-decoration: none!important;
+    text-align: center;
+    color: #fff;
+    margin: 0 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #888888;
+    padding: 0px 2px;
+}
+.button_help:hover {
+    background-color: #717171;
+}

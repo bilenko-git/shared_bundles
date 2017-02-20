@@ -1,0 +1,32 @@
+.toolbar__group_sep_both {
+    width: 407px;
+    flex-grow: 5;
+}
+.toolbar__group_sep_both .control-group {
+    position: relative;
+    margin: 0 18px;
+    display: flex;
+    height: 26px;
+    align-items: center;
+    line-height: 1.1;
+}
+.toolbar__group_sep_both .control-group:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -18px;
+    top: 5px;
+    height: 15px;
+    margin: 0px 8px;
+    border-right: dotted 3px #B8B8B8;
+}
+.toolbar__group_sep_both .control-group:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -18px;
+    top: 5px;
+    height: 15px;
+    margin: 0px 8px;
+    border-right: dotted 3px #B8B8B8;
+}

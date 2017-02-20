@@ -1,0 +1,4 @@
+.search-form_right {
+    display: flex;
+    justify-content: flex-end;
+}

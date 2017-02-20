@@ -1,0 +1,17 @@
+.button_view_toggle {
+    position: relative;
+    width: 19px;
+    height: 19px;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.button_view_toggle .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}

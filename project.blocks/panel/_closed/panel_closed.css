@@ -1,0 +1,16 @@
+.panel_closed {
+    opacity: 0;
+    max-height: 0;
+    animation: panelClose .1s ease-in;
+}
+
+@keyframes panelClose {
+    from {
+        opacity: 1;
+        max-height: 90px;
+    }
+    to {
+        opacity: 0;
+        max-height: 0;
+    }
+}

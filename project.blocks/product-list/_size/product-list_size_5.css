@@ -1,0 +1,10 @@
+.product-list_size_5 {}
+
+.product-list_size_5 .product-list__item {
+    width: calc(100%/5);
+    border-right: solid 1px #cacaca;
+}
+
+.product-list_size_5 .product-list__item:nth-child(5) {
+    border-right: none;
+}

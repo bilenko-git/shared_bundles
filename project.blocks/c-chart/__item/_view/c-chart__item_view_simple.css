@@ -1,0 +1,8 @@
+.c-chart__item_view_simple {
+    display: flex;
+}
+
+.c-chart__item_view_simple canvas{
+    border-radius: 3px;
+    border: none;
+}

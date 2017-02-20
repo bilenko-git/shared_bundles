@@ -1,0 +1,7 @@
+.product-list__title {
+    display: inline-block;
+    font-family: "life_text";
+    font-size: 14px;
+    line-height: 30px;
+    color: #593292;
+}

@@ -1,0 +1,5 @@
+.c-info__group {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+}

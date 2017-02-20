@@ -1,0 +1,13 @@
+.cmp-chart__info_data {
+    display: block;
+    margin: 0 auto;
+    font-family: "life_text";
+    font-size: 13px;
+    font-weight: normal;
+    width: 25px;
+    height: 25px;
+    line-height: 1.8;
+    background: #939291;
+    color: #fff;
+    border-radius: 50%;
+}

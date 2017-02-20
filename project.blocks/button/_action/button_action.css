@@ -1,0 +1,13 @@
+.button_action {
+    border: none;
+    display: inline-block;
+    font-family: 'life_medium';
+    font-size: 17px;
+    padding: 7px 20px;
+    background-color: #ff2e39;
+    border-radius: 17px;
+    color: #fff;
+    line-height: 1.2;
+    outline: none;
+    cursor: pointer;
+}

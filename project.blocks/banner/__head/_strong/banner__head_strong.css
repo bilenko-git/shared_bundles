@@ -1,0 +1,8 @@
+.banner__head_strong {
+    padding: 0;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 23px;
+    font-family: "life_medium";
+    line-height: 1.1;
+}

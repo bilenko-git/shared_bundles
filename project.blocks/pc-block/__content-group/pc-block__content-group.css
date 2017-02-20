@@ -1,0 +1,9 @@
+.pc-block__content-group {
+	display: table;
+	width: 100%;
+	border-top: dashed 2px #666666;
+	padding: 20px 0;
+}
+.pc-block__content-group:nth-child(2) {
+	border-top-color: transparent;
+}

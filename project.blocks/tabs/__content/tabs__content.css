@@ -1,0 +1,4 @@
+.tabs__content {
+    display: block;
+    max-height: 0;
+}

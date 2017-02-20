@@ -1,0 +1,35 @@
+.breadcrumbs__item {
+    display: inline-block;
+    position: relative;
+    font-family: arial,helvetica, sans-serif;
+    font-size: 15px;
+    margin-right: 18px;
+}
+
+.breadcrumbs__item .link {
+	text-decoration: none;
+	color: #222222;
+}
+
+.breadcrumbs__item .link_hovered {
+	text-decoration: underline;
+	color: #222222;
+}
+
+.breadcrumbs__item:after {
+	content: '>';
+	position: absolute;
+	color: #8A8A8A;
+	right: -13px;
+	font-size: 15px;
+}
+
+.breadcrumbs__item:last-child:after {
+	content: '';
+}
+.breadcrumbs__item:last-child .link {
+	color: rgb(173,173,173);
+}
+.breadcrumbs__item:last-child .link:hover {
+	text-decoration: none;
+}

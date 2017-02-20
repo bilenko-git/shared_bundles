@@ -1,0 +1,6 @@
+.tarif-line {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	/*height: 450px;*/
+}

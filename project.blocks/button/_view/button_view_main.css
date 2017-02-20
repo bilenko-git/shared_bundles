@@ -1,0 +1,14 @@
+.button_view_main {
+    position: relative;
+    display: inline-block;
+    height: 31px;
+    border: none;
+    border-radius: 31px;
+    padding: 0 25px;
+    font-family: 'life_medium';
+    font-size: 13px;
+    color: #fff;
+    background-color: #ff2e39;
+    outline: none;
+    cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.content-block__links {
+    display: table-cell;
+    vertical-align: middle;
+}
+.content-block__links .link {
+	margin: 0 6px;
+}

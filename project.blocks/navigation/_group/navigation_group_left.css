@@ -1,0 +1,9 @@
+.navigation_group_left {
+    float: left;
+}
+
+.navigation_group_left:after {
+	content: '';
+	display: table;
+	clear: both;
+}

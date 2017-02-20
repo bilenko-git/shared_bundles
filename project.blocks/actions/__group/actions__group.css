@@ -1,0 +1,10 @@
+.actions__group {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    padding: 0 0 0 30px;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: solid 1px #f00; */
+}

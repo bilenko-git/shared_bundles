@@ -1,0 +1,8 @@
+.icon_std {
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 12px;
+}

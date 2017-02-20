@@ -1,0 +1,6 @@
+.actions__info {
+    display: flex;
+    height: 30px;
+    flex-basis: 100%;
+    justify-content: flex-end;
+}

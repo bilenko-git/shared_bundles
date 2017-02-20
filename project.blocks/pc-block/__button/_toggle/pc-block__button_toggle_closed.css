@@ -1,0 +1,36 @@
+.pc-block__button_toggle_closed {
+    display: block;
+    position: relative;
+    background: transparent;
+    width: 44px;
+    height: 60px;
+    border: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-animation: toggleButtonRotateDown .3s ease-out;
+    animation: toggleButtonRotateDown .3s ease-out;
+}
+.pc-block__button_toggle_closed .icon > svg {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+}
+.pc-block__button_toggle_closed .icon > svg path {
+    fill:#fff;
+}
+
+@keyframes toggleButtonRotateDown {
+    from {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+

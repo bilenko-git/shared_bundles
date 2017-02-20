@@ -1,0 +1,10 @@
+.tarif__icon {
+    border-radius: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    z-index: 1000;
+    position: relative;
+}

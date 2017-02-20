@@ -1,0 +1,6 @@
+.banner__head {
+    position: relative;
+    z-index: 1000;
+    color: #fff;
+    padding: 26px 0 0 27px;
+}

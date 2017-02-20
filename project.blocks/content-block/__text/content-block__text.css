@@ -1,0 +1,10 @@
+.content-block__text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content-block__text .red-link {
+    color: #ff2e39;
+    margin: 0 12px;
+    text-decoration: underline;
+}

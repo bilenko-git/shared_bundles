@@ -1,0 +1,7 @@
+.icon_question {
+    display: block;
+    min-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    cursor: pointer;
+}

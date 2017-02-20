@@ -1,0 +1,22 @@
+.button_std {
+    font-size: 15px;
+    padding: 0px 8px;
+    background-color: #E63B3B;
+    white-space: pre;
+    height: 24px;
+    line-height: 22px;
+    display: inline-block;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    margin: 0 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.button_std:hover {
+    background-color: #CD0202;
+}
+

@@ -1,0 +1,33 @@
+.pc-block__content_toggle_closed {
+    display: block;
+    position: relative;
+    background: transparent;
+    border: 0;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    animation: toggleButtonRotateDown .3s ease-out;
+}
+.pc-block__content_toggle_closed .icon > svg {
+    margin: 0;
+}
+.pc-block__content_toggle_closed .icon > svg path {
+    fill:#fff;
+}
+
+@keyframes toggleButtonRotateDown {
+    from {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+

@@ -1,0 +1,14 @@
+.tarif-line__item {
+    display: flex;
+    max-width: 25%;
+}
+.tarif-line__item:not(:last-child) {
+    border-right: 1px solid #a1a1a1;
+    padding: 0px 10px 0px 10px; 
+}
+.tarif-line__item:last-child {
+    padding: 0px 0px 0px 10px; 
+}
+.tarif-line__item:first-child {
+    padding: 0px 10px 0px 0px;
+}

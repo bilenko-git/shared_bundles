@@ -1,0 +1,53 @@
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: stretch;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.user__settings-button {
+    fill: #b8b8b8;
+    cursor: pointer;
+}
+.user__photo {
+    background-color: gray;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 0px 20px 0px 20px;
+}
+.user__inforamtion {
+    width: 250px;
+}
+.user__name {
+    color: #5b3293;
+    font-weight: bolder;
+}
+.user__slider {
+    background: url(http://multidev.life.com.by/assets/img/slider.png) 0px;
+    width: 290px;
+    height: 45px;
+    margin-left: 10px;
+}
+.user__menu {
+	position: absolute;
+    display: none;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    list-style-type: none;
+    -webkit-padding-start: 0px;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    padding: 10px;
+}
+.user__menu li:not(:last-child) {
+    border-bottom: 1px solid #a1a1a1;
+}
+.user__menu li {
+    padding: 10px 10px 1px 10px;
+}

@@ -1,0 +1,10 @@
+.footer__hotlink {
+    color: #ce324e;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+    font-family: Arial, helvetica, sans-serif;
+    margin-left: 17px;
+    display: flex;
+    align-self: flex-end;
+}

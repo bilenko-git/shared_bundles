@@ -1,0 +1,6 @@
+.tarif__menu {
+
+}
+.tarif__menu.menu_focused {
+	outline: none;
+}

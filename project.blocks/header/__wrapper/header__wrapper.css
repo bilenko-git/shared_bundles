@@ -1,0 +1,12 @@
+.header__wrapper {
+    display: block;
+    margin-top: 17px;
+    height: 155px;
+    text-align: right;
+}
+
+.header__wrapper:after {
+	clear: both;
+	display:table;
+	content: '';
+}

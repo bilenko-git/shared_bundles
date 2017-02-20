@@ -1,0 +1,7 @@
+.product-list__item {
+    display: inline-flex;
+    height: 227px;
+    padding: 3px;
+    align-items: center;
+    border-right: solid 1px #cacaca;
+}

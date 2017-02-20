@@ -1,0 +1,6 @@
+.c-balance {
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    min-width: 400px;
+}

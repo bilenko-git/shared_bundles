@@ -1,0 +1,24 @@
+.tarif__actions {
+    display: block;
+    text-align: center;
+}
+
+.tarif__actions .link {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    font-family: 'life_medium';
+    text-decoration: underline;
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0 auto;
+    width: 105px;
+    height: 41px;
+}
+
+.tarif__actions .link:after {
+    content: '>';
+    position: absolute;
+    right: 0;
+    top: 1px;
+}

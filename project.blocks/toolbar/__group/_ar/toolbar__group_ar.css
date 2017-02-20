@@ -1,0 +1,6 @@
+.toolbar__group_ar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 452px;
+}

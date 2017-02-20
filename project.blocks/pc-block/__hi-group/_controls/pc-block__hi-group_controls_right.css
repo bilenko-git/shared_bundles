@@ -1,0 +1,8 @@
+.pc-block__hi-group_controls_right {
+    display: table-cell;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 44px;
+    height: 60px;
+}

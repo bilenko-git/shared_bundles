@@ -1,0 +1,4 @@
+({
+    mustDeps : { block: 'common-styles' }
+    
+})

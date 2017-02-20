@@ -1,0 +1,8 @@
+.c-info__action-link {
+    font-size: 14px;
+    font-family: "life_medium";
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #000;
+}

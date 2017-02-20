@@ -1,0 +1,6 @@
+.soc-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 186px;
+}

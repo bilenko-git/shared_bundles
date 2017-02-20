@@ -1,0 +1,10 @@
+.c-tarif {
+    display: flex;
+    flex-direction: row;
+    width: 315px;
+    height: 120px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: dashed 2px #b5b5b5;
+}

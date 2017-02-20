@@ -1,0 +1,7 @@
+.pc-block__content-group_item {
+	display: table-cell;
+	vertical-align: top;
+    width: auto;
+    border: none;
+    padding: 0;
+}

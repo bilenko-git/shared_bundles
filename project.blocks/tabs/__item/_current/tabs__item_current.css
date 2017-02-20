@@ -1,0 +1,15 @@
+.tabs__item_current {
+	background: #fff;
+	z-index: 1000;
+	position: relative;
+	box-shadow: 1px 1px 3px 0px #828282;
+}
+.tabs__item_current:after {
+	content: '';
+	position: absolute;
+	height: 5px;
+	background-color: #fff;
+	width: 100%;
+	left: 0;
+	bottom: -5px;
+}

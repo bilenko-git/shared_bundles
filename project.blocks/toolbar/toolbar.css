@@ -1,0 +1,14 @@
+.toolbar {
+    height: 38px;
+    background: #FFFFFF;
+    margin-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding-top: 3px;
+    border-bottom: 2px solid #BABABA;
+    color: #fff;
+    padding: 0 10px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
