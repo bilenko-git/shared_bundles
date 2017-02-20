@@ -1,5 +1,6 @@
 .balance {
     display: flex;
+    flex-basis: 200px;
     min-width: 100px;
     max-width: 300px;
     margin-right: 10px;
