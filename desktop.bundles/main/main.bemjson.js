@@ -36,9 +36,8 @@ module.exports = {
                                                                 content: {
                                                                     block: 'link',
                                                                     content: {
-                                                                        block: 'icon',
-                                                                        // mix: { block: 'soc-links', mods: { rss: true } }
-                                                                        url: '/assets/img/rss.png'
+                                                                        block: 'soc-link',
+                                                                        mods: { rss: true }
                                                                     }
                                                                 }
                                                             }, {
@@ -46,9 +45,8 @@ module.exports = {
                                                                 content: {
                                                                     block: 'link',
                                                                     content: {
-                                                                        block: 'icon',
-                                                                        // mix: { block: 'soc-links', mods: { vk: true } }
-                                                                        url: '/assets/img/vk.png'
+                                                                        block: 'soc-link',
+                                                                        mods: { vk: true }
                                                                     }
                                                                 }
                                                             }, {
@@ -56,9 +54,8 @@ module.exports = {
                                                                 content: {
                                                                     block: 'link',
                                                                     content: {
-                                                                        block: 'icon',
-                                                                        // mix: { block: 'soc-links', mods: { facebook: true } }
-                                                                        url: '/assets/img/facebook.png'
+                                                                        block: 'soc-link',
+                                                                        mods: { facebook: true }
                                                                     }
                                                                 }
                                                             }, {
@@ -66,9 +63,8 @@ module.exports = {
                                                                 content: {
                                                                     block: 'link',
                                                                     content: {
-                                                                        block: 'icon',
-                                                                        // mix: { block: 'soc-links', mods: { twitter: true } }
-                                                                        url: '/assets/img/twitter.png'
+                                                                        block: 'soc-link',
+                                                                        mods: { twitter: true }
                                                                     }
                                                                 }
                                                             }, {
@@ -76,9 +72,8 @@ module.exports = {
                                                                 content: {
                                                                     block: 'link',
                                                                     content: {
-                                                                        block: 'icon',
-                                                                        // mix: { block: 'soc-links', mods: { youtube: true } }
-                                                                        url: '/assets/img/youtube.png'
+                                                                        block: 'soc-link',
+                                                                        mods: { youtube: true }
                                                                     }
                                                                 }
                                                             }, {
@@ -86,9 +81,8 @@ module.exports = {
                                                                 content: {
                                                                     block: 'link',
                                                                     content: {
-                                                                        block: 'icon',
-                                                                        // mix: { block: 'soc-links', mods: { ok: true } }
-                                                                        url: '/assets/img/ok.png'
+                                                                        block: 'soc-link',
+                                                                        mods: { ok: true }
                                                                     }
                                                                 }
                                                             }]

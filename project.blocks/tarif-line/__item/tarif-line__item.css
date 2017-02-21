@@ -1,6 +1,6 @@
 .tarif-line__item {
     display: flex;
-    max-width: 25%;
+    max-width: 234px;
 }
 .tarif-line__item:not(:last-child) {
     border-right: 1px solid #a1a1a1;

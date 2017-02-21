@@ -1,0 +1,29 @@
+.soc-link {
+    width: 27px;
+    height: 26px;
+    background-size: 299px;
+    background-image: url(/assets/img/icons.png);
+    opacity: 0.8;
+    cursor: pointer;
+}
+.soc-link_rss {
+    background-position: -53px 0px; 
+}
+.soc-link_vk {
+    background-position: 193px 0px;
+}
+.soc-link_facebook {
+    background-position: 0px 0px;
+}
+.soc-link_twitter {
+    background-position: -80px 0px;
+}
+.soc-link_youtube {
+    background-position: -133px 0px;
+}
+.soc-link_ok {
+    background-position: -26px 0px;
+}
+.soc-link:hover {
+    opacity: 1;
+}
