@@ -99,12 +99,7 @@ module.exports = {
                                                                 placeholder: 'Поиск по сайту',
                                                             }, {
                                                                 block: 'button',
-                                                                mix: { mods: { search: true } },
-                                                                icon: {
-                                                                    block: 'icon',
-                                                                    mix: { block: 'search-form', elem: 'icon', mods: { search: true } },
-                                                                    url: '/assets/img/ser.png'
-                                                                }
+                                                                mix: { mods: { search: true } }
                                                             }]
                                                         }
                                                     }]
@@ -415,10 +410,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_1.png',
-                                                            }
+                                                            cls: 'icon-SMP1'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Семья 1'
@@ -556,10 +548,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_2.png',
-                                                            }
+                                                            cls: 'icon-SMP2'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Семья 2'
@@ -697,10 +686,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_3.png',
-                                                            }
+                                                            cls: 'icon-SMP3'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Семья 3'
@@ -838,10 +824,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_4.png',
-                                                            }
+                                                            cls: 'icon-SMPN'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Мультинет'

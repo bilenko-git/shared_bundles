@@ -9,11 +9,11 @@
     opacity: 0.6;
     cursor: pointer;
     outline: none;
+    background: url(/assets/img/icons.png) no-repeat -200px -4px;
 }
 .button_search .icon {
     width: 22px;
 }
-
 .button_search:hover {
-    background: url(/assets/img/ser.png) no-repeat 2px -4px, #E7E7E7;
+    background: url(/assets/img/icons.png) no-repeat -200px -4px, #E7E7E7;
 }
