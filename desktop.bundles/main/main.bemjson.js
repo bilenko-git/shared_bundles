@@ -156,8 +156,12 @@ module.exports = {
                                     content: [{
                                         block: 'logo',
                                         content: [{
-                                            block: 'image',
-                                            url: '/assets/img/life-logo.png'
+                                            block: 'link',
+                                            url: '/',
+                                            content: {
+                                                block: 'image',
+                                                url: '/assets/img/life-logo.png'
+                                            }
                                         }]
                                     }, {
                                         elem: 'group',

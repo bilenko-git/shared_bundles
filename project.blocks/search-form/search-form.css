@@ -37,11 +37,11 @@
 }
 .search-form .input_hovered,
 .search-form .input_hovered .input__box {
-    width:296px;
+    width:293px;
     transition: 0.6s;
 }
 
 .search-form .input_hovered .input__control {
-    width:287px;
+    width:284px;
     transition: 0.6s;
 }
