@@ -7,4 +7,17 @@
     overflow: hidden;
     z-index: 1000;
     position: relative;
+    background: url(/assets/img/icons.png);
+}
+.icon-SMP1 {
+    background-position: 1px -40px;
+}
+.icon-SMP2 {
+    background-position: -68px -40px;
+}
+.icon-SMP3 {
+    background-position: -138px -40px;
+}
+.icon-SMPN {
+    background-position: -208px -41px;
 }

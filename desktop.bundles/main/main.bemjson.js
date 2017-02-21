@@ -99,12 +99,7 @@ module.exports = {
                                                                 placeholder: 'Поиск по сайту',
                                                             }, {
                                                                 block: 'button',
-                                                                mix: { mods: { search: true } },
-                                                                icon: {
-                                                                    block: 'icon',
-                                                                    mix: { block: 'search-form', elem: 'icon', mods: { search: true } },
-                                                                    url: '/assets/img/ser.png'
-                                                                }
+                                                                mix: { mods: { search: true } }
                                                             }]
                                                         }
                                                     }]
@@ -419,10 +414,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_1.png',
-                                                            }
+                                                            cls: 'icon-SMP1'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Семья 1'
@@ -440,8 +432,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_wallet.png',
+                                                                        mods: { std: true, 'SMP1-lev1': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -466,8 +457,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_phone.png',
+                                                                        mods: { std: true, 'SMP1-lev2': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -492,8 +482,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_network.png'
+                                                                        mods: { std: true, 'SMP1-lev3': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -522,8 +511,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_unlim.png'
+                                                                        mods: { std: true, 'SMP1-lev4': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -560,10 +548,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_2.png',
-                                                            }
+                                                            cls: 'icon-SMP2'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Семья 2'
@@ -581,8 +566,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_wallet.png',
+                                                                        mods: { std: true, 'SMP2-lev1': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -607,8 +591,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_phone.png',
+                                                                        mods: { std: true, 'SMP2-lev2': true}
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -633,8 +616,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_network.png'
+                                                                        mods: { std: true, 'SMP2-lev3': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -663,8 +645,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_unlim.png'
+                                                                        mods: { std: true, 'SMP2-lev4': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -701,10 +682,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_3.png',
-                                                            }
+                                                            cls: 'icon-SMP3'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Семья 3'
@@ -722,8 +700,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_wallet.png',
+                                                                        mods: { std: true, 'SMP3-lev1': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -748,8 +725,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_phone.png',
+                                                                        mods: { std: true, 'SMP3-lev2': true}
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -774,8 +750,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_network.png'
+                                                                        mods: { std: true, 'SMP3-lev3': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -804,8 +779,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_unlim.png'
+                                                                        mods: { std: true, 'SMP3-lev4': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -842,10 +816,7 @@ module.exports = {
                                                         elem: 'head',
                                                         content: [{
                                                             elem: 'icon',
-                                                            content: {
-                                                                block: 'image',
-                                                                url: '/assets/img/family_4.png',
-                                                            }
+                                                            cls: 'icon-SMPN'
                                                         }, {
                                                             elem: 'head-desc',
                                                             content: 'Мультинет'
@@ -863,8 +834,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_wallet_alt.png',
+                                                                        mods: { std: true, 'SMPN-lev1': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -889,8 +859,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_phone_alt.png',
+                                                                        mods: { std: true, 'SMPN-lev2': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -915,8 +884,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_network_alt.png'
+                                                                        mods: { std: true, 'SMPN-lev3': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',
@@ -945,8 +913,7 @@ module.exports = {
                                                                     elem: 'property',
                                                                     content: [{
                                                                         block: 'icon',
-                                                                        mods: { std: true },
-                                                                        url: '/assets/img/icon_unlim_alt.png'
+                                                                        mods: { std: true, 'SMPN-lev4': true }
                                                                     }, {
                                                                         block: 'tarif',
                                                                         elem: 'property-desc',

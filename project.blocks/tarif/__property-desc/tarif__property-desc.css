@@ -1,4 +1,6 @@
 .tarif__property-desc {
     display: table-cell;
     vertical-align: middle;
+    line-height: 21px;
+    width: 150px;
 }

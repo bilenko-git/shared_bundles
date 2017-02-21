@@ -1,8 +1,40 @@
 .icon_std {
-    width: 33px;
-    height: 33px;
-    border-radius: 33px;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 12px;
+    width: 34px;
+    height: 34px;
+    background: url(/assets/img/icons.png);
+   	margin-right: 5px;
+}
+
+.icon_SMP1-lev1,
+.icon_SMP2-lev1,
+.icon_SMP3-lev1 {
+    background-position: 0px -112px;
+}
+.icon_SMP1-lev2,
+.icon_SMP2-lev2,
+.icon_SMP3-lev2 {
+    background-position: -34px -112px;
+}
+.icon_SMP1-lev3,
+.icon_SMP2-lev3,
+.icon_SMP3-lev3 {
+    background-position: -70px -112px;
+}
+.icon_SMP1-lev4,
+.icon_SMP2-lev4,
+.icon_SMP3-lev4{
+    background-position: -105px -112px;
+}
+
+.icon_SMPN-lev1 {
+    background-position: -1px -150px;
+}
+.icon_SMPN-lev2 {
+    background-position: -36px -150px;
+}
+.icon_SMPN-lev3 {
+    background-position: -70px -150px;
+}
+.icon_SMPN-lev4 {
+    background-position: -103px -150px;
 }
