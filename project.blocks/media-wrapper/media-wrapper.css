@@ -1,3 +1,6 @@
 .media-wrapper {
     
 }
+.media-wrapper .image {
+	width: 100%;
+}

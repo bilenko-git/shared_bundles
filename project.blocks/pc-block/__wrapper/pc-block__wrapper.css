@@ -3,7 +3,6 @@
     display: block;
 }
 .pc-block__wrapper {
-	display: table-cell;
 	vertical-align: bottom;
 	width: 100%;
 }
