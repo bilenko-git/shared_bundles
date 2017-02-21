@@ -4,3 +4,9 @@
 .tarif__menu.menu_focused {
 	outline: none;
 }
+.menu__item {
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px 0px 10px 5px;
+}
