@@ -1,6 +1,7 @@
 .toolbar__group_sep_both {
-    width: 407px;
+    width: auto;
     flex-grow: 5;
+    justify-content: flex-end;
 }
 .toolbar__group_sep_both .control-group {
     position: relative;
@@ -24,7 +25,7 @@
     content: '';
     display: block;
     position: absolute;
-    right: -18px;
+    right: -20px;
     top: 5px;
     height: 15px;
     margin: 0px 8px;

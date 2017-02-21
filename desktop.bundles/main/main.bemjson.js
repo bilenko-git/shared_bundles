@@ -125,16 +125,16 @@ module.exports = {
                                                             mods: { theme: 'simple-red' },
                                                             content: [{
                                                                 block: 'button',
-                                                                mods: { std: true },
-                                                                content: 'Пополнить счет'
+                                                                mods: { type: 'link', std: true },
+                                                                text: 'Пополнить счет'
                                                             }, {
                                                                 block: 'button',
-                                                                mods: { help: true },
-                                                                content: 'Помощь'
+                                                                mods: { type: 'link', 'std-help': true },
+                                                                text: 'Помощь'
                                                             }, {
                                                                 block: 'button',
-                                                                mods: { std: true },
-                                                                content: 'Личный кабинет'
+                                                                mods: { type: 'link', std: true },
+                                                                text: 'Личный кабинет'
                                                             }]
                                                         }
                                                     }, {
@@ -145,11 +145,11 @@ module.exports = {
                                                             content: [{
                                                                 block: 'button',
                                                                 mods: { help: true },
-                                                                content: 'Eng'
+                                                                text: 'Eng'
                                                             }, {
                                                                 block: 'button',
                                                                 mods: { help: true },
-                                                                content: 'Bel'
+                                                                text: 'Bel'
                                                             }]
                                                         }
                                                     }]

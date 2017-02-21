@@ -1,21 +1,21 @@
-.button_help {
-    display: inline-block;
-    height: 24px;
-    padding: 0 5px;
-    max-width: 35px;
-    margin: 0 2px;
-    line-height: 23px;
+.button_std-help {
     font-size: 15px;
+    padding: 0px 12px;
+    background-color: #888888;
+    white-space: pre;
+    height: 24px;
+    line-height: 23px;
+    display: inline-block;
     border-radius: 2px;
-    box-sizing: border-box;
     text-decoration: none;
     text-align: center;
     color: #fff;
+    margin: 0 2px;
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: #888888;
 }
-.button_help:hover {
+
+.button_std-help:hover {
     background-color: #717171;
 }

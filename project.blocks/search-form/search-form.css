@@ -31,8 +31,17 @@
     transition: 0.6s;
     outline: none;
 }
+.search-form .input__box {
+    display: inline-block;
+    transition: 0.6s;
+}
 .search-form .input_hovered,
-.search-form .input_hovered .input__box,
+.search-form .input_hovered .input__box {
+    width:296px;
+    transition: 0.6s;
+}
+
 .search-form .input_hovered .input__control {
-    width:310px;
+    width:287px;
+    transition: 0.6s;
 }

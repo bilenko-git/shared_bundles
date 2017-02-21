@@ -1,6 +1,10 @@
 .toolbar__group_ar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     width: 100%;
-    max-width: 452px;
+    flex-basis: 70%;
 }

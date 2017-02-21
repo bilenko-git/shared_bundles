@@ -1,5 +1,5 @@
 block('actions')(
-	js()(true)
+	js()({id: 'actions'})
 );
 block('actions').content()(function() {
     return {

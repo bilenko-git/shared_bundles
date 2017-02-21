@@ -16,4 +16,9 @@
     width: 100%;
     height: 100%;
     background-size: cover;
+    opacity: .8;
+}
+.soc-links__item .link_hovered .icon {
+    opacity: 1;
+    cursor: pointer;
 }

@@ -1,43 +1,37 @@
-
 /*common-styles*/
 @font-face{
     font-family: 'life_medium';
-    src: url('/assets/fonts/TyponineSansLCMedium.eot'),
-    url('/assets/fonts/TyponineSansLCMedium.eot') format('embedded-opentype'),
-    url('/assets/fonts/TyponineSansLCMedium.woff2') format('woff2'),
-    url('/assets/fonts/TyponineSansLCMedium.woff') format('woff'),
-    url('/assets/fonts/TyponineSansLCMedium.ttf') format('truetype'),
-    url('/assets/fonts/TyponineSansLCMedium.svg#TyponineSansLCMedium') format('svg');
+    src: url('/assets/fonts/TyponineSansLCMedium.eot') format('embedded-opentype'),
+        url('/assets/fonts/TyponineSansLCMedium.woff2') format('woff2'),
+        url('/assets/fonts/TyponineSansLCMedium.woff') format('woff'),
+        url('/assets/fonts/TyponineSansLCMedium.ttf') format('truetype'),
+        url('/assets/fonts/TyponineSansLCMedium.svg#TyponineSansLCMedium') format('svg');
 
 }
-
 @font-face{
     font-family: 'life_light';
-    src: url('/assets/fonts/TyponineSansLCLight.eot'),
-    url('/assets/fonts/TyponineSansLCLight.eot') format('embedded-opentype'),
-    url('/assets/fonts/TyponineSansLCLight.woff2') format('woff2'),
-    url('/assets/fonts/TyponineSansLCLight.ttf') format('truetype'),
-    url('/assets/fonts/TyponineSansLCLight.svg#TyponineSansLCLight') format('svg');
+    src: url('/assets/fonts/TyponineSansLCLight.eot') format('embedded-opentype'),
+        url('/assets/fonts/TyponineSansLCLight.woff2') format('woff2'),
+        url('/assets/fonts/TyponineSansLCLight.ttf') format('truetype'),
+        url('/assets/fonts/TyponineSansLCLight.svg#TyponineSansLCLight') format('svg');
 
 }
-
 @font-face{
     font-family: 'life_regular';
-    src: url('/assets/fonts/TyponineSansLCRegular.eot'),
-    url('/assets/fonts/TyponineSansLCRegular.eot') format('embedded-opentype'),
-    url('/assets/fonts/TyponineSansLCRegular.woff2') format('woff2'),
-    url('/assets/fonts/TyponineSansLCRegular.woff') format('woff'),
-    url('/assets/fonts/TyponineSansLCRegular.ttf') format('truetype'),
-    url('/assets/fonts/TyponineSansLCRegular.svg#TyponineSansLCRegular') format('svg');
+    src: url('/assets/fonts/TyponineSansLCRegular.eot') format('embedded-opentype'),
+        url('/assets/fonts/TyponineSansLCRegular.woff2') format('woff2'),
+        url('/assets/fonts/TyponineSansLCRegular.woff') format('woff'),
+        url('/assets/fonts/TyponineSansLCRegular.ttf') format('truetype'),
+        url('/assets/fonts/TyponineSansLCRegular.svg#TyponineSansLCRegular') format('svg');
 
 }
-
 @font-face{
     font-family: 'life_text';
-    src: url('/assets/fonts/TyponineSansLCText.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/TyponineSansLCText.woff') format('woff'),
-    url('/assets/fonts/TyponineSansLCText.ttf') format('truetype'),
-    url('/assets/fonts/TyponineSansLCText.svg#Sri-TSCRegular') format('svg');
+    src: local('TyponineSansLCText'),
+        url('/assets/fonts/TyponineSansLCText.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/TyponineSansLCText.woff') format('woff'),
+        url('/assets/fonts/TyponineSansLCText.ttf') format('truetype'),
+        url('/assets/fonts/TyponineSansLCText.svg#Sri-TSCRegular') format('svg');
 
 }
 html,body {
