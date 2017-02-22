@@ -1,4 +1,8 @@
 .tarif__property {
-display: flex;
-align-items: center;
+	display: flex;
+	align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px 0px 10px 5px;
 }
