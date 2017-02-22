@@ -169,7 +169,7 @@ module.exports = {
                                                             content: [{
                                                                     block: 'icon',
                                                                     url: '/assets/img/private_act.png',
-                                                                    js: { 'cur-image': '/assets/img/private.png' }
+                                                                    // js: { 'cur-image': '/assets/img/private.png' }
                                                                 }, {
                                                                     block: 'tabs',
                                                                     elem: 'title',
@@ -187,7 +187,7 @@ module.exports = {
                                                                 content: [{
                                                                     block: 'icon',
                                                                     url: '/assets/img/business.png',
-                                                                    js: { 'cur-image': '/assets/img/business_act.png' }
+                                                                    // js: { 'cur-image': '/assets/img/business_act.png' }
                                                                 }, {
                                                                     block: 'tabs',
                                                                     elem: 'title',
