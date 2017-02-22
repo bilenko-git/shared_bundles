@@ -165,11 +165,9 @@ module.exports = {
                                                             block: 'link',
                                                             mix: { block: 'tabs', elem: 'item', elemMods: { current: true } },
                                                             url: '#',
-                                                            // js: { id: 'tab1' },
                                                             content: [{
-                                                                    block: 'icon',
-                                                                    url: '/assets/img/private_act.png',
-                                                                    // js: { 'cur-image': '/assets/img/private.png' }
+                                                                    block: 'tabs',
+                                                                    elem: 'private-client'
                                                                 }, {
                                                                     block: 'tabs',
                                                                     elem: 'title',
@@ -177,24 +175,18 @@ module.exports = {
                                                                     content: ['Частным', { tag: 'br' }, 'клиентам']
                                                                 }]
                                                         }, {
-                                                            // elem: 'item',
                                                             block: 'link',
                                                             mix: { block: 'tabs', elem: 'item' },
-                                                            // js: { id: 'tab1' },
-                                                            // content: {
-                                                                // block: 'link',
-                                                                // mix: { block: 'tabs', elem: 'item' },
-                                                                content: [{
-                                                                    block: 'icon',
-                                                                    url: '/assets/img/business.png',
-                                                                    // js: { 'cur-image': '/assets/img/business_act.png' }
-                                                                }, {
-                                                                    block: 'tabs',
-                                                                    elem: 'title',
-                                                                    tag: 'span',
-                                                                    content: ['Бизнес', { tag: 'br' }, 'клиентам']
-                                                                }]
-                                                            // }
+                                                            url: '#',
+                                                            content: [{
+                                                                block: 'tabs',
+                                                                elem: 'business-client'
+                                                            }, {
+                                                                block: 'tabs',
+                                                                elem: 'title',
+                                                                tag: 'span',
+                                                                content: ['Бизнес', { tag: 'br' }, 'клиентам']
+                                                            }]
                                                         }]
                                                     }, {
                                                         elem: 'content',
