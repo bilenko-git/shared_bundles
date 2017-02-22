@@ -2,14 +2,14 @@
     display: inline-block;
     width: 35px;
     height: 24px;
+    background: url(/assets/img/icons.png) no-repeat -200px -4px;
+    background-color: #d2d2d2;
     border-radius: 0px 3px 3px 0px;
     border: 1px solid #C5C5C5;
     z-index: 1;
-    background-color: #d2d2d2;
     opacity: 0.6;
     cursor: pointer;
     outline: none;
-    background: url(/assets/img/icons.png) no-repeat -200px -4px;
 }
 .button_search .icon {
     width: 22px;
