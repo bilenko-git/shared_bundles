@@ -154,15 +154,9 @@ module.exports = {
                                 }, {
                                     elem: 'wrapper',
                                     content: [{
-                                        block: 'logo',
-                                        content: [{
-                                            block: 'link',
-                                            url: '/',
-                                            content: {
-                                                block: 'image',
-                                                url: '/assets/img/life-logo.png'
-                                            }
-                                        }]
+                                        block: 'link',
+                                        url: '/',
+                                        mix: { block: 'logo' }
                                     }, {
                                         elem: 'group',
                                         content: {
