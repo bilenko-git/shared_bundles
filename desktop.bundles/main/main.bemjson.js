@@ -169,12 +169,10 @@ module.exports = {
                                                         elem: 'links',
                                                         content: [{
                                                             elem: 'item',
+                                                            mix: { block: 'link', mods: { pseudo: true } },
                                                             elemMods: { current: true },
                                                             js: { id: 'tab1' },
-                                                            content: {
-                                                                block: 'link',
-                                                                mods: { pseudo: true },
-                                                                content: [{
+                                                            content: [{
                                                                     block: 'icon',
                                                                     url: '/assets/img/private_act.png',
                                                                     js: { 'cur-image': '/assets/img/private.png' }
@@ -184,7 +182,6 @@ module.exports = {
                                                                     tag: 'span',
                                                                     content: ['Частным', { tag: 'br' }, 'клиентам']
                                                                 }]
-                                                            }
                                                         }, {
                                                             elem: 'item',
                                                             js: { id: 'tab1' },
@@ -1066,20 +1063,6 @@ module.exports = {
                                                 url: '#',
                                                 target: '_blank',
                                                 content: 'Как оплатить'
-                                            }, {
-                                                block: 'link',
-                                                mix: { block: 'footer', elem: 'hotlink' },
-                                                url: '#',
-                                                target: '_blank',
-                                                content: [{
-                                                    block: 'online-consultation',
-                                                    content: [{
-                                                        elem: 'img',
-                                                    }, {
-                                                        elem: 'des',
-                                                        content: 'ONLINE <br>КОНСУЛЬТАНТ'
-                                                    }]
-                                                }]
                                             }]
                                         }]
                                     }, {
@@ -1094,10 +1077,6 @@ module.exports = {
                                                 content: 'о нас'
                                             }
                                         }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
-                                        }, {
                                             elem: 'item',
                                             content: {
                                                 block: 'link',
@@ -1105,10 +1084,6 @@ module.exports = {
                                                 url: '#',
                                                 content: 'пресса'
                                             }
-                                        }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
                                         }, {
                                             elem: 'item',
                                             content: {
@@ -1118,10 +1093,6 @@ module.exports = {
                                                 content: 'новости'
                                             }
                                         }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
-                                        }, {
                                             elem: 'item',
                                             content: {
                                                 block: 'link',
@@ -1129,10 +1100,6 @@ module.exports = {
                                                 url: '#',
                                                 content: 'карьера'
                                             }
-                                        }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
                                         }, {
                                             elem: 'item',
                                             content: {
@@ -1142,10 +1109,6 @@ module.exports = {
                                                 content: 'покрытие'
                                             }
                                         }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
-                                        }, {
                                             elem: 'item',
                                             content: {
                                                 block: 'link',
@@ -1153,10 +1116,6 @@ module.exports = {
                                                 url: '#',
                                                 content: 'салоны'
                                             }
-                                        }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
                                         }, {
                                             elem: 'item',
                                             content: {
@@ -1166,10 +1125,6 @@ module.exports = {
                                                 content: 'контакты'
                                             }
                                         }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
-                                        }, {
                                             elem: 'item',
                                             content: {
                                                 block: 'link',
@@ -1177,10 +1132,6 @@ module.exports = {
                                                 url: '#',
                                                 content: 'sms'
                                             }
-                                        }, {
-                                            block: 'footer',
-                                            elem: 'sep',
-                                            content: ''
                                         }, {
                                             elem: 'item',
                                             content: {
