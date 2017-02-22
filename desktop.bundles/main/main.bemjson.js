@@ -90,16 +90,21 @@ module.exports = {
                                                     }, {
                                                         block: 'search-form',
                                                         js: true,
+                                                        tag: 'form',
+                                                        attrs: { id: 'search-form', action: 'http://life.com.by/private/search' },
                                                         mods: { right: true },
                                                         content: {
                                                             block: 'control-group',
                                                             content: [{
                                                                 block: 'input',
+                                                                name: 'term',
+                                                                attrs: { onfocus: "if(this.value !== .'') {this.value='';}" },
                                                                 mix: { block: 'search-form', elem: 'input' },
                                                                 placeholder: 'Поиск по сайту',
                                                             }, {
                                                                 block: 'button',
-                                                                mix: { mods: { search: true } }
+                                                                mix: { mods: { search: true, type: 'submit' } },
+                                                                attrs: { onclick: 'document.querySelector("#search-form").submit()' }
                                                             }]
                                                         }
                                                     }]
