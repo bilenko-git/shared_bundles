@@ -164,14 +164,14 @@ module.exports = {
                                             elem: 'item',
                                             content: [{
                                                     block: 'tabs',
-                                                    js: true,
+                                                    // js: true,
                                                     content: [{
                                                         elem: 'links',
                                                         content: [{
-                                                            elem: 'item',
-                                                            mix: { block: 'link', mods: { pseudo: true } },
-                                                            elemMods: { current: true },
-                                                            js: { id: 'tab1' },
+                                                            block: 'link',
+                                                            mix: { block: 'tabs', elem: 'item', elemMods: { current: true } },
+                                                            url: '#',
+                                                            // js: { id: 'tab1' },
                                                             content: [{
                                                                     block: 'icon',
                                                                     url: '/assets/img/private_act.png',
@@ -183,11 +183,13 @@ module.exports = {
                                                                     content: ['Частным', { tag: 'br' }, 'клиентам']
                                                                 }]
                                                         }, {
-                                                            elem: 'item',
-                                                            js: { id: 'tab1' },
-                                                            content: {
-                                                                block: 'link',
-                                                                mods: { pseudo: true },
+                                                            // elem: 'item',
+                                                            block: 'link',
+                                                            mix: { block: 'tabs', elem: 'item' },
+                                                            // js: { id: 'tab1' },
+                                                            // content: {
+                                                                // block: 'link',
+                                                                // mix: { block: 'tabs', elem: 'item' },
                                                                 content: [{
                                                                     block: 'icon',
                                                                     url: '/assets/img/business.png',
@@ -198,77 +200,79 @@ module.exports = {
                                                                     tag: 'span',
                                                                     content: ['Бизнес', { tag: 'br' }, 'клиентам']
                                                                 }]
-                                                            }
+                                                            // }
                                                         }]
                                                     }, {
                                                         elem: 'content',
                                                         content: {
                                                             elem: 'content-wrapper',
                                                             content: [{
-                                                                    elem: 'item',
-                                                                    elemMods: { content: 'current' },
-                                                                    js: { id: 'tab1' },
+                                                                elem: 'item',
+                                                                elemMods: { content: 'current' },
+                                                                js: { id: 'tab1' },
+                                                                content: {
+                                                                    block: 'c-menu',
+                                                                    mods: { horiz: true },
                                                                     content: {
-                                                                        block: 'c-menu',
-                                                                        mods: { horiz: true },
-                                                                        content: {
-                                                                            block: 'menu',
-                                                                            content: [{
-                                                                                    elem: 'item',
-                                                                                    val: 1,
-                                                                                    content: {
-                                                                                        block: 'link',
-                                                                                        mix: { block: 'tabs', elem: 'link' },
-                                                                                        url: '#',
-                                                                                        content: 'тарифы'
-                                                                                    }
-                                                                                }, {
-                                                                                    elem: 'item',
-                                                                                    val: 2,
-                                                                                    content: {
-                                                                                        block: 'link',
-                                                                                        mix: { block: 'tabs', elem: 'link' },
-                                                                                        url: '#',
-                                                                                        content: 'услуги'
-                                                                                    }
-                                                                                }, {
-                                                                                    elem: 'item',
-                                                                                    val: 3,
-                                                                                    content: {
-                                                                                        block: 'link',
-                                                                                        mix: { block: 'tabs', elem: 'link' },
-                                                                                        url: '#',
-                                                                                        content: 'интернет'
-                                                                                    }
-                                                                                }, {
-                                                                                    elem: 'item',
-                                                                                    val: 4,
-                                                                                    content: {
-                                                                                        block: 'link',
-                                                                                        mix: { block: 'tabs', elem: 'link' },
-                                                                                        url: '#',
-                                                                                        content: 'роуминг'
-                                                                                    }
-                                                                                }, {
-                                                                                    elem: 'item',
-                                                                                    val: 5,
-                                                                                    content: {
-                                                                                        block: 'link',
-                                                                                        mix: { block: 'tabs', elem: 'link' },
-                                                                                        url: '#',
-                                                                                        content: 'интернет-магазин'
-                                                                                    }
-                                                                                }, {
-                                                                                    elem: 'item',
-                                                                                    val: 6,
-                                                                                    content: {
-                                                                                        block: 'link',
-                                                                                        mix: { block: 'tabs', elem: 'link' },
-                                                                                        url: '#',
-                                                                                        content: 'my life:)'
-                                                                                    }
-                                                                                }]
-	                                                                           }}}, {
+                                                                        block: 'menu',
+                                                                        content: [{
+                                                                            elem: 'item',
+                                                                            val: 1,
+                                                                            content: {
+                                                                                block: 'link',
+                                                                                mix: { block: 'tabs', elem: 'link' },
+                                                                                url: '#',
+                                                                                content: 'тарифы'
+                                                                            }
+                                                                        }, {
+                                                                            elem: 'item',
+                                                                            val: 2,
+                                                                            content: {
+                                                                                block: 'link',
+                                                                                mix: { block: 'tabs', elem: 'link' },
+                                                                                url: '#',
+                                                                                content: 'услуги'
+                                                                            }
+                                                                        }, {
+                                                                            elem: 'item',
+                                                                            val: 3,
+                                                                            content: {
+                                                                                block: 'link',
+                                                                                mix: { block: 'tabs', elem: 'link' },
+                                                                                url: '#',
+                                                                                content: 'интернет'
+                                                                            }
+                                                                        }, {
+                                                                            elem: 'item',
+                                                                            val: 4,
+                                                                            content: {
+                                                                                block: 'link',
+                                                                                mix: { block: 'tabs', elem: 'link' },
+                                                                                url: '#',
+                                                                                content: 'роуминг'
+                                                                            }
+                                                                        }, {
+                                                                            elem: 'item',
+                                                                            val: 5,
+                                                                            content: {
+                                                                                block: 'link',
+                                                                                mix: { block: 'tabs', elem: 'link' },
+                                                                                url: '#',
+                                                                                content: 'интернет-магазин'
+                                                                            }
+                                                                        }, {
+                                                                            elem: 'item',
+                                                                            val: 6,
+                                                                            content: {
+                                                                                block: 'link',
+                                                                                mix: { block: 'tabs', elem: 'link' },
+                                                                                url: '#',
+                                                                                content: 'my life:)'
+                                                                            }
+                                                                        }]
+                                                                    }
+                                                                }
+                                                            } /*,{
                                                                             elem: 'item',
                                                                             elemMods: { content: true },
                                                                             js: { id: 'tab2' },
@@ -286,7 +290,7 @@ module.exports = {
                                                                                     ]
                                                                                 }
                                                                             }
-                                                                        }]
+                                                                        }*/]
                                                                 }
                                                             }]
                                                     }]
