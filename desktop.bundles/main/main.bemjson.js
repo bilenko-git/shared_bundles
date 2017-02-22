@@ -286,8 +286,7 @@ module.exports = {
                                                             }]
                                                     }]
                                                 }
-                                            },
-                                            {
+                                            }, {
                                                 block: 'navigation',
                                                 content: [{
                                                     block: 'navigation',
