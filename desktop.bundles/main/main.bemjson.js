@@ -362,7 +362,7 @@ module.exports = {
                                                     mods: { 'icon-only': true },
                                                     icon: {
                                                         block: 'icon',
-                                                        url: '/assets/img/question.png'
+                                                        mods: { 'tooltip': true }
                                                     }
                                                 }]
                                             }]
@@ -499,8 +499,7 @@ module.exports = {
                                                                         }]
                                                                     }, {
                                                                         block: 'icon',
-                                                                        mods: { smile: true },
-                                                                        url: '/assets/img/icon_smile.png'
+                                                                        mods: { smile: true }
                                                                     }]
                                                                 }]
                                                             }, {
@@ -633,8 +632,7 @@ module.exports = {
                                                                         }]
                                                                     }, {
                                                                         block: 'icon',
-                                                                        mods: { smile: true },
-                                                                        url: '/assets/img/icon_smile.png'
+                                                                        mods: { smile: true }
                                                                     }]
                                                                 }]
                                                             }, {
@@ -767,8 +765,7 @@ module.exports = {
                                                                         }]
                                                                     }, {
                                                                         block: 'icon',
-                                                                        mods: { smile: true },
-                                                                        url: '/assets/img/icon_smile.png'
+                                                                        mods: { smile: true }
                                                                     }]
                                                                 }]
                                                             }, {
@@ -901,8 +898,7 @@ module.exports = {
                                                                         }]
                                                                     }, {
                                                                         block: 'icon',
-                                                                        mods: { smile: true },
-                                                                        url: '/assets/img/icon_smile.png'
+                                                                        mods: { smile: true }
                                                                     }]
                                                                 }]
                                                             }, {

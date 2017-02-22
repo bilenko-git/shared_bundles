@@ -17,3 +17,6 @@
 .button_search:hover {
     background: url(/assets/img/icons.png) no-repeat -200px -4px, #E7E7E7;
 }
+button:focus {
+    outline: none;
+}
