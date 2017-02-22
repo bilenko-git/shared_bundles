@@ -1,9 +1,10 @@
 .navigation_group_right {
-	float: right;
+    float: right;
+    padding: 2px 0 0 0;
 }
 
 .navigation_group_right:after {
-	content: '';
-	display: table;
-	clear: both;
+    content: '';
+    display: table;
+    clear: both;
 }
