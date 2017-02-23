@@ -1,0 +1,9 @@
+.tabs__private-client {
+	width: 27px;
+    height: 27px;
+    background: url(/assets/img/icons.png);
+    background-position: 71px -2px;
+    /*  background-position: 40px -2px;*/
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
