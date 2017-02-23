@@ -206,11 +206,12 @@ module.exports = {
                                 elem: 'info-text',
                                 content: 'Абонентская плата списывается 1 числа. Ваш баланс должен составлять не менее 35,90 руб, чтобы трафик по тарифу был начислен на следующий месяц.'
                             }, {
-                                block: 'icon',
-                                mods: {
-                                    question: true
-                                },
-                                url: '/assets/img/question.png'
+                                block: 'button',
+                                mods: { 'icon-only': true },
+                                content: {
+                                    block: 'icon',
+                                    mods: { 'tooltip': true }
+                                }
                             }]
                         }]
                     }
@@ -226,22 +227,24 @@ module.exports = {
                                 mix: { block: 'c-info', elem: 'action-link' },
                                 url: '#',
                                 content: ['Все мои услуги', {
-                                    block: 'icon',
-                                    mods: {
-                                        question: true
-                                    },
-                                    url: '/assets/img/question.png'
+                                    block: 'button',
+                                    mods: { 'icon-only': true },
+                                    content: {
+                                        block: 'icon',
+                                        mods: { 'tooltip': true }
+                                    }
                                 }]
                             }, {
                                 block: 'link',
                                 mix: { block: 'c-info', elem: 'action-link' },
                                 url: '#',
                                 content: ['Сменить тариф', {
-                                    block: 'icon',
-                                    mods: {
-                                        question: true
-                                    },
-                                    url: '/assets/img/question.png'
+                                    block: 'button',
+                                    mods: { 'icon-only': true },
+                                    content: {
+                                        block: 'icon',
+                                        mods: { 'tooltip': true }
+                                    }
                                 }]
                             }, {
                                 block: 'link',

@@ -21,6 +21,7 @@ modules.define('actions', ['i-bem-dom'/*,'i-bem'*/, 'modal', 'BEMHTML', 'jquery'
                                 mods : { visible: false, theme : 'life-light', autoclosable: true },
                                 content: {
                                     block: 'button',
+                                    mods: { view: 'main' },
                                     text: 'Закрыть'
                                 },
                             });
