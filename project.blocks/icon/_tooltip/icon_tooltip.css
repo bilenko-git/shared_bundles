@@ -2,3 +2,8 @@
     background: url(/assets/img/icons.png);
     background-position: -174px -114px;
 }
+
+.icon_tooltip_small {
+    background: url(/assets/img/icons.png);
+    background-position: -279px -40px;
+}

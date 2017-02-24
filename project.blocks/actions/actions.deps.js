@@ -1,6 +1,8 @@
 ({
     mustDeps: [
         { block: 'modal', tech: 'bemhtml' },
+        { block: 'form', tech: 'bemhtml' },
+        { block: 'button', mods: { type: 'link' }, tech: 'bemhtml' },
         { block: 'modal', mods: { theme: 'islands', autoclosable: true } },
         { block: 'modal', mods: { theme: 'life-light' }, tech: 'css' },
         { block: 'modal', mods: { theme: 'islands' }, tech: 'css' },

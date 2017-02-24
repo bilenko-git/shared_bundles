@@ -16,10 +16,35 @@
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
 }
-
+.modal_theme_life-light .modal_cell {
+    position: relative;
+}
+.modal__close-button {
+    position: absolute;
+    display: block;
+    height: 21px;
+    width: 21px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    top: 24px;
+    right: 24px;
+    outline: none;
+    cursor: pointer;
+}
+.modal__close-button svg {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    top: 0;
+    left: 0;
+}
 .modal_theme_life-light .modal__content {
-    margin: 5px;
-    border: 1px solid #bfbfbf;
+    min-width: 878px;
+    margin: 0;
+    padding: 24px 24px 32px 32px;
+    border-radius: 5px;
+    /*border: 1px solid #bfbfbf;*/
     background-color: #fff;
 }
 

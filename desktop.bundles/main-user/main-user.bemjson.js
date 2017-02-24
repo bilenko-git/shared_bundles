@@ -33,10 +33,10 @@ module.exports = {
                                     elem: 'info',
                                     content: [{
                                         elem: 'info-icon',
-                                        content: {
+                                        mix: [{
                                             block: 'icon',
-                                            url: '/assets/img/icon_wallet_alt.png'
-                                        }
+                                            mods: { std: true, 'SMPN-lev1': true }
+                                        }]
                                     }, {
                                         elem: 'info-value',
                                         content: [
@@ -59,10 +59,10 @@ module.exports = {
                                     elem: 'info',
                                     content: [{
                                         elem: 'info-icon',
-                                        content: {
+                                        mix: [{
                                             block: 'icon',
-                                            url: '/assets/img/icon_phone_alt.png'
-                                        }
+                                            mods: { std: true, 'SMPN-lev2': true }
+                                        }]
                                     }, {
                                         elem: 'info-value',
                                         content: [
@@ -75,10 +75,10 @@ module.exports = {
                                         elem: 'info',
                                         content: [{
                                             elem: 'info-icon',
-                                            content: {
+                                            mix: [{
                                                 block: 'icon',
-                                                url: '/assets/img/icon_network_alt.png'
-                                            }
+                                                mods: { std: true, 'SMPN-lev3': true }
+                                            }]
                                         }, {
                                             elem: 'info-value',
                                             content: [
@@ -210,7 +210,7 @@ module.exports = {
                                 mods: { 'icon-only': true },
                                 content: {
                                     block: 'icon',
-                                    mods: { 'tooltip': true }
+                                    mods: { 'tooltip': 'small' }
                                 }
                             }]
                         }]
@@ -231,7 +231,7 @@ module.exports = {
                                     mods: { 'icon-only': true },
                                     content: {
                                         block: 'icon',
-                                        mods: { 'tooltip': true }
+                                        mods: { 'tooltip': 'small' }
                                     }
                                 }]
                             }, {
@@ -243,7 +243,7 @@ module.exports = {
                                     mods: { 'icon-only': true },
                                     content: {
                                         block: 'icon',
-                                        mods: { 'tooltip': true }
+                                        mods: { 'tooltip': 'small' }
                                     }
                                 }]
                             }, {
@@ -333,9 +333,13 @@ module.exports = {
                             elem: 'info',
                             elemMods: { text: true },
                             content: [{
-                                block: 'icon',
-                                mix: { block: 'actions', elem: 'icon' },
-                                url: '/assets/img/icon_warning.png'
+                                block: 'button',
+                                mix: { block: 'tooltip', js: true },
+                                mods: { 'icon-only': true },
+                                content: {
+                                    block: 'icon',
+                                    mods: { warning: true }
+                                }
                             },'Все минуты и мегабайты начислены вам. Вы можете распределить их между пользователями тарифа']
                         }]
                     }, {

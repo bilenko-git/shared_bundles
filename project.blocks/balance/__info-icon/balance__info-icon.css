@@ -3,8 +3,23 @@
     height: 19px;
 }
 
-.balance__info-icon .icon {
+.balance__info-icon .icon,
+.balance__info-icon.icon_std {
+    background-size: 203px 109px;
+    margin: 0;
     width: 19px;
+    min-width: 19px;
     height: 19px;
-    background-size: 100% 100%;
+}
+
+.balance__info-icon.icon_SMPN-lev1 {
+    background-position: 0px -82px;
+}
+
+.balance__info-icon.icon_SMPN-lev2 {
+    background-position: -20px -82px;
+}
+
+.balance__info-icon.icon_SMPN-lev3 {
+    background-position: -38px -82px;
 }
