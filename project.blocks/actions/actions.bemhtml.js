@@ -1,5 +1,5 @@
 block('actions')(
-	js()(true)
+	js()(function(){ return { id: this.generateId()}})
 );
 block('actions').content()(function() {
     return {
