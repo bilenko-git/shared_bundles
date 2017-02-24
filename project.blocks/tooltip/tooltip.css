@@ -5,3 +5,6 @@
     background-position: -174px -114px;
     cursor: pointer;
 }
+.tooltip:focus{
+	outline: none;
+}
