@@ -349,7 +349,9 @@ module.exports = {
                                                 mods : { switcher : 'link', theme : 'islands', size : 'm' },
                                                 switcher : '',
                                                 popup : 'Перехд в личный кабинет на сайте в котором <br> можно управлять ...',
-                                                mix: { block: 'tooltip'}
+                                                mix: { block: 'tooltip'},
+                                                js: { tooltip: 'main' }
+                         
                                             }]
                                         
                                         }]
