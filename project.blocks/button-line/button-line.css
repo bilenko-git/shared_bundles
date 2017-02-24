@@ -1,9 +1,11 @@
 .button-line__group_right {
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 @media (max-width: 1000px) {
 	.button-line__group_right {
-	    text-align: left;
+	    justify-content: flex-start;
 	}
 }

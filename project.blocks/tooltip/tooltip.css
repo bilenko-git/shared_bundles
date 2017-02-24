@@ -1,0 +1,7 @@
+.tooltip  {
+    width: 24px;
+    height: 24px;
+    background: url(/assets/img/icons.png);
+    background-position: -174px -114px;
+    cursor: pointer;
+}

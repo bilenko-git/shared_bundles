@@ -1,8 +1,8 @@
 ({
     shouldDeps: [
-        { block: 'input'},
-        { block: 'checkbox'},
-        { block: 'button'},
-        { block: 'select'}
+        { block: 'input' },
+        { block: 'checkbox' },
+        { block: 'button' },
+        { block: 'select' }
     ]
 })
