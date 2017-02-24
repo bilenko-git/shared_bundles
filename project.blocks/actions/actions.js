@@ -1,12 +1,10 @@
 modules.define('actions', ['i-bem-dom', 'modal', 'BEMHTML', 'jquery'], function(provide, bemDom, Modal, bemHtml, $) {
-
     provide(bemDom.declBlock(this.name, {
         onSetMod: {
             js: {
                 inited: function() {
                     this._domEvents('button').on('click', function() {
                         debugger;
-
                         // console.log(Modal);
                         console.log(this.findChildBlock(Modal) === null);
                         if( this.findChildBlock(Modal) === null) {
@@ -27,5 +25,4 @@ modules.define('actions', ['i-bem-dom', 'modal', 'BEMHTML', 'jquery'], function(
             }
         }
     }));
-
 });

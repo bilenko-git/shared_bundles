@@ -341,22 +341,17 @@ module.exports = {
                                             elem: 'group',
                                             elemMods: { right: true },
                                             content: [{
-                                                block: 'control-group',
-                                                content: [{
-                                                    block: 'button',
-                                                    type: 'link',
-                                                    mods: { link: true },
-                                                    text: ['Перейти к управлению']
-                                                }, {
-                                                    block: 'button',
-                                                    type: 'link',
-                                                    mods: { 'icon-only': true },
-                                                    icon: {
-                                                        block: 'icon',
-                                                        mods: { 'tooltip': true }
-                                                    }
-                                                }]
+                                                block: 'button',
+                                                mods: { link: true },
+                                                content: 'Перейти к управлению'
+                                            }, {
+                                                block : 'dropdown',
+                                                mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                                                switcher : '',
+                                                popup : 'Перехд в личный кабинет на сайте в котором <br> можно управлять ...',
+                                                mix: { block: 'tooltip'}
                                             }]
+                                        
                                         }]
                                     }, {
                                         block: 'banner',
