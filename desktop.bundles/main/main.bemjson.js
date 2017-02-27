@@ -348,7 +348,7 @@ module.exports = {
                                                 block : 'dropdown',
                                                 mods : { switcher : 'link', theme : 'islands', size : 'm' },
                                                 switcher : '',
-                                                popup : 'Перехд в личный кабинет на сайте в котором <br> можно управлять ...',
+                                                popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
                                                 mix: { block: 'tooltip', js: true },
                                                 js: { tooltip: 'main' }
                          
@@ -517,6 +517,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
+                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-1'}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -650,6 +651,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
+                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-2'}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -783,6 +785,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
+                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-3'}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -916,6 +919,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
+                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-2'}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'

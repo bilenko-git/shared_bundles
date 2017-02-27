@@ -1,0 +1,1 @@
+block('tarif').js()(true);

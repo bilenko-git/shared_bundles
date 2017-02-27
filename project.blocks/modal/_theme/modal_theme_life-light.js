@@ -15,11 +15,15 @@ provide(Modal.declMod({ modName : 'theme', modVal : 'life-light' }, /** @lends m
     onSetMod : {
         'visible' : {
             'true' : function() {
+                // console.log(bemDom);
                 this
                     // Apply the animation only at first opening, otherwise the animation will be played when block
                     // initialized.
                     .setMod('has-animation')
                     .__base.apply(this, arguments);
+                this._domEvents('close-button').on('click', function() {
+                    this.toggleMod('visible');
+                })
             }
         }
     }
