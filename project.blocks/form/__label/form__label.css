@@ -2,5 +2,7 @@
     display: inline-block;
     width: 174px;
     height: 42px;
-    line-height: 42px;
+    font-family: 'life_text';
+    font-size: 21px;
+    line-height: 28px;
 }

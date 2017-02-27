@@ -1,3 +1,7 @@
 .form__title {
     align-self: flex-start;
+    font-family: 'life_text';
+    font-size: 24px;
+    font-weight: normal;
+    color: #b5b5b5;
 }

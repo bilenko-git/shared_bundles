@@ -1,32 +1,51 @@
 .form__button-group {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: flex-end;
     max-width: 498px;
     align-self: center;
     padding: 42px 0 31px;
+    font-family: 'life_text';
+    font-weight: normal;
+    font-size: 24px;
+}
+.form__button-group .ussd-call {
+    color: #ff2e39;
+}
+.form__button-group .form__button-group_wide {
+    min-width: 547px;
+    font-size: 21px;
+    justify-content: flex-start;
 }
 
 .form__button-group_inner {
     display: flex;
     width: 100%;
     padding: 0;
-    justify-content: space-between;
+    margin: 4px 0;
+    justify-content: flex-start;
 }
 
 .form__button-group_inner .button,
 .form__button-group_inner .select,
 .form__button-group_inner .input:not(:last-child) {
-    margin: 4px;
+    margin: 0 4px;
+}
+.form__button-group_inner .tooltip {
+    display: flex;
+    align-self: center;
 }
 
+
 .form__button-group_inner .form__label {
-    font-size: 16px;
+    font-size: 21px;
     min-width: 174px;
     line-height: 42px;
 }
 
 .form__button-group_vert {
     flex-flow: column wrap;
+
 }
 
 .form__button-group_vert .control-group {
