@@ -287,3 +287,16 @@
 .control-group >:only-child .button_theme_life-light:before {
     border-radius: 2px;
 }
+.button_theme_gray {
+    border: 0px;
+    color: white;
+    border-radius: 20px;
+    padding: 9px 19px;
+    font-family: 'life_medium';
+    font-size: 13px;
+    background-color: #626262;
+    cursor: pointer;
+}
+.button_theme_gray:focus {
+    outline: none;
+}

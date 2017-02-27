@@ -1,0 +1,15 @@
+.user-account {
+    width: 265px;
+    border-left: 1px solid #a1a1a1;
+    padding: 0px 0px 0px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.user-account__info-and-exit {
+	display: flex;
+	justify-content: inherit;
+}
+.user-account__info-and-exit a {
+    color: black;
+}

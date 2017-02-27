@@ -1,4 +1,6 @@
 .pc-block {
+	margin: 20px 0px 0px 0px;
+
 	&__head {
 		display: flex;
 		align-items: center;
@@ -11,7 +13,9 @@
 	    cursor: pointer;
 	}
 	&__title {
-		color: white;
+	    color: white;
+	    font-size: 18px;
+	    font-family: 'life_text', sans-serif;
 	}
 	&__svg {
 		width: 24px;
@@ -49,7 +53,7 @@
 				transition: height, 0.5s linear;
 			}
 			&__content {
-				max-height: 300px;
+				max-height: 500px;
 			}
 		}
 	}

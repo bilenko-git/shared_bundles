@@ -15,7 +15,7 @@ module.exports = {
         content: [{
             block: 'profile',
             content: [{
-                elem: 'information',
+                block: 'my-tariff',
                 content: [{
                     elem: 'text',
                     content: 'Вы состоите в группе пользователя'
@@ -27,7 +27,7 @@ module.exports = {
                     content: 'тариф Семья 3'
                 }]
             }, {
-                elem: 'balans',
+                block: 'user-balance',
                 content: [{
                     elem: 'text',
                     content: ['баланс:',{
@@ -35,41 +35,56 @@ module.exports = {
                         content: '32,45'
                     }, {
                         elem: 'currency',
-                        content: 'руб.'
+                        content: 'руб'
                     }]
                 },{
-                    block: 'button',
-                    mods: { theme: 'red', size: 's' },
-                    text: 'Пополнить'
-                },{
-                    block: 'button',
-                    mods: { theme: 'red', size: 's' },
-                    text: 'Попросить пополнить счет'
+                    block: 'buttons',
+                    content: [{
+                        block: 'button',
+                        js : true,
+                        mods: { theme: 'red', size: 's' },
+                        mix: { block : 'recharge-account', js : true },
+                        text: 'Пополнить'
+                    },{
+                        block: 'button',
+                        mods: { theme: 'red', size: 's' },
+                        text: 'Попросить пополнить счет'
+                    }]
                 }] 
             }, {
-                elem: 'account',
+                block: 'user-account',
                 content: [{
-                    block: 'link',
-                    url: '#',
-                    content: 'Все мои услуги'
+                    elem: 'info-and-exit',
+                    content: [{
+                        block: 'link-and-tooltip',
+                        content: [{
+                            block: 'link',
+                            url: '#',
+                            content: 'Все мои услуги' 
+                        }, {
+                            block : 'dropdown',
+                            mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                            switcher : '',
+                            popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+                            mix: { block: 'tooltip', js: true },
+                            js: { tooltip: 'main' }
+                        }]
+                    }, {
+                        block: 'button',
+                        cls: 'exit_account',
+                        mods: { theme: 'gray', size: 's' },
+                        text: 'Выход'
+                    }]
                 }, {
-                    elem: 'tooltip',
-                    content: '?'
-                }, {
-                    block: 'button',
-                    cls: 'exit_account',
-                    mods: { theme: 'gray', size: 's' },
-                    text: 'Выход'
-                }, {
-                    block: 'button',
-                    cls: 'exit_goroup',
-                    mods: { theme: 'red', size: 's' },
-                    text: 'Выйти из группы'
+                    elem: 'exit-group',
+                    content: [{
+                        block: 'button',
+                        cls: 'exit_goroup',
+                        mods: { theme: 'red', size: 's' },
+                        text: 'Выйти из группы'
+                    }]
                 }] 
             }]
-        }, {
-            block: 'sep',
-            mods: { horizontal: true },
         }, {
             block: 'user',
             content: [{
@@ -89,7 +104,9 @@ module.exports = {
                     }]
                 }]
             }, {
-                elem: 'photo',
+                block: 'icon',
+                mix: { block: 'user', elem: 'photo' },
+                url: '/assets/img/user-avatar.png'
             }, {
                 elem: 'inforamtion',
                 content:  [{
@@ -115,24 +132,25 @@ module.exports = {
                 text: 'Попросить МБ'
             }]
         }, {
-            block: 'toggle-block',
+            block: 'pc-block',
             js: true,
             content: [{
                 elem: 'head',
                 content: [{
                     elem: 'title',
-                    content: 'Часто задаваемые вопросы'
+                    content: 'Часто задаваемые вопросы' 
                 }, {
-                    elem: 'button',
-                    content:  '<svg width="24" height="24" viewBox="0 0 24 24"><path fill="#000000" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"></path></svg>'
+                    elem: 'svg',
+                    tag: 'svg',
+                    content: '<path fill="#ffffff" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>'
                 }]
             }, {
                 elem: 'content',
                 content: [{
-                    elem: 'description',
+                    block: 'questions-description',
                     content: 'Также вы можете выбрать дополнительные услуги и устройства'
                 }, {
-                    elem: 'questions',
+                    block: 'questions',
                     content: ['APPS CLUB', 'Мелоринг', 'ItV', 'Скидки на роуминг'].map(function(service) {
                         return {
                             elem: 'question',
@@ -155,7 +173,7 @@ module.exports = {
                             }]
                         }
                     })
-                }]
+                }]                                     
             }]
         }]
     }]
