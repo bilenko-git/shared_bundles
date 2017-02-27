@@ -4,25 +4,30 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
             js: {
                 inited: function() {
                     var popup = $('.popup');
+                    sessionStorage.setItem('tooltips', '');
 
                     this._domEvents().on('click', function(e) {
                         var tooltips = sessionStorage.tooltips,
                             tooltipIndex = this.domElem.data('bem').dropdown.tooltip;
 
                         if(!tooltips) {
-                            if(false) {
-                                $.ajax({
-                                    url: "url"
-                                }).done(function(tooltips) {
-                                    sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
-                                    AppendTooltip(tooltips, tooltipIndex);
-                                }); 
-                            } else {
-                                var tooltips = {'main' : '1Перехд в личный кабинет на сайте в котором<br> можно управлять ...', 'user' : 'user des'};
-                                
-                                sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
-                                AppendTooltip(tooltips, tooltipIndex);
-                            }
+                            $.ajax({
+                                type: "GET",
+                                url: "https://missaapitest.life.com.by/api/v1/subscriber/bundles/getHintsByRole",
+                                data: {
+                                    "role" : "UNAUTHORIZED"
+                                },
+                                crossDomain : true,
+                                success: function (tooltips) {
+                                    console.log(tooltips);
+                                      sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
+ +                                    AppendTooltip(tooltips, tooltipIndex);
+                                },
+                                error: function (xhr, status) {
+                                    console.log(xhr);
+                                    console.log(status);
+                                }
+                            });
                         } else {
                             AppendTooltip(JSON.parse(tooltips), tooltipIndex);
                         }
