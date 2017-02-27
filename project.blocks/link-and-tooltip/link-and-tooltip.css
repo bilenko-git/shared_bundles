@@ -1,0 +1,7 @@
+.link-and-tooltip {
+	display: flex;
+    align-items: center;
+}
+.link-and-tooltip a {
+	margin: 0px 10px 0px 0px;
+}

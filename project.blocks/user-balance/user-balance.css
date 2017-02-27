@@ -1,0 +1,22 @@
+.user-balance {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.user-balance__text {
+	display: flex;
+}
+.user-balance__text {
+    line-height: 23px;
+    color: #626262;
+}
+.user-balance__price {
+    font-size: 29px;
+    margin: 5px 5px 0px 10px;
+    font-family: 'life_medium';
+}
+.user-balance__currency {
+    margin-top: 10px;
+    font-weight: bold;
+}

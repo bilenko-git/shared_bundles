@@ -1,0 +1,14 @@
+.button_theme_red {
+    border: 0px;
+    color: white;
+    border-radius: 20px;
+    padding: 9px 19px;
+    margin: 26px 10px 0px 0px;
+    font-family: 'life_medium';
+    font-size: 13px;
+    background-color: #ff0000;
+    cursor: pointer;
+}
+.button_theme_red:focus {
+    outline: none;
+}

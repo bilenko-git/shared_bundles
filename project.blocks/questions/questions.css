@@ -1,3 +1,8 @@
+.toggle-block {
+    background-color: white;
+    margin: 25px 0px 0px 0px;
+}
+
 .toggle-block__content {
     padding-bottom: 20px;
 }
@@ -6,44 +11,44 @@
     padding: 20px 25px 30px 25px;
     font-size: 18px;
 }
-.toggle-block__question {
+.questions__question {
     width: 230px;
     margin: 10px 0px 10px 0px;
 }
-.toggle-block__questions {
+.questions {
     display: flex;
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
     flex-wrap: wrap;
 }
-.toggle-block__icon {
+.questions__icon {
     width: 106px;
     height: 90px;
     margin: 0 auto;
     margin-top: 10px;
 }
-.toggle-block__title {
+.questions__title {
 	color: #5b3293;
     text-align: center;
     margin: 10px 0px 15px 0px;
 }
-.toggle-block__desc {
+.questions__desc {
 	width: 175px;
     margin: auto;
     text-align: -webkit-left;
 }
-.toggle-block__more {
+.questions__more {
     margin-top: 20px;
     text-align: center;
 }
-.toggle-block__more a {
+.questions__more a {
     color: red;
 }
-.toggle-block__question:not(:last-child) {
+.questions__question:not(:last-child) {
     border-right: 1px solid #a1a1a1;
 }
-.toggle-block__question:last-child:hover {
+.questions__question:last-child:hover {
     border: 1px solid #a1a1a1;
     padding: 1px 0px 0px 0px;
     margin: 8px -1px 0px -1px;
@@ -51,7 +56,7 @@
     background-color: rgba(234, 234, 234, 0.14);
     cursor: pointer;
 }
-.toggle-block__question:hover {
+.questions__question:hover {
     border: 1px solid #a1a1a1;
     padding: 1px 0px 0px 0px;
     margin: 8px 0px 0px -1px;
@@ -65,19 +70,35 @@
 }
 
 
-.toggle-block_closed .toggle-block__title {
+.questions_closed .questions__title {
     color: white !important;
 }
 
-.toggle-block_closed .toggle-block__head {
+.questions_closed .questions__head {
     background-color: #5b3293 !important;
 }
-.toggle-block_closed .toggle-block__content {
+.questions_closed .questions__content {
     display: none;
 }
-.toggle-block_closed svg path {
+.questions_closed svg path {
     fill: #FFF;
 }
-.toggle-block_closed .toggle-block__button {
+.questions_closed .questions__button {
     transform: rotate(180deg);
+}
+.questions__head {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    color: black;
+    padding: 0px 10px 0px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.questions-description {
+	color: #5b3293;
+	padding: 20px 25px 30px 25px;
+	font-size: 18px;
 }

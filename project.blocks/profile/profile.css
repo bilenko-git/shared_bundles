@@ -4,4 +4,10 @@
     align-items: stretch;
     align-content: stretch;
     flex-wrap: wrap;
+    margin-top: 20px;
+}
+.my-tariff,
+.user-balance,
+.user-account {
+    margin-bottom: 40px;
 }
