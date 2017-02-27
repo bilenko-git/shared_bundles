@@ -1,54 +1,51 @@
-.pc-block__head {
-	display: flex;
-	align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px 10px 15px;
-    border-radius: 5px;
-    position: relative;
-    background: #593290;
-    max-width: 100%;
-    cursor: pointer;
+.pc-block {
+	&__head {
+		display: flex;
+		align-items: center;
+	    justify-content: space-between;
+	    padding: 10px 15px 10px 15px;
+	    border-radius: 5px;
+	    position: relative;
+	    background: #593290;
+	    max-width: 100%;
+	    cursor: pointer;
+	}
+	&__title {
+		color: white;
+		-webkit-transition:height, 0.5s linear;
+		-moz-transition: height, 0.5s linear;
+		-ms-transition: height, 0.5s linear;
+		-o-transition: height, 0.5s linear;
+		transition: height, 0.5s linear;
+	}
+	&__svg {
+		width: 24px;
+		height: 24px;
+	}
+	&__content {
+		overflow: hidden;
+		max-height: 0;
+		padding: 0px;
+		-webkit-transition: max-height 1s; 
+		-moz-transition: max-height 1s; 
+		-ms-transition: max-height 1s; 
+		-o-transition: max-height 1s; 
+		transition: max-height 1s;  
+		background: white;
+	}
+	&__content-text {
+		padding: 25px;
+		background-color: white;
+	}
+	&_opened {
+		.pc-block {
+			&__svg {
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+			&__content {
+				max-height: 300px;
+			}
+		}
+	}
 }
-.pc-block__title {
-	color: white;
-}
-.pc-block__svg {
-	width: 24px;
-	height: 24px;
-}
-.pc-block__svg {
-	-webkit-transition:height, 0.5s linear;
-	-moz-transition: height, 0.5s linear;
-	-ms-transition: height, 0.5s linear;
-	-o-transition: height, 0.5s linear;
-	transition: height, 0.5s linear;
-}
-.pc-block_opened .pc-block__svg {
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
-}
-
-
-
-
-.pc-block__content {
-	-webkit-transition: max-height 1s; 
-	-moz-transition: max-height 1s; 
-	-ms-transition: max-height 1s; 
-	-o-transition: max-height 1s; 
-	transition: max-height 1s;  
-	background: white;
-	overflow: hidden;
-	max-height: 0;
-	padding: 0px;
-}
-.pc-block_opened .pc-block__content {
-	max-height: 300px;
-}
-.content-text {
-	background-color: white;
-    padding: 25px;
-}
-
-
-
