@@ -16,8 +16,16 @@
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
 }
-.modal_theme_life-light .modal_cell {
+.modal_theme_life-light .modal__table {
+    display: flex;
+    justify-content: center;
+}
+.modal_theme_life-light .modal__cell {
+    max-width: 878px;
+    margin:auto;
+    align-self: center;
     position: relative;
+    display: flex;
 }
 .modal__close-button {
     position: absolute;
@@ -31,6 +39,7 @@
     right: 24px;
     outline: none;
     cursor: pointer;
+    z-index: 1000;
 }
 .modal__close-button svg {
     position: absolute;
@@ -42,6 +51,7 @@
 .modal_theme_life-light .modal__content {
     min-width: 878px;
     margin: 0;
+    box-sizing: border-box;
     padding: 24px 24px 32px 32px;
     border-radius: 5px;
     /*border: 1px solid #bfbfbf;*/

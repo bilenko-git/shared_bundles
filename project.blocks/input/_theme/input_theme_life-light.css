@@ -1,0 +1,196 @@
+.input_theme_life-light {
+    font-family: 'life_light', Helvetica, Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 0 0 2px 2px #636363;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/* Decorative element (inner background) */
+
+.input_theme_life-light:before {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    content: '';
+    background: #fff;
+}
+
+.input_theme_life-light .input__box {
+    position: relative;
+    display: block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.input_theme_life-light .input__control {
+    font: inherit;
+    line-height: inherit;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+
+/*лишние отступы у текста*/
+
+.input_theme_life-light .input__control::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+/*нативный крестик*/
+
+.input_theme_life-light .input__control::-webkit-search-cancel-button {
+    display: none;
+}
+
+.input_theme_life-light .input__control::-webkit-input-placeholder {
+    color: #999;
+    text-indent: 0;
+}
+
+.input_theme_life-light .input__control::-moz-placeholder {
+    opacity: 1;
+    color: #999;
+}
+
+.input_theme_life-light .input__control::-ms-clear {
+    display: none;
+}
+
+.input_theme_life-light .input__control::-webkit-autofill {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+}
+
+.input_theme_life-light.input_has-clear .input__control {
+    text-overflow: ellipsis;
+}
+
+.input_theme_life-light .input__clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: text;
+    -webkit-transition: opacity 0.1s ease-out;
+    transition: opacity 0.1s ease-out;
+    opacity: 0;
+    background: 50% 50% no-repeat;
+}
+
+.input_theme_life-light .input__clear_visible {
+    opacity: 0.3;
+}
+
+.input_theme_life-light .input__clear_visible:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.input_theme_life-light.input_focused {
+    z-index: 1;
+}
+
+.input_theme_life-light.input_focused:before {
+    box-shadow: 0 0 0 1px #ffcc00, inset 0 0 0 1px #ffcc00;
+}
+
+.input_theme_life-light.input_focused .input__control {
+    text-overflow: clip;
+    /* fix ellipsis bug in Chrome */
+}
+
+.input_theme_life-light.input_disabled {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.input_theme_life-light.input_disabled:before,
+.input_theme_life-light.input_disabled .input__clear {
+    display: none;
+}
+
+.input_theme_life-light.input_disabled .input__box,
+.input_theme_life-light.input_disabled .input__control {
+    color: rgba(0, 0, 0, 0.4);
+    cursor: default;
+}
+
+
+/*.input_theme_life-light.input_size_s .input__clear,
+    .input_theme_life-light.input_size_m .input__clear {
+    width: 24px;
+    height: 24px;
+    background-image: url(../../theme/_life-light/clear_size_s.svg);
+    background-position: 7px 50%;
+}*/
+
+.input_theme_life-light.input_size_s.input_has-clear .input__control {
+    padding-right: 24px;
+}
+
+.input_theme_life-light.input_size_m {
+    width: 206px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.input_theme_life-light.input_size_m .input__control {
+    height: 28px;
+    padding: 0 8px;
+}
+
+.input_theme_life-light.input_size_m.input_has-clear .input__control {
+    padding-right: 28px;
+}
+
+.input_theme_life-light.input_size_m .input__clear {
+    width: 28px;
+    height: 28px;
+    background-position: 9px 50%;
+}
+
+
+/*.input_theme_life-light.input_size_l .input__clear,
+    .input_theme_life-light.input_size_xl .input__clear {
+    width: 32px;
+    height: 32px;
+    background-image: url(../../theme/_life-light/clear_size_l.svg);
+    background-position: 9px 50%;
+}*/
+
+.input_theme_life-light.input_has-clear .input__control {
+    padding-right: 0;
+}
+
+.input_theme_life-light.input_width_available {
+    width: 100%;
+    max-width: 284px;
+}
+
+.input_theme_life-light.input_type_password .input__control {
+    text-overflow: clip;
+}
+
+.control-group .input_theme_life-light:before {
+    right: 0;
+}
+
+.control-group > .input_theme_life-light:last-child:before,
+.control-group >:last-child .input_theme_life-light:before {
+    right: 1px;
+}

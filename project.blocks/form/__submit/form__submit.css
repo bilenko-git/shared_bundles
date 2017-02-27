@@ -1,0 +1,11 @@
+.form__submit {
+    display: inline-block;
+    height: 52px;
+    line-height: 52px;
+    font-size: 22px;
+    font-family: "life_text";
+    margin: 0 17px;
+    padding: 0 40px;
+    text-decoration: none;
+    white-space: pre;
+}
