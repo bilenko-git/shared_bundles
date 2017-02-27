@@ -20,8 +20,8 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                                 crossDomain : true,
                                 success: function (tooltips) {
                                     console.log(tooltips);
-                                      sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
- +                                    AppendTooltip(tooltips, tooltipIndex);
+                                    sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
+                                    AppendTooltip(tooltips, tooltipIndex);
                                 },
                                 error: function (xhr, status) {
                                     console.log(xhr);
