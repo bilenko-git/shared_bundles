@@ -12,15 +12,15 @@
 	}
 	&__title {
 		color: white;
+	}
+	&__svg {
+		width: 24px;
+		height: 24px;
 		-webkit-transition:height, 0.5s linear;
 		-moz-transition: height, 0.5s linear;
 		-ms-transition: height, 0.5s linear;
 		-o-transition: height, 0.5s linear;
 		transition: height, 0.5s linear;
-	}
-	&__svg {
-		width: 24px;
-		height: 24px;
 	}
 	&__content {
 		overflow: hidden;
@@ -42,6 +42,11 @@
 			&__svg {
 				-webkit-transform: rotate(180deg);
 				transform: rotate(180deg);
+				-webkit-transition:height, 0.5s linear;
+				-moz-transition: height, 0.5s linear;
+				-ms-transition: height, 0.5s linear;
+				-o-transition: height, 0.5s linear;
+				transition: height, 0.5s linear;
 			}
 			&__content {
 				max-height: 300px;
