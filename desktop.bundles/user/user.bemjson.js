@@ -60,13 +60,12 @@ module.exports = {
                             url: '#',
                             content: 'Все мои услуги' 
                         }, {
-                                                                            block : 'dropdown',
-                                                mods : { switcher : 'link', theme : 'islands', size : 'm' },
-                                                switcher : '',
-                                                popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
-                                                mix: { block: 'tooltip', js: true },
-                                                js: { tooltip: 'main' }
-                 
+                            block : 'dropdown',
+                            mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                            switcher : '',
+                            popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+                            mix: { block: 'tooltip', js: true },
+                            js: { tooltip: 'main' }
                         }]
                     }, {
                         block: 'button',
@@ -84,9 +83,6 @@ module.exports = {
                     }]
                 }] 
             }]
-        }, {
-            block: 'sep',
-            mods: { horizontal: true },
         }, {
             block: 'user',
             content: [{
