@@ -2,7 +2,7 @@
     tech: 'js',
     mustDeps: [
         { block: 'dropdown', tech: 'bemhtml' },
-        { block: 'popup', tech: 'bemhtml' },
+        // { block: 'popup', tech: 'bemhtml' },
         { block: 'tooltip', tech: 'bemhtml' }
     ]
 },{
@@ -15,7 +15,8 @@
         { block: 'dropdown' },
         { block: 'form', tech: 'bemhtml' },
 
-        { block: 'button', tech: 'bemhtml' },
+        // { block: 'button', tech: 'bemhtml' },
+        { block: 'link', tech: 'bemhtml' },
         { block: 'select', tech: 'bemhtml' },
         { block: 'tooltip', tech: 'css' },
         { block: 'select', mods: { mode: 'radio' }, tech: 'bemhtml' },
@@ -23,6 +24,7 @@
         { block: 'popup', mods: { autoclosable: true } },
         { elem: 'button-group' },
         { elem: 'title' },
+        { elem: 'text' },
         { elem: 'label' },
         { elem: 'submit' },
         { elem: 'text-error' },

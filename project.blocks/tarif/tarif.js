@@ -94,7 +94,9 @@ modules.define('tarif', ['i-bem-dom'/*,'i-bem'*/, 'modal', 'popup', 'BEMHTML', '
                         if( !this._modalWindow) {
                             // debugger;
                             this._modalWindow = bemDom.append(this.findChildElem('wrapper').domElem, modal);
+                            this._events(this.findChildBlock(Modal)).on({ modName: 'visible', modVal: ''}, this._onModalDestruct);
                             this.findChildBlock(Modal).toggleMod('visible');
+                            // debugger;
                         } else {
                             this._modalWindow = bemDom.replace(this._modalWindow, modal);
                             // debugger;
@@ -110,6 +112,11 @@ modules.define('tarif', ['i-bem-dom'/*,'i-bem'*/, 'modal', 'popup', 'BEMHTML', '
                     });
                 }
             }
+        },
+        _onModalDestruct: function() {
+            // debugger;
+            bemDom.destruct(this._modalWindow);
+            this._modalWindow = null;
         }
     }));
 

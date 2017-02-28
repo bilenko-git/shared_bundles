@@ -32,7 +32,7 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 		  console.log('111');
 		  console.log(parentBlock);
 		  // debugger;
-		  if (actionId === 'action-2') {
+		  if (actionId === 'action-3') {
 		  // if (actionId === '/api/getAuth' ) {
 			 // debugger;
 			 var tarifActionTitle = this.params.title || 'def';
@@ -116,7 +116,7 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 /**
  * end_ action-1
  */
- 			} else if (actionId === 'action-3') {
+ 			} else if (actionId === 'action-2') {
 			 var authForm = bemHtml.apply({
 				block: 'form',
 				action: '',
@@ -133,7 +133,7 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 						content: 'Подключиться на тариф можно в ближайшем салоне'
 					}, {
 						elem: 'button-group',
-						elemMods: { inner: true },
+						elemMods: { wide: 'center' },
 						content: [{
 							block: 'button',
 							mods: { view: 'main', type: 'submit' },
@@ -163,68 +163,51 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 					elemMods: { vert: true },
 					content: [{
 						elem: 'head-title',
-						content: 'Пожалуйста, авторизуйтесь'
+						content: 'После смены тарифного плана'
 					}, {
-						elem: 'button-group',
-						elemMods: { inner: true },
+						elem: 'text',
+						// elem: 'button-group',
+						// elemMods: { inner: true },
 						content: [{
-							elem: 'label',
-							tag: 'span',
-							content: 'Ваш номер life:)'
-						}, {
-							block: 'select',
-							mods: { mode: 'radio', theme: 'life-light', size: 'm' },
-							text: 25,
-							options: [
-							{ val: 25, text: '25' },
-							{ val: 29, text: '29' },
-							{ val: 44, text: '44' }
-							]
-						}, {
-							block: 'input',
-							mods: { theme: 'life-light', size: 'm' },
-							placeholder: '1234567'
+								tag: 'h3',
+								content: 'продолжат действовать:'
+							}, {
+								tag: 'ul',
+								content: [{
+									tag: 'li',
+									content: 'все услуги, которые вы подключали дополнительно к вашему текущему тарифному плану'
+								}, {
+									tag: 'li',
+									content: ['все бонусные и дополнительные счета, включая', { block: 'link', url: '#', content: 'lifepoints'}]
+								}]
+							}, {
+								tag: 'h3',
+								content: 'обнулятся:'
+							}, {
+								tag: 'ul',
+								content: [{
+									tag: 'li',
+									content: ['услуга ', { block: 'link', url: '#', content: 'Карманы'}, ' и накопленные минуты,']
+								}, {
+									tag: 'li',
+									content: 'минуты и интернет из текущего тарифного плана'
+								}]
+							}]
 						}]
 					}, {
 						elem: 'button-group',
-						elemMods: { inner: true },
+						mods: { inner: true },
 						content: [{
-							elem: 'label',
-							tag: 'span',
-							content: 'Пароль'
-						}, {
-							block: 'input',
-							mods: { theme: 'life-light', size: 'm', width: 'available', type: 'password' },
-							placeholder: '1234567'
-						}, {
-							block : 'dropdown',
-							mods : { switcher : 'link', theme : 'islands', size : 'm' },
-							switcher : { block: 'tooltip'},
-							popup : {
-								block: 'popup',
-								mix: { block: 'tooltip', js: true },
-								content: 'Пароль от личного кабинета life:)'
-							},
-							js: { tooltip: 'main' }
-
-						}]
-					}, {
-						elem: 'text-error',
-						content: 'Вы ввели неправильный номер или пароль. Проверьте и попробуйте ещё раз'
-					}, {
-						elem: 'button-group',
-						mods: 'inner',
-						content: {
 							block: 'button',
 							mods: { view: 'main', type: 'submit' },
 							mix: { block: 'form', elem: 'submit' },
-							text: 'Войти'
-						}
-					}, {
-						elem: 'button-group',
-						elemMods: { wide: true },
-						content: ['Перейти на тариф можно и с помощью USSD - ', { tag: 'span', cls: 'ussd-call', content: '*115*9#'}]
-					}]
+							text: 'Подтвердить'
+						}, {
+							block: 'link',
+							mix: { block: 'form', elem: 'cancel' },
+							content: 'Отменить'
+						}]
+					// }]
 				}]
 			 });
 
@@ -238,72 +221,8 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 				    elem: 'title',
 				    content: 'Подключение тарифного плана ' + '&laquo;' + tarifActionTitle + '&raquo;'
 				}, {
-					elem: 'button-group',
-					elemMods: { vert: true },
-					content: [{
-						elem: 'head-title',
-						content: 'Пожалуйста, авторизуйтесь'
-					}, {
-						elem: 'button-group',
-						elemMods: { inner: true },
-						content: [{
-							elem: 'label',
-							tag: 'span',
-							content: 'Ваш номер life:)'
-						}, {
-							block: 'select',
-							mods: { mode: 'radio', theme: 'life-light', size: 'm' },
-							text: 25,
-							options: [
-							{ val: 25, text: '25' },
-							{ val: 29, text: '29' },
-							{ val: 44, text: '44' }
-							]
-						}, {
-							block: 'input',
-							mods: { theme: 'life-light', size: 'm' },
-							placeholder: '1234567'
-						}]
-					}, {
-						elem: 'button-group',
-						elemMods: { inner: true },
-						content: [{
-							elem: 'label',
-							tag: 'span',
-							content: 'Пароль'
-						}, {
-							block: 'input',
-							mods: { theme: 'life-light', size: 'm', width: 'available', type: 'password' },
-							placeholder: '1234567'
-						}, {
-							block : 'dropdown',
-							mods : { switcher : 'link', theme : 'islands', size : 'm' },
-							switcher : { block: 'tooltip'},
-							popup : {
-								block: 'popup',
-								mix: { block: 'tooltip', js: true },
-								content: 'Пароль от личного кабинета life:)'
-							},
-							js: { tooltip: 'main' }
-
-						}]
-					}, {
-						elem: 'text-error',
-						content: 'Вы ввели неправильный номер или пароль. Проверьте и попробуйте ещё раз'
-					}, {
-						elem: 'button-group',
-						mods: 'inner',
-						content: {
-							block: 'button',
-							mods: { view: 'main', type: 'submit' },
-							mix: { block: 'form', elem: 'submit' },
-							text: 'Войти'
-						}
-					}, {
-						elem: 'button-group',
-						elemMods: { wide: true },
-						content: ['Перейти на тариф можно и с помощью USSD - ', { tag: 'span', cls: 'ussd-call', content: '*115*9#'}]
-					}]
+					elem: 'text',
+					content: 'Нам очень жаль, но при наличии обязательств (например смартфона в рассрочку) переход невозможен до их погашения'
 				}]
 			 });
 
@@ -320,55 +239,8 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 					elem: 'button-group',
 					elemMods: { vert: true },
 					content: [{
-						elem: 'head-title',
-						content: 'Пожалуйста, авторизуйтесь'
-					}, {
-						elem: 'button-group',
-						elemMods: { inner: true },
-						content: [{
-							elem: 'label',
-							tag: 'span',
-							content: 'Ваш номер life:)'
-						}, {
-							block: 'select',
-							mods: { mode: 'radio', theme: 'life-light', size: 'm' },
-							text: 25,
-							options: [
-							{ val: 25, text: '25' },
-							{ val: 29, text: '29' },
-							{ val: 44, text: '44' }
-							]
-						}, {
-							block: 'input',
-							mods: { theme: 'life-light', size: 'm' },
-							placeholder: '1234567'
-						}]
-					}, {
-						elem: 'button-group',
-						elemMods: { inner: true },
-						content: [{
-							elem: 'label',
-							tag: 'span',
-							content: 'Пароль'
-						}, {
-							block: 'input',
-							mods: { theme: 'life-light', size: 'm', width: 'available', type: 'password' },
-							placeholder: '1234567'
-						}, {
-							block : 'dropdown',
-							mods : { switcher : 'link', theme : 'islands', size : 'm' },
-							switcher : { block: 'tooltip'},
-							popup : {
-								block: 'popup',
-								mix: { block: 'tooltip', js: true },
-								content: 'Пароль от личного кабинета life:)'
-							},
-							js: { tooltip: 'main' }
-
-						}]
-					}, {
-						elem: 'text-error',
-						content: 'Вы ввели неправильный номер или пароль. Проверьте и попробуйте ещё раз'
+						elem: 'text',
+						content: 'В настоящий момент на вашем счету недостаточно денег для перехода на тариф &laquo;Семья 3&raquo;. Пополните пожалуйста баланс'
 					}, {
 						elem: 'button-group',
 						mods: 'inner',
@@ -376,12 +248,8 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 							block: 'button',
 							mods: { view: 'main', type: 'submit' },
 							mix: { block: 'form', elem: 'submit' },
-							text: 'Войти'
+							text: 'Пополнить баланс'
 						}
-					}, {
-						elem: 'button-group',
-						elemMods: { wide: true },
-						content: ['Перейти на тариф можно и с помощью USSD - ', { tag: 'span', cls: 'ussd-call', content: '*115*9#'}]
 					}]
 				}]
 			 });

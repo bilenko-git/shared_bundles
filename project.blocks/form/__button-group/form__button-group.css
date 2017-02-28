@@ -17,6 +17,11 @@
     font-size: 21px;
     justify-content: flex-start;
 }
+.form__button-group .form__button-group_wide_center {
+    min-width: 547px;
+    font-size: 21px;
+    justify-content: center;
+}
 
 .form__button-group_inner {
     display: flex;
