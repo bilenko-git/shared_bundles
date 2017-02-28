@@ -38,14 +38,16 @@ module.exports = {
                         content: 'руб'
                     }]
                 },{
-                    block: 'buttons',
+                    block: 'recharge-account',
+                    js: true,
                     content: [{
-                        block: 'button',
-                        js : true,
-                        mods: { theme: 'red', size: 's' },
-                        mix: { block : 'recharge-account', js : true },
-                        text: 'Пополнить'
-                    },{
+                        elem: 'action',
+                        content: [{
+                            block: 'button',
+                            mods: { theme: 'red', size: 's',  action: true },
+                            text: 'Пополнить',
+                        }]
+                    }, {
                         block: 'button',
                         mods: { theme: 'red', size: 's' },
                         text: 'Попросить пополнить счет'
