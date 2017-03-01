@@ -3,18 +3,13 @@ modules.define('recharge-account', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', '
         onSetMod: {
             js: {
                 inited: function() {
-                    this._domEvents('action').on('click', function(e) {
+                    this._domEvents('').on('click', function(e) {
                         var html = bemHtml.apply({
                             block: 'my-modal-content',
                             content: 'asdfas',
                         });
 
                         InfoModal.show(html);
-                
-                        //InfoModal.clear();
-
-
-                        //InfoModal.getModal().findChildBlock(Modal));
                     });
 
                 }

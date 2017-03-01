@@ -15,7 +15,6 @@ modules.define('info-modal', ['i-bem-dom', 'modal', 'next-tick'], function(provi
                 .setContent(content)
                 .setMod('visible');
 
-            console.log('_show');
             return this;
         },
         show: function(content) {
@@ -25,27 +24,21 @@ modules.define('info-modal', ['i-bem-dom', 'modal', 'next-tick'], function(provi
             nextTick(function() {
                 _this._show(content);
             });
-            console.log('show');
+
             return this;
         },
         hide: function() {
             this.getModal().delMod('visible');
-            console.log('hide');
+
             return this;
         },
         toggle: function() {
             this.getModal().toggleMod('visible');
-            console.log('toggle');
+
             return this;
         },
         getModal: function() {
-            console.log('getModal');
             return this._modal;
-        },
-        clear: function() {
-            console.log('clear');
-            return this.getModal()
-                .setContent('')
         }
     }));
 

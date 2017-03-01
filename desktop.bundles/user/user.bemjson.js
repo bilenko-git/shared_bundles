@@ -38,15 +38,12 @@ module.exports = {
                         content: 'руб'
                     }]
                 },{
-                    block: 'recharge-account',
-                    js: true,
+                    block: 'buttons',
                     content: [{
-                        elem: 'action',
-                        content: [{
-                            block: 'button',
-                            mods: { theme: 'red', size: 's',  action: true },
-                            text: 'Пополнить',
-                        }]
+                        block: 'button',
+                        mods: { theme: 'red', size: 's'},
+                        mix: { block: 'recharge-account', js: true },
+                        text: 'Пополнить',
                     }, {
                         block: 'button',
                         mods: { theme: 'red', size: 's' },
