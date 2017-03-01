@@ -24,6 +24,7 @@
 .modal__content {
     min-width: 500px;
     min-height: 200px;
+    padding: 40px;
 }
 .modal__close-button {
     position: absolute;

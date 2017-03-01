@@ -517,7 +517,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-1'}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams': { 'method' : 'toPlugSMP1' }}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -651,7 +651,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-2'}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams': { 'method' : 'toPlugSMP2'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -785,7 +785,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-3'}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams' : { 'method' : 'toPlugSMP3' }}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -919,7 +919,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'tarif', elem: 'action', js: { actionId: 'tarif-2'}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams': { 'method': 'toPlugSMPN' }}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
