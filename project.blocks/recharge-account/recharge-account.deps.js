@@ -5,6 +5,7 @@
         { block: 'form', tech: 'css' },
         { block: 'page' },
         { block: 'next-tick' },
+        { block: 'input', mods: { theme: 'life-light' }, tech: 'bemhtml' },
         { block: 'button', mods: { type: 'link' }, tech: 'bemhtml' },
         { block: 'info-modal', mods: { theme: 'islands', autoclosable: true } },
         { block: 'info-modal', mods: { theme: 'life-light' }, tech: 'css' },
@@ -14,4 +15,5 @@
     shouldDeps: [
         { elem: 'inner', techs: 'css' }
     ]
-})
+});
+
