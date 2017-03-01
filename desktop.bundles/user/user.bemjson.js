@@ -42,7 +42,7 @@ module.exports = {
                     content: [{
                         block: 'button',
                         mods: { theme: 'red', size: 's'},
-                        mix: { block: 'recharge-account', js: true },
+                        mix: { block: 'action-user',  js: { 'action': 'rechargeAccount'} },
                         text: 'Пополнить',
                     }, {
                         block: 'button',
