@@ -10,9 +10,13 @@ modules.define('recharge-account', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', '
                         });
 
                         InfoModal.show(html);
-                        //console.log(InfoModal.getModal());
+                
                         //InfoModal.clear();
+
+
+                        //InfoModal.getModal().findChildBlock(Modal));
                     });
+
                 }
             }
         }

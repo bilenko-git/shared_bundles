@@ -21,7 +21,15 @@ provide(Modal.declMod({ modName : 'theme', modVal : 'life-light' }, /** @lends m
                     // initialized.
                     .setMod('has-animation')
                     .__base.apply(this, arguments);
-
+                this._domEvents('close-button').on('click', function() {
+                    console.log('close');
+                    this.toggleMod('visible');
+                })
+            },
+            '' : function() {
+                this.__base.apply(this, arguments);
+                this.setContent('');
+                console.log('close');
             }
         }
     }
