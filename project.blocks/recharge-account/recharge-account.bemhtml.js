@@ -1,1 +1,0 @@
-block('recharge-account').js()(true);
