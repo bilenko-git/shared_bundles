@@ -20,10 +20,14 @@
 	justify-content: flex-start;
 }
 
-.form__button-group .form__button-group_wide_center {
+.form__button-group.form__button-group_wide_center {
 	/*min-width: 547px;*/
 	font-size: 21px;
 	justify-content: center;
+}
+.form__button-group.form__button-group_wide_center .form__text {
+	font-size: 21px;
+	text-align: center;
 }
 
 .form__button-group_inner {
@@ -43,7 +47,8 @@
 }
 
 .form__button-group.form__button-group_size_xl {
-	width: 609px;
+	width: 629px;
+	justify-content: space-between;
 }
 .form__button-group.form__button-group_no-padding {
 	padding: 0;

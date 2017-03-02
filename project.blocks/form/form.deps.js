@@ -27,6 +27,7 @@
             { block: 'modal', mods: { autoclosable: true } },
             { block: 'popup', mods: { autoclosable: true } },
             { elem: 'button-group' },
+            { elem: 'cancel' },
             { elem: 'title' },
             { elem: 'text' },
             { elem: 'label' },
