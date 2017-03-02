@@ -517,7 +517,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams': { 'method' : 'toPlugSMP1' }}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP1'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -651,7 +651,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams': { 'method' : 'toPlugSMP2'}}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP2'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -785,7 +785,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams' : { 'method' : 'toPlugSMP3' }}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP3'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -919,7 +919,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'tiriff', 'actionParams': { 'method': 'toPlugSMPN' }}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMPN'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'

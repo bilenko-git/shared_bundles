@@ -7,10 +7,10 @@ modules.define('form', ['i-bem-dom', 'BEMHTML', 'modal', 'popup', 'input', 'chec
 				// this._domEvents().on('pointerenter', this._isValid);
 				this._domEvents('submit').on('click', function(e) {
 				    // debugger;
-				    this._onSubmit(e, Button, Modal, Popup, bemDom, nextTick);
+				    //this._onSubmit(e, Button, Modal, Popup, bemDom, nextTick);
 				});
 				this._domEvents('action').on('click', function(e) {
-					this._onSubmit(e, Button, Modal, Popup, bemDom, nextTick);
+					//this._onSubmit(e, Button, Modal, Popup, bemDom, nextTick);
 				});
 			 }
 		  }
