@@ -9,7 +9,7 @@
         ]
     },{
         mustDeps: [
-            { block: 'button' },
+            { block: 'button' } ,
             { block: 'button', mods: { view: 'main' } },
             { block: 'input', mods: { theme: 'life-light' } },
             { block: 'button', mods: { theme: 'life-light' } },
