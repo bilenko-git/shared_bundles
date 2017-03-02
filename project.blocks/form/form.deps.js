@@ -3,6 +3,7 @@
         tech: 'js',
         mustDeps: [
             { block: 'dropdown', tech: 'bemhtml' },
+            { block: 'dropdown', mods: { switcher: 'link'}, tech: 'bemhtml' },
             // { block: 'popup', tech: 'bemhtml' },
             { block: 'tooltip', tech: 'bemhtml' }
         ]
@@ -22,6 +23,7 @@
             // { block: 'button', tech: 'bemhtml' },
             { block: 'link', tech: 'bemhtml' },
             { block: 'select', tech: 'bemhtml' },
+            { block: 'link', tech: 'css' },
             { block: 'tooltip', tech: 'css' },
             { block: 'select', mods: { mode: 'radio' }, tech: 'bemhtml' },
             { block: 'modal', mods: { autoclosable: true } },

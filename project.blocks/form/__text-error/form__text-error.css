@@ -3,3 +3,7 @@
     font-size: 21px;
     color: #ff2e39;
 }
+.form__text-error_hidden {
+	max-height: 0;
+	overflow: hidden;
+}
