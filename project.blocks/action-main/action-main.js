@@ -71,16 +71,12 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 								placeholder: '1234567',
 								name: 'password'
 							}, {
-								block: 'dropdown',
-								mods: { switcher: 'link', theme: 'islands', size: 'm' },
-								switcher: { block: 'tooltip' },
-								popup: {
-									block: 'popup',
-									mix: { block: 'tooltip', js: true },
-									content: 'Пароль от личного кабинета life:)'
-								},
-								js: { tooltip: 'main' }
-
+                                block : 'dropdown',
+                                mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                                switcher : '',
+                                popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+                                mix: { block: 'tooltip', js: true },
+                                js: { tooltip: 'main' }
 							}]
 						}, {
 							elem: 'text-error',
