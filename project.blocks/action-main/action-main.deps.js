@@ -3,6 +3,7 @@
         { block: 'info-modal', tech: 'bemhtml' },
         { block: 'form', tech: 'bemhtml' },
         { block: 'form', tech: 'css' },
+        { block: 'wrapper', tech: 'css' },
         { block: 'page' },
         { block: 'next-tick' },
         { block: 'input', mods: { theme: 'life-light' }, tech: 'bemhtml' },

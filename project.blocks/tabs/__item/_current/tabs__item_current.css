@@ -8,9 +8,9 @@
 .tabs__item_current:after {
 	content: '';
 	position: absolute;
-	height: 6px;
+	height: 5px;
 	background-color: #fff;
 	width: calc(100% + 8px);
 	left: -4px;
-	bottom: -6px;
+	bottom: -5px;
 }

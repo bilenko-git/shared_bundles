@@ -1,60 +1,84 @@
 .form__button-group {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    max-width: 498px;
-    align-self: center;
-    padding: 42px 0 31px;
-    font-family: 'life_text';
-    font-weight: normal;
-    font-size: 24px;
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	/*max-width: 498px;*/
+	align-self: center;
+	padding: 42px 0 31px;
+	font-family: 'life_text';
+	font-weight: normal;
+	font-size: 24px;
 }
+
 .form__button-group .ussd-call {
-    color: #ff2e39;
+	color: #ff2e39;
 }
+
 .form__button-group .form__button-group_wide {
-    min-width: 547px;
-    font-size: 21px;
-    justify-content: flex-start;
+	/*min-width: 547px;*/
+	font-size: 21px;
+	justify-content: flex-start;
 }
+
 .form__button-group .form__button-group_wide_center {
-    min-width: 547px;
-    font-size: 21px;
-    justify-content: center;
+	/*min-width: 547px;*/
+	font-size: 21px;
+	justify-content: center;
 }
 
 .form__button-group_inner {
-    display: flex;
-    width: 100%;
-    padding: 0;
-    margin: 4px 0;
-    justify-content: flex-start;
+	display: flex;
+	width: 100%;
+	padding: 0;
+	margin: 4px 0;
+	justify-content: flex-start;
+}
+
+
+.form__button-group.form__button-group_size_m {
+	width: 499px;
+}
+.form__button-group.form__button-group_size_l {
+	width: 609px;
+}
+
+.form__button-group.form__button-group_size_xl {
+	width: 609px;
+}
+.form__button-group.form__button-group_no-padding {
+	padding: 0;
+}
+.form__button-group .button:only-of-type {
+	align-self: center;
 }
 
 .form__button-group_inner .button,
 .form__button-group_inner .select,
 .form__button-group_inner .input:not(:last-child) {
-    margin: 0 4px;
-}
-.form__button-group_inner .tooltip {
-    display: flex;
-    align-self: center;
+	margin: 0 4px;
 }
 
+.form__button-group_inner .input:not(:last-child) {
+	margin: 0 12px 0 4px;
+}
+
+.form__button-group_inner .tooltip {
+	display: flex;
+	align-self: center;
+}
 
 .form__button-group_inner .form__label {
-    font-size: 21px;
-    min-width: 174px;
-    line-height: 42px;
+	font-size: 21px;
+	min-width: 174px;
+	line-height: 42px;
 }
 
 .form__button-group_vert {
-    flex-flow: column wrap;
-
+	flex-flow: column wrap;
 }
 
 .form__button-group_vert .control-group {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
