@@ -13,7 +13,7 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                         if(!tooltips) {
                             $.ajax({
                                 type: "POST",
-                                url: "tooltip",
+                                url: "api/tooltip",
                                 success: function (tooltips) {
                                     tooltips = JSON.parse(tooltips);
                                     sessionStorage.setItem('tooltips', JSON.stringify(tooltips));

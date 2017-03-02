@@ -754,8 +754,12 @@ module.exports = {
                                                                             content: 'Безлимит для BiP, Viber, WhatsApp'
                                                                         }]
                                                                     }, {
-                                                                        block: 'icon',
-                                                                        mods: { smile: true }
+                                                                        block : 'dropdown',
+                                                                        mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                                                                        switcher : '',
+                                                                        popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+                                                                        mix: { block: 'tooltip', block: 'icon_smile', js: true },
+                                                                        js: { tooltip: 'main' }
                                                                     }]
                                                                 }]
                                                             }, {

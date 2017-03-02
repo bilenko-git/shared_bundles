@@ -113,7 +113,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 			console.log(formAuth);
             $.ajax({
                 type: "POST",
-                url: "http://multidev.life.com.by/auth",
+                url: "api/auth",
                 data: { formAuth },
                 success: function (data) {
                     console.log(data);

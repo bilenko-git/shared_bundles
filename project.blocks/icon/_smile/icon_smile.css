@@ -3,5 +3,10 @@
     height: 23px;
     background: url(/assets/img/icons.png);
     background-position: -142px -113px;
-    margin: 0px 0px -24px -13px;
+    margin: 0px 0px 5px -13px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+.icon_smile:focus {
+    outline: none;
 }
