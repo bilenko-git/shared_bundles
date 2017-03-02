@@ -115,18 +115,18 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 					password: '34704844' //form.find('[name="password"]').val()
 				};
 			console.log(formAuth);
-			$.ajax({
-				type: "POST",
-				url: "",
-				data: formAuth,
-				success: function(data) {
-					console.log(data);
-				},
-				error: function(xhr, status) {
-					console.log(xhr);
-					console.log(status);
-				}
-			});
+            $.ajax({
+                type: "POST",
+                url: "http://multidev.life.com.by/auth",
+                data: { formAuth },
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (xhr, status) {
+                    console.log(xhr);
+                    console.log(status);
+                }
+            });
 		}
 	}));
 });

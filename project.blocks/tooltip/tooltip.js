@@ -9,17 +9,13 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                     this._domEvents().on('click', function(e) {
                         var tooltips = sessionStorage.tooltips,
                             tooltipIndex = this.domElem.data('bem').dropdown.tooltip;
-
+   
                         if(!tooltips) {
                             $.ajax({
-                                type: "GET",
-                                url: "https://missaapitest.life.com.by/api/v1/subscriber/bundles/getHintsByRole",
-                                data: {
-                                    "role" : "UNAUTHORIZED"
-                                },
-                                crossDomain : true,
+                                type: "POST",
+                                url: "tooltip",
                                 success: function (tooltips) {
-                                    console.log(tooltips);
+                                    tooltips = JSON.parse(tooltips);
                                     sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
                                     AppendTooltip(tooltips, tooltipIndex);
                                 },
@@ -33,9 +29,16 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                         }
                         
                         function AppendTooltip(tooltips, tooltipIndex) {
-                            if(tooltips[tooltipIndex]) {
-                                popup.html(tooltips[tooltipIndex]);
-                            } 
+                            var tooltipDes = '';
+                            
+                            for (var tooltip in tooltips) {
+                                if(tooltipIndex == tooltips[tooltip]['key']) {
+                                    tooltipDes = tooltips[tooltip]['description']
+                                    continue;
+                                }
+                            }
+                            
+                            popup.html(tooltipDes);
                         }
                     });
                 }
