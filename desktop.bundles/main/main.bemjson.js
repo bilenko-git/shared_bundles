@@ -959,7 +959,7 @@ module.exports = {
                                                 url: '#',
                                                 content: {
                                                     block: 'image',
-                                                    url: '/assets/img/apple_store.png'
+                                                    url: '/assets/img/apple_store.svg'
                                                 }
                                             }]
                                         }]
