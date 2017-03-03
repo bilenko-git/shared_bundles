@@ -1,8 +1,8 @@
-block('page').content()(function() {
-    return [].concat(applyNext(), {
-        block: 'info-modal'
-    });
-});
+// block('page').content()(function() {
+//     return [].concat(applyNext(), {
+//         block: 'info-modal'
+//     });
+// });
 
 block('info-modal')(
     js()(true),
