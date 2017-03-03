@@ -4,4 +4,10 @@
 }
 .content-block__links .link {
 	margin: 0 6px;
+	display: inline-block;
+	vertical-align: middle;
+	max-height: 35px;
+}
+.content-block__links .image {
+    max-height: 35px;
 }
