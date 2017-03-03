@@ -9,6 +9,7 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                     this._domEvents().on('click', function(e) {
                         var tooltips = sessionStorage.tooltips,
                             tooltipIndex = this.domElem.data('bem').dropdown.tooltip;
+                        tooltips = '2';
 
                         if(!tooltips) {
                             $.ajax({
@@ -30,6 +31,10 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                         }
                         
                         function AppendTooltip(tooltips, tooltipIndex) {
+                            tooltips = {'0' : {
+                                'key' : 'main',
+                                'description': 'TEST'
+                            }}
                             var tooltipDes = '';
                             
                             for (var tooltip in tooltips) {
