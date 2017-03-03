@@ -517,7 +517,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP1'}}},
+                                                            mix: { block: 'action-main',  js: { 'action': '_requestForm', 'actionParams': { 'type' : 'SMP1'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'

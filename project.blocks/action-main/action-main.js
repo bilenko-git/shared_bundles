@@ -1,4 +1,4 @@
-modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input'], function(provide, bemDom, Popup, bemHtml, $, InfoModal, input) {
+modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input', 'next-tick'], function(provide, bemDom, Popup, bemHtml, $, InfoModal, input, nextTick) {
 	provide(bemDom.declBlock(this.name, {
 		onSetMod: {
 			js: {
@@ -11,7 +11,50 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 			}
 		},
 		connectTariff: function() {
-			InfoModal.show(bemHtml.apply(this.auth()));
+			var ctx = this;
+			nextTick(function() {
+				InfoModal.show(bemHtml.apply(ctx.auth()));
+			})
+		},
+		_requestForm: function() {
+			var requestForm = {
+                block: 'wrapper',
+                content: {
+                    block: 'form',
+                    // js: { title: this.findChildElem('head-desc').domElem.text() },
+                    // js: { title: this.findChildElem('head-desc').domElem.text() },
+                    action: '',
+                    method: 'post',
+                    enctype: 'multipart/form-data',
+                    content: [{
+                        elem: 'title',
+                        content: 'Подключение тарифного плана ' + '&laquo;' + 'tarifActionTitle' + '&raquo;'
+                    }, {
+                        elem: 'button-group',
+                        elemMods: { wide: 'center' },
+                        content: [{
+                            block: 'button',
+                            mods: { view: 'main', type: 'link' },
+                            url: 'tarifAction2',
+                            mix: { block: 'form', elem: 'submit' },
+                            content: 'Я не абонент life:)'
+                        }, {
+                            block: 'button',
+                            name: 'action',
+                            val: 'change',
+                            js: { action: 'tarifAction1' },
+                            mods: { view: 'main', type: 'submit' },
+                            mix: [
+                            { block: 'form', elem: 'submit' }, 
+                            { block: 'action-main', js: { 'action': 'connectTariff', 'actionParams': { 'a': '1' } } }
+                            ],
+                            content: 'Я абонент life:)'
+                        }]
+                    }]
+                }
+            };
+            InfoModal.show(bemHtml.apply(requestForm));
+            // return requestForm;
 		},
 		auth: function() {
 			var tarifActionTitle = this.params.title || 'Test';
@@ -113,7 +156,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 			console.log(formAuth);
             $.ajax({
                 type: "POST",
-                url: "api/authentication",
+                url: "http://multidev.life.com.by/auth",
                 data: { formAuth },
                 success: function (data) {
                     console.log(data);
