@@ -321,14 +321,18 @@ module.exports = {
                                                     block: 'navigation',
                                                     mods: { group: 'right' },
                                                     content: {
-                                                        block: 'button',
-                                                        type: 'link',
-                                                        mods: { back: true },
-                                                        icon: {
-                                                            block: 'icon',
-                                                            url: '/assets/img/back__1.png'
-                                                        },
-                                                        text: 'Назад'
+                                                        block: 'link',
+                                                        url: 'history.back()',
+                                                        content: {
+                                                            block: 'button',
+                                                            type: 'link',
+                                                            mods: { back: true },
+                                                            icon: {
+                                                                block: 'icon',
+                                                                url: '/assets/img/back__1.png'
+                                                            },
+                                                            text: 'Назад'
+                                                        }
                                                     }
                                                 }]
                                             }]
@@ -513,7 +517,6 @@ module.exports = {
                                                         content: [{
                                                             block: 'link',
                                                             url: '#',
-                                                            target: '_blank',
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
@@ -647,7 +650,6 @@ module.exports = {
                                                         content: [{
                                                             block: 'link',
                                                             url: '#',
-                                                            target: '_blank',
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
@@ -785,7 +787,6 @@ module.exports = {
                                                         content: [{
                                                             block: 'link',
                                                             url: '#',
-                                                            target: '_blank',
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
@@ -919,7 +920,6 @@ module.exports = {
                                                         content: [{
                                                             block: 'link',
                                                             url: '#',
-                                                            target: '_blank',
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
