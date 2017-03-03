@@ -520,7 +520,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': '_requestForm', 'actionParams': { 'type' : 'SMP1'}}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP1', 'title': 'Семья 1'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -653,7 +653,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP2'}}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP2', 'title': 'Семья 2'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -790,7 +790,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP3'}}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMP3', 'title': 'Семья 3'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'
@@ -923,7 +923,7 @@ module.exports = {
                                                             content: 'Подробнее'
                                                         }, {
                                                             block: 'button',
-                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMPN'}}},
+                                                            mix: { block: 'action-main',  js: { 'action': 'connectTariff', 'actionParams': { 'type' : 'SMPN', 'title': 'Мультинет'}}},
                                                             type: 'button',
                                                             mods: { action: true },
                                                             text: 'Подключить'

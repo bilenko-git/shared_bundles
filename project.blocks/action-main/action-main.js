@@ -12,22 +12,29 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 		},
 		connectTariff: function() {
 			var ctx = this;
+
 			nextTick(function() {
-				InfoModal.show(bemHtml.apply(ctx._modalForm('authentication', {'title' : ctx.params.title})));
-			})
+                if(!ctx.getSessionAuth().access_token) {
+                    //ajax(smp1 or smp2 ...)
+                    InfoModal.show(bemHtml.apply(ctx._modalForm('changeTarifConfirmForm', {'title' : ctx.params.actionParams.title })));
+                } else {
+                    InfoModal.show(bemHtml.apply(ctx._modalForm('subcriber_and_not_subcriber', {'title' : ctx.params.actionParams.title })));
+                }
+			});
 		},
 		_requestForm: function() {
-            InfoModal.show(bemHtml.apply(requestForm));
-            // return requestForm;
+            var ctx = this;
+            InfoModal.show(bemHtml.apply(ctx._modalForm('subcriber_and_not_subcriber', {'title' : ctx.params.actionParams.title})));
 		},
 		authEntrance: function(actionParams, _this) {
-			var form = $(_this.domElem[0].form),
+			var ctx = this,
+                form = $(_this.domElem[0].form),
 				formAuth = {
 					phone: '375256257224', // form.find('[name="phone"]').val()+form.find('[name="codePhone"]').val(),
 					password: '34704844' //form.find('[name="password"]').val()
 				};
 
-            if(false) {
+            if(true) {
                 var authObj = {
                     'data' : {
                         'access_token' : "c19e8df9-9f5c-483e-a440-90ae894d9aab",
@@ -39,13 +46,18 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                 }
 
                 sessionStorage.setItem('authentication', JSON.stringify(authObj));
-                console.log(sessionStorage.authentication);
+            
+                nextTick(function() {
+                    //ajax получить профиль
+                    InfoModal.show(bemHtml.apply(ctx._modalForm('changeTarifConfirmForm', {'title' : ctx.params.actionParams.title })));
+                });
             } else {
                 $.ajax({
                     type: "POST",
                     url: "api/authentication",
                     data: { formAuth },
                     success: function (data) {
+
                     },
                     error: function (xhr, status) {
                         console.log(xhr);
@@ -54,6 +66,20 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                 });
             }
 		},
+        subcriber: function() {
+            var ctx = this;
+            nextTick(function() {
+                InfoModal.show(bemHtml.apply(ctx._modalForm('clientRedirectForm', {'title' : ctx.params.actionParams.title })));
+            });
+            console.log('subcriber');
+        }, 
+        notSubcriber: function() {
+            var ctx = this;
+            nextTick(function() {
+                InfoModal.show(bemHtml.apply(ctx._modalForm('authentication', {'title' : ctx.params.actionParams.title })));
+            });
+            console.log('notSubcriber');
+        },
         _modalForm: function(modal, data) {
             var modals = {
                 'authentication': {
@@ -130,7 +156,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                                     mods: { view: 'main', type: 'submit' },
                                     mix: [
                                         { block: 'form', elem: 'submit' },
-                                        { block: 'action-main', js: { 'action': 'authEntrance', 'actionParams': { 'a': '1' } } },
+                                        { block: 'action-main', js: { 'action': 'authEntrance', 'actionParams': { 'title': data['title'] } } },
                                     ],
                                     text: 'Войти'
                                 }
@@ -157,19 +183,18 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                             elemMods: { wide: 'center' },
                             content: [{
                                 block: 'button',
-                                mods: { view: 'main', type: 'link' },
-                                url: 'tarifAction2',
-                                mix: { block: 'form', elem: 'submit' },
-                                content: 'Я не абонент life:)'
-                            }, {
-                                block: 'button',
-                                name: 'action',
-                                val: 'change',
-                                js: { action: 'tarifAction1' },
                                 mods: { view: 'main', type: 'submit' },
                                 mix: [
                                     { block: 'form', elem: 'submit' }, 
-                                    { block: 'action-main', js: { 'action': 'connectTariff', 'actionParams': { 'a': '1' } } }
+                                    { block: 'action-main', js: { 'action': 'subcriber', 'actionParams': { 'title': data['title'] }}}
+                                ],
+                                content: 'Я не абонент life:)'
+                            }, {
+                                block: 'button',
+                                mods: { view: 'main', type: 'submit' },
+                                mix: [
+                                    { block: 'form', elem: 'submit' }, 
+                                    { block: 'action-main', js: { 'action': 'notSubcriber', 'actionParams': { 'title': data['title'] }}}
                                 ],
                                 content: 'Я абонент life:)'
                             }]
@@ -201,14 +226,16 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                                 elemMods: { inner: true, size: 'xl' },
                                 content: [{
                                     block: 'button',
-                                    mods: { view: 'main', type: 'submit' },
+                                    mods: { view: 'main', type: 'link' },
                                     mix: { block: 'form', elem: 'submit' },
-                                    text: 'Купить SIM-карту'
+                                    text: 'Купить SIM-карту',
+                                    url : 'http://www.life.com.by/'  
                                 }, {
                                     block: 'button',
-                                    mods: { view: 'main', type: 'submit' },
+                                    mods: { view: 'main', type: 'link' },
                                     mix: { block: 'form', elem: 'submit' },
-                                    text: 'Перенести номер в life:)'
+                                    text: 'Перенести номер в life:)',
+                                    url : 'http://www.life.com.by/'
                                 }]
                             }]
                         }]
@@ -330,6 +357,9 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
             };
 
             return modals[modal];
+        },
+        getSessionAuth: function() {
+            return JSON.parse(sessionStorage.authentication).data;
         }
 	}));
 });

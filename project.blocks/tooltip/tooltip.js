@@ -5,7 +5,7 @@ modules.define('tooltip', ['i-bem-dom', 'jquery', 'dropdown', 'popup'], function
                 inited: function() {
                     var ctx = this;
                     ctx.popup = this.findChildBlock(Dropdown);
-                    debugger;
+                   //debugger;
                     // $('.popup');
                     sessionStorage.setItem('tooltips', '');
 
