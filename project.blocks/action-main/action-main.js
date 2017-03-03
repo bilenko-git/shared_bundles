@@ -113,7 +113,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 			console.log(formAuth);
             $.ajax({
                 type: "POST",
-                url: "api/auth",
+                url: "api/authentication",
                 data: { formAuth },
                 success: function (data) {
                     console.log(data);

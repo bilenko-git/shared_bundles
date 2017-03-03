@@ -3,7 +3,7 @@
 	z-index: 1000;
 	margin: 0 2px 0 4px;
 	position: relative;
-	box-shadow: 1px 2px 6px 0px #828282;
+	box-shadow: 1px 2px 5px 0px #828282;
 }
 .tabs__item_current:after {
 	content: '';
