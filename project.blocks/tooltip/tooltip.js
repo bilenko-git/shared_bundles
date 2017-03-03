@@ -1,9 +1,12 @@
-modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) {
+modules.define('tooltip', ['i-bem-dom', 'jquery', 'dropdown', 'popup'], function(provide, bemDom, $, Dropdown, Popup) {
     provide(bemDom.declBlock(this.name, {
         onSetMod: {
             js: {
                 inited: function() {
-                    var popup = $('.popup');
+                    var ctx = this;
+                    ctx.popup = this.findChildBlock(Dropdown);
+                    debugger;
+                    // $('.popup');
                     sessionStorage.setItem('tooltips', '');
 
                     this._domEvents().on('click', function(e) {
@@ -19,7 +22,7 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                                     tooltips = JSON.parse(JSON.parse(tooltips).data);
                                     console.log(tooltips);
                                     sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
-                                    AppendTooltip(tooltips, tooltipIndex);
+                                    this._appendTooltip(tooltips, tooltipIndex);
                                 },
                                 error: function (xhr, status) {
                                     console.log(xhr);
@@ -27,28 +30,29 @@ modules.define('tooltip', ['i-bem-dom', 'jquery'], function(provide, bemDom, $) 
                                 }
                             });
                         } else {
-                            AppendTooltip(JSON.parse(tooltips), tooltipIndex);
+                            this._appendTooltip(JSON.parse(tooltips), tooltipIndex, ctx, Dropdown, Popup);
                         }
                         
-                        function AppendTooltip(tooltips, tooltipIndex) {
-                            tooltips = {'0' : {
-                                'key' : 'main',
-                                'description': 'TEST'
-                            }}
-                            var tooltipDes = '';
-                            
-                            for (var tooltip in tooltips) {
-                                if(tooltipIndex == tooltips[tooltip]['key']) {
-                                    tooltipDes = tooltips[tooltip]['description']
-                                    continue;
-                                }
-                            }
-                            
-                            popup.html(tooltipDes);
-                        }
+
                     });
                 }
             }
+        },
+        _appendTooltip: function (tooltips, tooltipIndex, ctx, Dropdown, Popup) {
+            tooltips = {'0' : {
+                'key' : 'main',
+                'description': 'TEST'
+            }}
+            var tooltipDes = '';
+            
+            for (var tooltip in tooltips) {
+                if(tooltipIndex == tooltips[tooltip]['key']) {
+                    tooltipDes = tooltips[tooltip]['description']
+                    continue;
+                }
+            }
+            // debugger;
+            this.findMixedBlock(Dropdown).findMixedBlock(Popup).setContent(tooltipDes);
         }
     }));
 });
