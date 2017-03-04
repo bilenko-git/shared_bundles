@@ -1,7 +1,22 @@
 .c-tarif__info-item {
     position: relative;
     display: list-item;
+    font-family: "life_medium";
     font-size: 12px;
     line-height: 12px;
     color: #636363;
+    margin: 0px 0px 3px 8px;
+    padding: 0 0 0 0px;
+}
+.c-tarif__info-item:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 0 1px 0px #191919;
+    width: 3px;
+    height: 3px;
+    background-color: #636363;
+    top: 6px;
+    margin: -2px 0 0 -8px;
 }

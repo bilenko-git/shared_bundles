@@ -8,6 +8,7 @@
     font-family: "life_medium";
     outline: none;
     cursor: pointer;
+    background-color: #b5b5b5;
 }
 
 .button_view_add .icon {

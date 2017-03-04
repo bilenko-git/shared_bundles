@@ -1,14 +1,15 @@
 .button_view_logout {
-    position: relative;
-    display: inline-block;
-    height: 31px;
-    border: none;
-    border-radius: 31px;
-    padding: 0 25px;
-    font-family: 'life_medium';
-    font-size: 13px;
-    color: #fff;
-    background-color: #636363;
-    outline: none;
-    cursor: pointer;
+	position: relative;
+	display: inline-block;
+	height: 31px;
+	border: none;
+	width: 88px;
+	border-radius: 31px;
+	padding: 0 22px;
+	font-family: 'life_medium';
+	font-size: 13px;
+	color: #fff;
+	background-color: #636363;
+	outline: none;
+	cursor: pointer;
 }

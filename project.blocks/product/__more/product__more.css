@@ -1,13 +1,23 @@
 .product__more {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: center;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: flex-end;
+	text-align: center;
 }
+
 .product__more .link {
 	color: #ff2e39;
 	font-size: 14px;
 	line-height: 14px;
 	font-family: "life_text";
+	font-weight: bold;
+	position: relative;
+}
+.product__more .link:after {
+	content: '>';
+	text-decoration: none;
+	position: absolute;
+	top: 0;
+	width: 15px;
 }

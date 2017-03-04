@@ -1,0 +1,18 @@
+.icon.icon_tooltip-small {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+.icon.icon_tooltip-small_question {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-image: url(icon_toltip_small_question.png);
+}
+.icon.icon_tooltip-small_warning {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-image: url(icon_toltip_small_warning.png);
+}

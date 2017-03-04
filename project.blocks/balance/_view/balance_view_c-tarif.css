@@ -1,9 +1,10 @@
 .balance_view_c-tarif {
     width: auto;
     margin: 0;
+    justify-content: flex-start;
 }
-
 .balance_view_c-tarif .balance__title {
+    font-family: "life_medium";
     color: #636363;
     font-size: 12px;
     line-height: 12px;

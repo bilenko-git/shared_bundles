@@ -1,5 +1,6 @@
 .product__desc {
-    font-family: "life_regular";
-    font-size: 12px;
-    line-height: 12px;
+	font-family: "life_regular";
+	font-size: 12px;
+	line-height: 12px;
+	padding: 10px 0 0 0;
 }

@@ -1,6 +1,11 @@
 .c-info__action-text {
-    font-family: "life_medium";
-    font-size: 14px;
-    outline: none;
-    color: #ff2e39;
+	font-family: "life_medium";
+	font-size: 14px;
+	outline: none;
+	color: #ff2e39;
+}
+
+.c-info__action-text_hidden {
+	max-height: 0;
+	overflow: hidden;
 }

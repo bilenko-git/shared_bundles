@@ -1,7 +1,9 @@
 .product-list__title {
-    display: inline-block;
-    font-family: "life_text";
-    font-size: 14px;
-    line-height: 30px;
-    color: #593292;
+	display: inline-block;
+	font-family: "life_regular";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 30px;
+	color: #593292;
+	padding: 25px 0 0 20px;
 }

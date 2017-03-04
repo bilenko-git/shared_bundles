@@ -1,10 +1,10 @@
 .balance {
-    display: flex;
-    flex-basis: 200px;
-    min-width: 115px;
-    max-width: 300px;
-    margin-right: 10px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-around;
+	display: flex;
+	flex-basis: 40px;
+	min-width: 115px;
+	max-width: 300px;
+	margin-right: 10px;
+	width: 100%;
+	flex-direction: column;
+	justify-content: space-between;
 }

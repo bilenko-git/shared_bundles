@@ -1,6 +1,8 @@
 .product__title {
-    color: #593292;
-    font-size: 15px;
-    font-family: "life_text";
-    font-weight: 700;
+	color: #593292;
+	font-size: 15px;
+	font-family: "life_text";
+	padding: 5px 0 0 0;
+	font-weight: 700;
+	text-align: center;
 }
