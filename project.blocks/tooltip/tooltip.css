@@ -8,3 +8,6 @@
 .tooltip:focus{
 	outline: none;
 }
+.popup.dropdown_tooltipS  {
+	width: 300px;
+}

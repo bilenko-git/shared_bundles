@@ -126,9 +126,18 @@ module.exports = {
                                                                 mods: { type: 'link', 'std-help': true },
                                                                 text: 'Помощь'
                                                             }, {
-                                                                block: 'button',
-                                                                mods: { type: 'link', std: true },
-                                                                text: 'Личный кабинет'
+
+                                                                block : 'dropdown',
+                                                                mods : { switcher : 'link', theme : 'islands', size : 'm', std: true  },
+                                                                switcher : 'Личный кабинет',
+                                                                popup : `<div class='control-tariff'>
+                                                                            <div class='b-menu'>Управление тарифами <br> "Семья и Мультинет"</div>
+                                                                            <div class="sep-in-menu"></div>
+                                                                            <a href="https://issa.life.com.by/ru/" class='b-menu'>Другие тарифы<br> и услуги</a>
+                                                                        </div>`,
+                                                                mix: { block: 'dropdown-with-content', js: true },
+                                                                js: { tooltip: 'main' },
+                                                                content: 'Личный кабинет',
                                                             }]
                                                         }
                                                     }, {
@@ -350,11 +359,11 @@ module.exports = {
                                                 content: 'Перейти к управлению'
                                             }, {
                                                 block : 'dropdown',
-                                                mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                                                mods : { switcher : 'link', theme : 'islands', size : 'm',  'tooltipS': true },
                                                 switcher : '',
                                                 popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
                                                 mix: { block: 'tooltip', js: true },
-                                                js: { tooltip: 'main' }
+                                                js: { tooltip: 'TXT-01' }
                          
                                             }]
                                         
@@ -362,31 +371,6 @@ module.exports = {
                                     }, {
                                         block: 'banner',
                                         content: [{
-                                            elem: 'head',
-                                            content: [{
-                                                elem: 'head',
-                                                tag: 'span',
-                                                elemMods: { strong: true },
-                                                content: ['Тарифы Семья.&nbsp;']
-                                            }, {
-                                                elem: 'head',
-                                                tag: 'span',
-                                                elemMods: { light: true },
-                                                content: 'Все на связи!'
-                                            }],
-                                        }, {
-                                            elem: 'text',
-                                            content: [{
-                                                tag: 'p',
-                                                content: 'Подключайте один тарифный план &ndash; и распределяйте интернет и минуты из него'
-                                            }, {
-                                                tag: 'p',
-                                                content: 'на несколько SIM-карт. Добавляйте родных, близких, друзей или устройства.'
-                                            }, {
-                                                tag: 'p',
-                                                content: 'Платите одну абонентскую плату &ndash; пользуетесь вместе'
-                                            }]
-                                        }, {
                                             elem: 'image',
                                             content: {
                                                 block: 'image',
