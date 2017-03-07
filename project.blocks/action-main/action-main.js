@@ -10,21 +10,59 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 				}
 			}
 		},
+        imNotASubscriber: function() {
+            var ctx = this;
+
+            nextTick(function() {
+                InfoModal.show(bemHtml.apply(ctx._modalForm('subcriber_and_not_subcriber', {'title' : 'Я не абонент life:)' })));
+            });
+            console.log('39');
+        },
+        conrolTariffsFamilyAndMultinet: function() {
+            var ctx = this;
+
+            if( ctx.getSessionAuth('access_token') ) {
+
+            } else {
+                nextTick(function() {
+                    InfoModal.show(bemHtml.apply(ctx._modalForm('authentication', {'title' : '' })));
+                    ctx.validationFormAuth();
+                });
+            }
+        },
+        goToManagement: function() {
+            var ctx = this;
+
+            if( ctx.getSessionAuth('access_token') ) {
+
+            } else {
+                nextTick(function() {
+                    InfoModal.show(bemHtml.apply(ctx._modalForm('authentication', {'title' : '' })));
+                    ctx.validationFormAuth();
+                });
+            }
+        },
 		connectTariff: function() {
 			var ctx = this;
 
 			nextTick(function() {
-                if(ctx.getSessionAuth() && ctx.getSessionAuth().access_token) {
+                if( ctx.getSessionAuth('access_token') ) {
                     //ajax(smp1 or smp2 ...)
+
+                    //Подключение тарифного плана ' + '&laquo; Семья 2 &raquo;
                     InfoModal.show(bemHtml.apply(ctx._modalForm('changeTarifConfirmForm', {'title' : ctx.params.actionParams.title })));
                 } else {
-                    InfoModal.show(bemHtml.apply(ctx._modalForm('subcriber_and_not_subcriber', {'title' : ctx.params.actionParams.title })));
+                    var title = 'Подключение тарифного плана ' + '&laquo;' + ctx.params.actionParams.title + '&raquo;';
+
+                    InfoModal.show(bemHtml.apply(ctx._modalForm('subcriber_and_not_subcriber', {'title' : title })));
                 }
 			});
 		},
 		_requestForm: function() {
             var ctx = this;
-            InfoModal.show(bemHtml.apply(ctx._modalForm('subcriber_and_not_subcriber', {'title' : ctx.params.actionParams.title})));
+            var title = ctx.params.actionParams.title;
+
+            InfoModal.show(bemHtml.apply(ctx._modalForm('subcriber_and_not_subcriber', {'title' : title })));
 		},
 		authEntrance: function(actionParams, _this) {
             var ctx = this,
@@ -41,10 +79,11 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                     url: "api/authentication",
                     data: { formAuth },
                     success: function (data) {
+                        var title = ctx.params.actionParams.title;
                         sessionStorage.setItem('authentication', JSON.stringify(data));
             
                         nextTick(function() {
-                            InfoModal.show(bemHtml.apply(ctx._modalForm('changeTarifConfirmForm', { 'title' : ctx.params.actionParams.title })));
+                            InfoModal.show(bemHtml.apply(ctx._modalForm('changeTarifConfirmForm', { 'title' : title })));
                         });
                     },
                     error: function (xhr, status) {
@@ -53,13 +92,15 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                     }
                 });
             } else {
-                
+
             }
 		},
         subcriber: function() {
             var ctx = this;
             nextTick(function() {
-                InfoModal.show(bemHtml.apply(ctx._modalForm('clientRedirectForm', {'title' : ctx.params.actionParams.title })));
+                InfoModal.show(bemHtml.apply(ctx._modalForm('clientRedirectForm', {
+                    'title' : ctx.params.actionParams.title 
+                })));
             });
             console.log('subcriber');
         },
@@ -81,7 +122,10 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
         notSubcriber: function() {
             var ctx = this;
             nextTick(function() {
-                InfoModal.show(bemHtml.apply(ctx._modalForm('authentication', {'title' : ctx.params.actionParams.title })));
+                var title = ctx.params.actionParams.title;
+                InfoModal.show(bemHtml.apply(ctx._modalForm('authentication', {
+                    'title' : title 
+                })));
                 ctx.validationFormAuth()
             });
             console.log('notSubcriber');
@@ -97,7 +141,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                         enctype: 'multipart/form-data',
                         content: [{
                             elem: 'title',
-                            content: 'Подключение тарифного плана ' + '&laquo;' + data['title'] + '&raquo;'
+                            content: data['title']
                         }, {
                             elem: 'button-group',
                             elemMods: { vert: true, size: 'm' },
@@ -122,6 +166,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                                     options: [
                                         { val: 25, text: '25' },
                                         { val: 29, text: '29' },
+                                        { val: 33, text: '33' },
                                         { val: 44, text: '44' }
                                     ],
                                     name: 'codePhone',
@@ -132,6 +177,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                                     placeholder: '1234567',
                                     maxLength : '7',
                                     name: 'phone',
+                                    autocomplete : false
                                 }]
                             }, {
                                 elem: 'button-group',
@@ -143,16 +189,17 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                                 }, {
                                     block: 'input',
                                     mods: { theme: 'life-light', size: 'm', width: 'available', type: 'password' },
-                                    placeholder: '1234',
-                                    maxLength : '4',
-                                    name: 'password'
+                                    //placeholder: 'пароль',
+                                    maxLength : '50',
+                                    name: 'password',
+                                    autocomplete : false
                                 },{
                                     block : 'dropdown',
-                                    mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                                    mods : { switcher : 'link', theme : 'islands', size : 'm',  'tooltipS': true },
                                     switcher : '',
                                     popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
                                     mix: { block: 'tooltip', js: true },
-                                    js: { tooltip: 'main' }
+                                    js: { tooltip: 'TXT-03'    }
                                 }]
                             }, {
                                 elem: 'text-error',
@@ -160,6 +207,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                                 content: 'Вы ввели неправильный номер или пароль. Проверьте и попробуйте ещё раз'
                             }, {
                                 elem: 'button-group',
+                                mix: { block : 'button-aut-enter' },
                                 mods: 'inner',
                                 content: {
                                     block: 'button',
@@ -172,9 +220,18 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                                 }
                             }]
                         },{
-                            elem: 'button-group',
+                            elem: 'button-group-center',
                             elemMods: { size: 'xl' },
-                            content: ['Перейти на тариф можно и с помощью USSD - ', { tag: 'span', cls: 'ussd-call', content: '*115*9#' }]
+                            content: ['Перейти на тариф можно с помощью USSD - ',{ 
+                                tag: 'span', cls: 'ussd-call', content: '*115*9#' 
+                            }, {
+                                tag: 'i', cls: 'ussd-call-img',
+                            }]
+                        },{
+                            elem: 'im-not-a-subscriber',
+                            content: 'Я ещё не абонент life:) ', 
+                            mix: { block: 'action-main',  js: { 'action': 'subcriber', 'actionParams': { 'type' : '' }}},
+                            mods: { action: true },
                         }]
                     }
                 },
@@ -187,7 +244,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                         enctype: 'multipart/form-data',
                         content: [{
                             elem: 'title',
-                            content: 'Подключение тарифного плана ' + '&laquo;' + data['title'] + '&raquo;'
+                            content: data['title']
                         }, {
                             elem: 'button-group',
                             elemMods: { wide: 'center' },
@@ -220,7 +277,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                         enctype: 'multipart/form-data',
                         content: [{
                             elem: 'title',
-                            content: 'Подключение тарифного плана ' + '&laquo;' + data['title'] + '&raquo;'
+                            content: data['title']
                         }, {
                             elem: 'button-group',
                             elemMods: { vert: true, size: 'l' },
@@ -233,19 +290,19 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                             elemMods: { inner: true, vert: true },
                             content: [{
                                 elem: 'button-group',
-                                elemMods: { inner: true, size: 'xl' },
+                                elemMods: { inner: true, size: 'xl', 'buttons': true},
                                 content: [{
                                     block: 'button',
                                     mods: { view: 'main', type: 'link' },
                                     mix: { block: 'form', elem: 'submit' },
                                     text: 'Купить SIM-карту',
-                                    url : 'http://www.life.com.by/'  
+                                    url : 'http://www.life.com.by/private/salons'  
                                 }, {
                                     block: 'button',
                                     mods: { view: 'main', type: 'link' },
                                     mix: { block: 'form', elem: 'submit' },
                                     text: 'Перенести номер в life:)',
-                                    url : 'http://www.life.com.by/'
+                                    url : 'http://www.life.com.by/private/services/polnyiy_perenos_nomera/'
                                 }]
                             }]
                         }]
@@ -260,7 +317,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                         enctype: 'multipart/form-data',
                         content: [{
                             elem: 'title',
-                                content: 'Подключение тарифного плана ' + '&laquo;' + data['title'] + '&raquo;'
+                                content: data['title']
                             }, {
                                 elem: 'button-group',
                                 elemMods: { wide: 'center' },
@@ -324,7 +381,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                         enctype: 'multipart/form-data',
                         content: [{
                                 elem: 'title',
-                                content: 'Подключение тарифного плана ' + '&laquo;' + data['title'] + '&raquo;'
+                                content: data['title']
                         }, {
                             elem: 'button-group',
                             elemMods: { vert: true, wide: 'center', size: 'xl' },
@@ -353,7 +410,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                         enctype: 'multipart/form-data',
                         content: [{
                             elem: 'title',
-                            content: 'Подключение тарифного плана ' + '&laquo;' + data['title'] + '&raquo;'
+                            content: data['title']
                         }, {
                             elem: 'button-group',
                             elemMods: { size: 'xl' },
@@ -368,8 +425,12 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 
             return modals[modal];
         },
-        getSessionAuth: function() {
-            return sessionStorage.authentication ? JSON.parse(JSON.parse(sessionStorage.authentication)).data : '';
+        getSessionAuth: function(el) {
+            if(sessionStorage.authentication) {
+                return JSON.parse(JSON.parse(sessionStorage.authentication)).data[el];
+            }
+
+            return false;
         }
 	}));
 });

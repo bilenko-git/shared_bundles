@@ -130,11 +130,22 @@ module.exports = {
                                                                 block : 'dropdown',
                                                                 mods : { switcher : 'link', theme : 'islands', size : 'm', std: true  },
                                                                 switcher : 'Личный кабинет',
-                                                                popup : `<div class='control-tariff'>
-                                                                            <div class='b-menu'>Управление тарифами <br> "Семья и Мультинет"</div>
-                                                                            <div class="sep-in-menu"></div>
-                                                                            <a href="https://issa.life.com.by/ru/" class='b-menu'>Другие тарифы<br> и услуги</a>
-                                                                        </div>`,
+                                                                popup : [{
+                                                                    block: 'control-tariff',
+                                                                    content: [{
+                                                                        block: 'b-menu',
+                                                                        content: 'Управление тарифами <br> "Семья и Мультинет"',
+                                                                        mix: { block: 'action-main',  js: { 'action': 'conrolTariffsFamilyAndMultinet', 'actionParams': { 'type' : ''}}},
+                                                                        mods: { action: true },
+                                                                    }, {
+                                                                        block: 'sep-in-menu',
+                                                                    }, {
+                                                                        tag: 'a',
+                                                                        attrs: { href : 'https://issa.life.com.by/ru/'},
+                                                                        cls: 'b-menu',
+                                                                        content: 'Другие тарифы<br> и услуги'
+                                                                    }]
+                                                                }],
                                                                 mix: { block: 'dropdown-with-content', js: true },
                                                                 js: { tooltip: 'main' },
                                                                 content: 'Личный кабинет',
@@ -355,8 +366,9 @@ module.exports = {
                                             elemMods: { right: true },
                                             content: [{
                                                 block: 'button',
-                                                mods: { link: true },
-                                                content: 'Перейти к управлению'
+                                                mods: { link: true  },
+                                                mix: { block: 'action-main',  js: { 'action': 'goToManagement', 'actionParams': { 'type' : ''}}},
+                                                content: 'Перейти к управлению'            
                                             }, {
                                                 block : 'dropdown',
                                                 mods : { switcher : 'link', theme : 'islands', size : 'm',  'tooltipS': true },
@@ -520,14 +532,20 @@ module.exports = {
                                                 content: [{
                                                     elem: 'wrapper',
                                                     content: [{
-                                                        elem: 'head',
-                                                        content: [{
-                                                            elem: 'icon',
-                                                            cls: 'icon-SMP2'
-                                                        }, {
-                                                            elem: 'head-desc',
-                                                            content: 'Семья 2'
-                                                        }]
+                                                        tag: 'a',
+                                                        attrs: {href : '/tariffs/SMP1'},
+                                                        content:  [{
+                                                            elem: 'head',
+                                                            content: [{
+                                                                elem: 'icon',
+                                                                cls: 'icon-SMP2'
+                                                            }, {
+                                                                elem: 'head-desc',
+                                                                content: 'Семья 2'
+                                                            }
+                                                        ]
+                                                    }]
+                                                       
                                                     }, {
                                                         elem: 'info',
                                                         content: {
@@ -741,7 +759,7 @@ module.exports = {
                                                                         }]
                                                                     }, {
                                                                         block : 'dropdown',
-                                                                        mods : { switcher : 'link', theme : 'islands', size : 'm' },
+                                                                        mods : { switcher : 'link', theme : 'islands', size : 'm', 'tooltipS': true },
                                                                         switcher : '',
                                                                         popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
                                                                         mix: { block: 'tooltip', block: 'icon_smile', js: true },
@@ -925,6 +943,8 @@ module.exports = {
                                                 'Управление трафиком в мобильном приложении', {
                                                     tag: 'span',
                                                     cls: 'red-link',
+                                                    block: 'link',
+                                                    url: 'http://www.life.com.by/private/services/uslugi_dlya_udobstva/smart_life',
                                                     content: 'Smart Life:)'
                                                 }
                                             ]
@@ -933,14 +953,14 @@ module.exports = {
                                             tag: 'span',
                                             content: [{
                                                 block: 'link',
-                                                url: '#',
+                                                url: 'https://play.google.com/store/apps/details?id=by.com.life.assistant4life&hl=ru',
                                                 content: {
                                                     block: 'image',
                                                     url: '/assets/img/google_play.png'
                                                 }
                                             }, {
                                                 block: 'link',
-                                                url: '#',
+                                                url: 'https://itunes.apple.com/us/app/smart-life/id1207759261?l=ru&ls=1&mt=8',
                                                 content: {
                                                     block: 'image',
                                                     url: '/assets/img/apple_store.svg'

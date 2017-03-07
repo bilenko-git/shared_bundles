@@ -2,3 +2,12 @@
     display: flex;
     flex-flow: column wrap;
 }
+.form__im-not-a-subscriber {
+ 	font-size: 24px;
+    margin-bottom: 30px;
+	text-align: center;
+	font-family: 'life_text';
+    font-weight: normal;
+    text-decoration: underline;
+    cursor: pointer;
+}
