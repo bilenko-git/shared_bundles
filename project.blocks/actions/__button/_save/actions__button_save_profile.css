@@ -1,0 +1,5 @@
+.actions__button_save_profile {
+	display: inline-flex;
+	align-self: flex-end;
+	margin-bottom: 18px;
+}

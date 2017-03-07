@@ -1,0 +1,3 @@
+block('userinfo')(
+	js()(true)
+);

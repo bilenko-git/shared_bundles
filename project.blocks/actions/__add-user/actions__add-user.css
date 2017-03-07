@@ -1,0 +1,7 @@
+.actions__add-user {
+	display: inline-flex;
+	align-self: flex-start;
+	min-width: 201px;
+	white-space: pre;
+
+}

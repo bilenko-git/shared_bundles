@@ -12,6 +12,7 @@
     ],
     shouldDeps: [
         { elem: 'inner', tech: 'css' },
-        { block: 'button', mods: { view: 'add' }, tech: 'css' }
+        { block: 'button', mods: { view: 'add' }, tech: 'css' },
+        { block: 'userinfo'}
     ]
 })

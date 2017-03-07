@@ -1,0 +1,26 @@
+.button_icon-only_menu {
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	border: 0;
+	width: 24px;
+	height: 24px;
+	outline: none;
+	line-height: 2;
+	cursor: pointer;
+}
+
+.button_icon-only_menu.button_theme_islands,
+.button_icon-only_menu.button_theme_islands.button_hovered,
+.button_icon-only_menu.button_theme_islands.button_focused,
+.button_icon-only_menu.button_theme_islands.button_focused-hard {
+	outline: none;
+	background: transparent;
+	width: 20px;
+	height: 20px;
+}
+
+.button_icon-only_menu.button_theme_islands.button_focused-hard:before {
+	/*background: transparent;*/
+	box-shadow: none;
+}

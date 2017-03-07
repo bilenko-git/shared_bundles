@@ -7,7 +7,14 @@ modules.define('actions', ['i-bem-dom'/*,'i-bem'*/, 'modal', 'popup', 'BEMHTML',
                     // console.log(Modal);
                     // console.log(iBem);
                     // console.log(modules.getState('modal'));
+
+                    this._domEvents('add-user').on('pointerclick pointerpress', function(e) {
+                        // debugger;
+                        this._onClick(e, bemDom, bemHtml);
+                    });
+
                     this._domEvents('button').on('click', function() {
+                        return;
                         // debugger;
                         // act = this;
                         // console.log(this.findChildElem('modal'));
@@ -79,6 +86,64 @@ modules.define('actions', ['i-bem-dom'/*,'i-bem'*/, 'modal', 'popup', 'BEMHTML',
                     });
                 }
             }
+        },
+        _onClick: function(e, bemDom, bemHtml) {
+            debugger;
+            var actionsBlock = bemHtml.apply({
+                    block: 'actions',
+                    mods: { view: 'simple' },
+                    content: [{
+                        elem: 'group',
+                        content: [{
+                            block: 'userinfo',
+                            content: [{
+                                block: 'dropdown',
+                                mods: { switcher: 'button', theme: 'islands' },
+                                switcher: { block: 'button', mods: { 'icon-only': 'menu', theme: 'islands' }, icon: { block: 'icon', mods: { 'type': 'menu-toggle' }}},
+                                popup: { block: 'menu', mods: { theme: 'islands' }, content: [{ elem: 'item', val: '1', content: 'item-1' }, { elem: 'item', val: '1', content: 'item-1' }, { elem: 'item', val: '1', content: 'item-1' }]},
+                            }, {
+                                block: 'icon',
+                                mix: { block: 'userinfo', elem: 'avatar' },
+                                url: '/assets/img/user-avatar.png'
+                            }, {
+                                elem: 'group',
+                                content: [{
+                                    block: 'button',
+                                    mix: { block: 'userinfo', elem: 'add-user' },
+                                    mods: { view: 'main' },
+                                    text: 'Пригласить пользователя'
+                                }]
+                            }]
+                        }]
+                    }, {
+                        elem: 'group',
+                        content: [{
+                            block: 'c-chart',
+                            content: {
+                                elem: 'item',
+                                elemMods: { view: 'simple' },
+                                content: {
+                                    tag: 'canvas',
+                                    attrs: { id: 'chartMin104', width: '280', height: '50' }
+                                }
+                            }
+                        }, {
+                            block: 'c-chart',
+                            content: {
+                                elem: 'item',
+                                elemMods: { view: 'simple' },
+                                content: {
+                                    tag: 'canvas',
+                                    attrs: { id: 'chartMin105', width: '280', height: '50' }
+                                }
+                            }
+                        }]
+                    }]
+                });
+            // debugger;
+            bemDom.before(this.domElem, actionsBlock);
+            // debugger;
+            // var action = 
         }
     }));
 
