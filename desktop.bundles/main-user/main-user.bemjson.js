@@ -204,14 +204,14 @@ module.exports = {
 								elem: 'info',
 								content: [{
 									elem: 'info-text',
-									content: 'Абонентская плата списывается 1 числа. Ваш баланс должен составлять не менее 35,90 руб, чтобы трафик по тарифу был начислен на следующий месяц.'
+									content: 'Ваш баланс должен составлять не менее 35,90 руб, чтобы трафик по тарифу был начислен на следующий месяц.'
 								}, {
-									block: 'button',
-									mods: { 'icon-only': true },
-									content: {
-										block: 'icon',
-										mods: { 'tooltip-small': 'question' }
-									}
+									block: 'dropdown',
+									mods: { switcher: 'button', theme: 'islands' },
+									switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' }}},
+									popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+									mix: { block: 'tooltip', js: true },
+									js: { tooltip: 'main' }
 								}]
 							}]
 						}
@@ -227,24 +227,24 @@ module.exports = {
 									mix: { block: 'c-info', elem: 'action-link' },
 									url: '#',
 									content: ['Все мои услуги', {
-										block: 'button',
-										mods: { 'icon-only': true },
-										content: {
-											block: 'icon',
-											mods: { 'tooltip-small': 'question' }
-										}
+										block: 'dropdown',
+										mods: { switcher: 'button', theme: 'islands' },
+										switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' }}},
+										popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+										mix: { block: 'tooltip', js: true },
+										js: { tooltip: 'main' }
 									}]
 								}, {
 									block: 'link',
 									mix: { block: 'c-info', elem: 'action-link' },
 									url: '#',
 									content: ['Сменить тариф', {
-										block: 'button',
-										mods: { 'icon-only': true },
-										content: {
-											block: 'icon',
-											mods: { 'tooltip-small': 'question' }
-										}
+										block: 'dropdown',
+										mods: { switcher: 'button', theme: 'islands' },
+										switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' }}},
+										popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+										mix: { block: 'tooltip', js: true },
+										js: { tooltip: 'main' }
 									}]
 								}, {
 									block: 'link',
@@ -304,12 +304,10 @@ module.exports = {
 						content: [{
 							block: 'userinfo',
 							content: [{
-								block: 'button',
-								mods: { view: 'toggle' },
-								icon: {
-									block: 'icon',
-									url: '/assets/img/icon_toggle.svg'
-								}
+								block: 'dropdown',
+								mods: { switcher: 'button', theme: 'islands' },
+								switcher: { block: 'button', mods: { 'icon-only': 'menu', theme: 'islands' }, icon: { block: 'icon', mods: { 'type': 'menu-toggle' }}},
+								popup: { block: 'menu', mods: { theme: 'islands' }, content: [{ elem: 'item', val: '1', content: 'item-1' }, { elem: 'item', val: '1', content: 'item-1' }, { elem: 'item', val: '1', content: 'item-1' }]},
 							}, {
 								block: 'icon',
 								mix: { block: 'userinfo', elem: 'avatar' },
@@ -371,12 +369,10 @@ module.exports = {
 						content: [{
 							block: 'userinfo',
 							content: [{
-								block: 'button',
-								mods: { view: 'toggle' },
-								icon: {
-									block: 'icon',
-									url: '/assets/img/icon_toggle.svg'
-								}
+								block: 'dropdown',
+								mods: { switcher: 'button', theme: 'islands' },
+								switcher: { block: 'button', mods: { 'icon-only': 'menu', theme: 'islands' }, icon: { block: 'icon', mods: { 'type': 'menu-toggle' }}},
+								popup: { block: 'menu', mods: { theme: 'islands' }, content: [{ elem: 'item', val: '1', content: 'item-1' }, { elem: 'item', val: '1', content: 'item-1' }, { elem: 'item', val: '1', content: 'item-1' }]},
 							}, {
 								block: 'icon',
 								mix: { block: 'userinfo', elem: 'avatar' },
@@ -385,6 +381,7 @@ module.exports = {
 								elem: 'group',
 								content: [{
 									block: 'button',
+									mix: { block: 'userinfo', elem: 'add-user' },
 									mods: { view: 'main' },
 									text: 'Пригласить пользователя'
 								}]
@@ -417,10 +414,11 @@ module.exports = {
 				}, {
 					block: 'actions',
 					mods: { view: 'simple' },
-					content: {
+					content: [{
 						elem: 'group',
 						content: {
 							block: 'button',
+							mix: { block: 'actions', elem: 'add-user' },
 							mods: { view: 'add' },
 							icon: {
 								block: 'icon',
@@ -428,7 +426,22 @@ module.exports = {
 							},
 							text: 'Добавить еще пользователей'
 						}
-					}
+					},{
+						elem: 'group',
+						content: [{
+							block: 'button',
+							mix: { block: 'actions', elem: 'button', elemMods: { save: 'profile', inactive: true } },
+							mods: { view: 'main' },
+							text: 'Сохранить изменения'
+						}, {
+							block: 'control-group',
+							mods: { type: 'line', size: 'l', theme: 'shared' },
+							content: [
+								{ block: 'checkbox', mods: { theme: 'shared', type: 'button', view: 'plain' }, icon: { block: 'icon', mods: { type: 'checkbox' } }, name: 'checkbox1', val: '1', text: 'Распределить всем поровну' },
+								{ block: 'checkbox', mods: { theme: 'shared', type: 'button', view: 'plain' }, icon: { block: 'icon', mods: { type: 'checkbox' }}, name: 'checkbox2', val: '2', text: 'Автоматически применить данное распределение в следующем месяце' }
+							]
+						}]
+					}]
 				}, {
 					block: 'pc-block',
 					js: true,
@@ -510,7 +523,7 @@ module.exports = {
 				}, ]
 			}, {
 				block: 'footer',
-				content: 'footer'
+				content: ''
 			}
 		]
 	}]

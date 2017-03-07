@@ -1,10 +1,20 @@
 .actions__group {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    padding: 0 0 0 30px;
-    justify-content: flex-end;
-    align-items: center;
-    /* border: solid 1px #f00; */
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	height: 100%;
+	padding: 0 0 0 30px;
+	justify-content: flex-end;
+	align-items: center;
+	/* border: solid 1px #f00; */
+}
+
+.actions__group .control-group_theme_shared {
+	display: flex;
+	max-width: 453px;
+	align-self: flex-end;
+	box-sizing: border-box;
+	padding-left: 55px;
+	margin-bottom: 18px;
+	align-items: flex-end;
 }

@@ -1,21 +1,25 @@
 .button_view_add {
     height: 25px;
+    box-sizing: border-box;
+    position: relative;
     border-radius: 25px;
     padding: 0 0 0 3px;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 18px;
     border: none;
     color: #fff;
-    font-family: "life_medium";
+    font-family: "life_text";
     outline: none;
     cursor: pointer;
     background-color: #b5b5b5;
 }
-
 .button_view_add .icon {
+    position: absolute;
+    top: calc(50% - 19px / 2);
     width: 19px;
     height: 19px;
 }
-
 .button_view_add .button__text {
-    padding: 0 25px 0 15px;
+    padding: 0 8px 0 27px;
+    max-width: 201px;
 }
