@@ -5,14 +5,10 @@ modules.define('tooltip', ['i-bem-dom', 'jquery', 'dropdown', 'popup'], function
                 inited: function() {
                     var ctx = this;
                     ctx.popup = this.findChildBlock(Dropdown);
-                   //debugger;
-                    // $('.popup');
-                    sessionStorage.setItem('tooltips', '');
-
+               
                     this._domEvents().on('click', function(e) {
                         var tooltips = sessionStorage.tooltips,
                             tooltipIndex = this.domElem.data('bem').dropdown.tooltip;
-                        tooltips = '2';
 
                         if(!tooltips) {
                             $.ajax({
@@ -22,7 +18,7 @@ modules.define('tooltip', ['i-bem-dom', 'jquery', 'dropdown', 'popup'], function
                                     tooltips = JSON.parse(JSON.parse(tooltips).data);
                                     console.log(tooltips);
                                     sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
-                                    this._appendTooltip(tooltips, tooltipIndex);
+                                    ctx._appendTooltip(tooltips, tooltipIndex);
                                 },
                                 error: function (xhr, status) {
                                     console.log(xhr);
@@ -30,19 +26,13 @@ modules.define('tooltip', ['i-bem-dom', 'jquery', 'dropdown', 'popup'], function
                                 }
                             });
                         } else {
-                            this._appendTooltip(JSON.parse(tooltips), tooltipIndex, ctx, Dropdown, Popup);
+                            ctx._appendTooltip(JSON.parse(tooltips), tooltipIndex, ctx, Dropdown, Popup);
                         }
-                        
-
                     });
                 }
             }
         },
         _appendTooltip: function (tooltips, tooltipIndex, ctx, Dropdown, Popup) {
-            tooltips = {'0' : {
-                'key' : 'main',
-                'description': 'TEST'
-            }}
             var tooltipDes = '';
             
             for (var tooltip in tooltips) {
@@ -51,7 +41,7 @@ modules.define('tooltip', ['i-bem-dom', 'jquery', 'dropdown', 'popup'], function
                     continue;
                 }
             }
-            // debugger;
+            
             this.findMixedBlock(Dropdown).findMixedBlock(Popup).setContent(tooltipDes);
         }
     }));

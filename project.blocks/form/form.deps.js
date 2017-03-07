@@ -14,6 +14,7 @@
             { block: 'input', mods: { theme: 'life-light' } },
             { block: 'button', mods: { theme: 'life-light' } },
             { block: 'select', mods: { theme: 'life-light' } },
+            { block: 'input', mods: { theme: 'life-light', size: 'm', type: 'password' } } 
         ],
         shouldDeps: [
             // { block: 'dropdown', tech: 'bemhtml' },
