@@ -60,7 +60,7 @@
 .form__button-group_inner .button,
 .form__button-group_inner .select,
 .form__button-group_inner .input:not(:last-child) {
-	margin: 0 4px;
+	margin: 0 4px 0 0;
 }
 
 .form__button-group_inner .input:not(:last-child) {

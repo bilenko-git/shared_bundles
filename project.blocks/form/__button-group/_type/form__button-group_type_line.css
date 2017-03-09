@@ -1,0 +1,6 @@
+.form__button-group_type_line {
+	padding: 3px 0;
+}
+.form__button-group_type_line .form__button-group_type_line {
+	padding: 0;
+}

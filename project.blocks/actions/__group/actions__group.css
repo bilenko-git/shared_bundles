@@ -8,6 +8,10 @@
 	align-items: center;
 	/* border: solid 1px #f00; */
 }
+.actions__group:only-child {
+	width: 100%;
+	justify-content: flex-start;
+}
 
 .actions__group .control-group_theme_shared {
 	display: flex;
@@ -16,5 +20,5 @@
 	box-sizing: border-box;
 	padding-left: 55px;
 	margin-bottom: 18px;
-	align-items: flex-end;
+	align-items: center;
 }

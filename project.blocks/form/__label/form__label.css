@@ -6,3 +6,12 @@
     font-size: 21px;
     line-height: 28px;
 }
+.form__button-group_inner .form__label_size_s,
+.form__button-group_type_list .form__label_size_s {
+	font-size: 14px;
+	min-width: 87px;
+	width: 87px;
+	line-height: 23px;
+	height: 25px;
+	color: #636363;
+}

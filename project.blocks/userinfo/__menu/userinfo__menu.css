@@ -1,0 +1,17 @@
+.userinfo__menu {
+	box-shadow: 1px 2px 4.75px 0.25px rgba(0, 0, 0, 0.3);
+	padding: 20px 23px 18px 25px;
+}
+
+.userinfo__menu .menu__item {
+	box-shadow: 0px 1px 0 0 #d3d3d3;
+	padding: 5px 0 9px 0;
+}
+
+.userinfo__menu .menu__item:last-child {
+	box-shadow: none;
+	padding: 12px 0 0 0;
+}
+.userinfo__menu .menu__item_hovered {
+	cursor: pointer;
+}

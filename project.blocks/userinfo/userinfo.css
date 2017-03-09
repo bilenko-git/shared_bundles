@@ -1,7 +1,7 @@
 .userinfo {
-    display: flex;
-    min-width: 280px;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-start;
+	display: flex;
+	min-width: 124px;
+	height: 100%;
+	align-items: center;
+	justify-content: space-between;
 }
