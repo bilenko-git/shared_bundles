@@ -9,11 +9,23 @@
 	font-weight: normal;
 	font-size: 24px;
 }
-
-.form__button-group .ussd-call {
-	color: #ff2e39;
+.form__button-group-center {
+	text-align: center;
+	padding: 42px 0 31px;
+	font-family: 'life_text';
+	font-weight: normal;
+	font-size: 24px;
 }
-
+.form__button-group-center .ussd-call {
+	color: #DC323C;
+}
+.ussd-call-img {
+	width: 8px;
+    height: 19px;
+    background: url(/assets/img/icons.png);
+    background-position: -306px -44px;
+    display: inline-flex;
+}
 .form__button-group .form__button-group_wide {
 	/*min-width: 547px;*/
 	font-size: 21px;
@@ -29,7 +41,6 @@
 	font-size: 21px;
 	text-align: center;
 }
-
 .form__button-group_inner {
 	display: flex;
 	width: 100%;
@@ -37,18 +48,11 @@
 	margin: 4px 0;
 	justify-content: flex-start;
 }
-
-
 .form__button-group.form__button-group_size_m {
 	width: 499px;
 }
 .form__button-group.form__button-group_size_l {
 	width: 609px;
-}
-
-.form__button-group.form__button-group_size_xl {
-	width: 629px;
-	justify-content: space-between;
 }
 .form__button-group.form__button-group_no-padding {
 	padding: 0;
@@ -86,4 +90,11 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+}
+.form__button-group_buttons {
+    justify-content: center;
+}
+.button-aut-enter {
+    box-sizing: border-box;
+    padding-right: 34px;
 }

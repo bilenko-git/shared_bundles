@@ -1,9 +1,7 @@
 .button_link {
-	display: inline-block;
+	padding: 8px 14px;
 	border: none;
 	outline: none;
-	width: 187px;
-	height: 32px;
 	border-radius: 5px;
 	background-color: #ff2e39;
 	color: #fff;

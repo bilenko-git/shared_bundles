@@ -14,3 +14,6 @@
     border-radius: 5px;
     box-sizing: border-box;
 }
+.tarif__head-desc.SMPN {
+    background-color: #ff9500;
+}
