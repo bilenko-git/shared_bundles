@@ -13,6 +13,10 @@
     shouldDeps: [
         { elem: 'inner', tech: 'css' },
         { block: 'button', mods: { view: 'add' }, tech: 'css' },
-        { block: 'userinfo'}
+        { block: 'button', mods : { theme : 'shared', togglable : 'check' } },
+        { block: 'checkbox', mods: { theme: 'shared', type: 'button' } },
+        { block: 'userinfo'},
+        { block: 'userinfo', elem: 'menu' },
+        { block: 'menu', mods: { theme: 'life-light' } }
     ]
 })

@@ -40,7 +40,7 @@
 	top: -5px;
 	left: 2px;
 	content: '';
-	background-image: url(checkbox-tip.svg);
+	/*background-image: url(checkbox-tip.svg);*/
 	background-size: 100%;
 	visibility: hidden;
 	opacity: 0;
@@ -156,6 +156,7 @@
 	display: inline-flex;
 	height: 30px;
 	background-color: #fff;
+	align-items: center;
 }
 .checkbox_theme_shared.checkbox_focused .button_checked,
 .checkbox_theme_shared.checkbox_focused .button_focused,
@@ -174,6 +175,11 @@
 
 .checkbox_theme_shared.checkbox_type_line:last-child {
 	margin-right: 0;
+}
+.checkbox_theme_shared .button__text .checkbox-line {
+	display: block;
+	text-align: left;
+	margin-right: 15px;
 }
 
 

@@ -21,6 +21,9 @@
 	width: 20px;
 	height: 20px;
 }
+.form__button-group_type_line .button_icon-only {
+	margin-right: 10px;
+}
 
 .button_icon-only.button_theme_islands.button_focused-hard:before {
 	/*background: transparent;*/
