@@ -366,6 +366,14 @@ module.exports = {
                                             elemMods: { right: true },
                                             content: [{
                                                 block: 'button',
+                                                mods: { link: true, 'hidden': true},
+                                                mix: [
+                                                    { block: 'action-main',  js: { 'action': 'exit', 'actionParams': { 'type' : ''}}},
+                                                    { block: 'button-hidden' }
+                                                ],
+                                                content: 'Выйти'            
+                                            },{
+                                                block: 'button',
                                                 mods: { link: true  },
                                                 mix: { block: 'action-main',  js: { 'action': 'goToManagement', 'actionParams': { 'type' : ''}}},
                                                 content: 'Перейти к управлению'            
