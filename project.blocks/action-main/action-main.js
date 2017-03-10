@@ -1,10 +1,9 @@
-modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input', 'next-tick', 'form', 'button'], function(provide, bemDom, Popup, bemHtml, $, InfoModal, input, nextTick, Form, Button) {
+modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input', 'next-tick', 'form'], function(provide, bemDom, Popup, bemHtml, $, InfoModal, input, nextTick, Form) {
 	provide(bemDom.declBlock(this.name, {
 		onSetMod: {
 			js: {
 				inited: function(e) {
-                    this.button = this.findMixedBlock( Button );
-                    this.switchButtonExit( this.button );
+                    this.switchButtonExit();
 
 					this._domEvents().on('click', function(e) {
 						e.preventDefault();
@@ -72,15 +71,23 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 		authEntrance: function( actionParams, _this ) {
             var ctx = this,
                 form = this.findParentBlock(_this.Form),
+                phoneCode = $('[name="codePhone"]', form.domElem).val(),
+                phoneNumber = $('[name="phone"]', form.domElem).val().trim(),
                 formAuth = {
-                    phone: '375'+$('[name="codePhone"]', form.domElem).val()+$('[name="phone"]', form.domElem).val(),
-                    password: $('[name="password"]', form.domElem).val()
+                    phone: '375'+phoneCode+phoneNumber,
+                    password: $('[name="password"]', form.domElem).val().trim()
                 };
 
             //6257224
             //34704844
 
-            if(formAuth['phone'] && (formAuth['phone'].length >= 7) && formAuth['password']) {
+            if( !phoneNumber && !formAuth['password'] ) {
+                _this.getMessage('ERR-02', '.form__text-error');
+                form.findChildElem('text-error').setMod('hidden', 'on');
+            } else if( phoneNumber.length < 7 ) {
+                _this.getMessage('ERR-03', '.form__text-error');
+                form.findChildElem('text-error').setMod('hidden', 'on');
+            } else {
                 $.ajax({
                     type: "POST",
                     url: "api/authentication",
@@ -93,18 +100,17 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
 
                             var title = ctx.params.actionParams.title;
                             sessionStorage.setItem('authentication', JSON.stringify(data));
-                            ctx.switchButtonExit(_this.button);
+                            ctx.switchButtonExit();
 
                             nextTick(function () {
                                 InfoModal.show(bemHtml.apply(ctx._modalForm('changeTarifConfirmForm', {'title': title})));
                             });
                         } else {
+                            _this.getMessage('ERR-01', '.form__text-error');
                             form.findChildElem('text-error').setMod('hidden', 'on');
                         }
                     }
                 });
-            } else {
-                form.findChildElem('text-error').setMod('hidden', 'on');
             }
 		},
         subcriber: function() {
@@ -256,7 +262,7 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                             }, {
                                 elem: 'text-error',
                                 elemMods: { hidden: true },
-                                content: 'Вы ввели неправильный номер или пароль. Проверьте и попробуйте ещё раз'
+                                content: ''
                             }, {
                                 elem: 'button-group',
                                 mix: { block : 'button-aut-enter' },
@@ -493,12 +499,38 @@ modules.define('action-main', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
             sessionStorage.setItem('authentication', '');
             location.reload();
         },
-        switchButtonExit: function( button ) {
+        switchButtonExit: function() {
             $('.button-hidden').css({'display': (this.getSessionAuth('access_token') ? 'block' : 'none')});
+        },
+        getMessage: function(tooltipIndex, domEl) {
+            var _this = this,
+                tooltips = sessionStorage.tooltips;
 
-            //if( button !== null && button.hasMod('hidden')) {
-                //button.setMod('hidden', this.getSessionAuth('access_token') ? 'on' : 'off');
-            //}
+            if(!tooltips) {
+                $.ajax({
+                    type: "POST",
+                    url: "api/tooltip",
+                    success: function (tooltips) {
+                        tooltips = JSON.parse(JSON.parse(tooltips).data);
+                        sessionStorage.setItem('tooltips', JSON.stringify(tooltips));
+                        _this._appendMessage(tooltips, tooltipIndex, domEl);
+                    }
+                });
+            } else {
+                _this._appendMessage(JSON.parse(tooltips), tooltipIndex, domEl);
+            }
+        },
+        _appendMessage: function (tooltips, tooltipIndex, domEl) {
+            var tooltipDes = '';
+            
+            for (var tooltip in tooltips) {
+                if(tooltipIndex == tooltips[tooltip]['key']) {
+                    tooltipDes = tooltips[tooltip]['description']
+                    continue;
+                }
+            }
+            
+            $(domEl).html(tooltipDes);
         }
 	}));
 });

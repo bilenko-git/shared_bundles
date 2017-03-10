@@ -38,7 +38,7 @@
 		background: white;
 	}
 	&__content-text {
-		padding: 25px;
+	    padding: 20px 30px 0px 30px;
 		background-color: white;
 	}
 	&_opened {
@@ -54,15 +54,20 @@
 			}
 			&__content {
 				max-height: 500px;
+			    overflow: auto;
 			}
 		}
 	}
 	&__content-text span {
 		display: block;
 	}
-	&__content-text span:last-child {
+	&__content-text span:nth-child(1) {
+	    font-size: 18px;
+	    line-height: 20px;
+	}
+	&__content-text span:nth-child(2n) {
 	    font-size: 16px;
-    	line-height: 20px;
-    	margin-top: 10px;
+	    line-height: 20px;
+	    margin: 10px 0px 30px 0px;
 	}
 }
