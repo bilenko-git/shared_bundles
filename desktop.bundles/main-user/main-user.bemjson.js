@@ -598,6 +598,18 @@ module.exports = {
 									js: { tooltip: 'main' }
 								}]
 							}]
+						}, {
+							elem: 'button-group',
+							elemMods: { type: 'list' },
+							content: [{
+								elem: 'text',
+								elemMods: { size: 's'},
+								content: 'Как только пользователь примет приглашение,',
+							}, {
+								elem: 'text',
+								elemMods: { size: 's'},
+								content: 'вы сможете распределить ему мин и МБ'
+							}]
 						}]
 					}]
 				}]

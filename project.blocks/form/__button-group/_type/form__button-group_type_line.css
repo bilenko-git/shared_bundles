@@ -1,6 +1,13 @@
 .form__button-group_type_line {
 	padding: 3px 0;
+	flex: 0 1 auto;
+	justify-content: flex-start;
+	align-items: center;
 }
+.form__button-group_type_line .select {
+	margin-right: 2px;
+}
+
 .form__button-group_type_line .form__button-group_type_line {
 	padding: 0;
 }
