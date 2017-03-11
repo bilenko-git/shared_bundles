@@ -1,0 +1,4 @@
+.input_view_error {
+	border: solid 1px #ff2e39;
+	box-shadow: inset 0 0 0 1px rgba(255, 46, 57, 0.33);
+}

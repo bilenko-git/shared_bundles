@@ -4,3 +4,9 @@
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 }
+
+.form_view_line .form__text-error {
+	font-size: 14px;
+	text-align: center;
+	flex-grow: 1;
+}

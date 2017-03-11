@@ -2,6 +2,8 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	margin-left: 10px;
+	flex: 0 0 auto;
 	font-size: 12px;
 	line-height: 13px;
 	font-family: "life_medium";
