@@ -223,11 +223,14 @@ module.exports = {
 							block: 'c-info',
 							elem: 'action-group',
 							content: [{
-								block: 'link',
-								js: true,
-								mix: [{ block: 'action-main-user', js: { action: 'redirect', actionParams: {}} }, { block: 'c-info', elem: 'action-link' }],
-								url: 'https://issa.life.com.by',
-								content: ['Все мои услуги', {
+								elem: 'line',
+								content: [{
+									block: 'link',
+									js: true,
+									mix: [{ block: 'action-main-user', js: { action: 'redirect', actionParams: {}} }, { block: 'c-info', elem: 'action-link' }],
+									url: 'https://issa.life.com.by',
+									content: ['Все мои услуги']
+								}, {
 									block: 'dropdown',
 									mods: { switcher: 'button', theme: 'islands' },
 									switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
@@ -237,7 +240,8 @@ module.exports = {
 								}]
 							}, {
 								block: 'link',
-								mix: { block: 'c-info', elem: 'action-link' },
+								mods: { pseudo: true },
+								mix: [{ block: 'action-main-user', js: { action: 'changeTarifModal', actionParams: {}} }, { block: 'c-info', elem: 'action-link' }],
 								url: '#',
 								content: ['Сменить тариф'/*, {
 									block: 'dropdown',

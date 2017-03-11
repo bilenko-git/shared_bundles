@@ -21,12 +21,15 @@
     justify-content: center;
 }
 .modal_theme_life-light .modal__cell {
-    max-width: 878px;
     margin:auto;
     align-self: center;
     position: relative;
     display: flex;
 }
+.modal_theme_life-light.modal_size_m .modal__cell {
+    max-width: 526px;
+}
+
 .button_close-button-style {
     position: absolute;
     float: right;
@@ -50,6 +53,11 @@
     top: 0;
     left: 0;
 }
+.modal_theme_life-light.modal_size_m .modal__close-button svg {
+    width: 17px;
+    height: 17px;
+}
+
 .modal_theme_life-light .modal__content {
     min-width: 878px;
     margin: 0;
@@ -58,6 +66,9 @@
     border-radius: 5px;
     /*border: 1px solid #bfbfbf;*/
     background-color: #fff;
+}
+.modal_theme_life-light.modal_size_m .modal__content {
+    min-width: 526px;
 }
 
 .modal_theme_life-light.modal_js_inited {

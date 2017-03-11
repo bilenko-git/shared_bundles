@@ -1,0 +1,8 @@
+.form__text_size_m {
+	font-family: "life_medium";
+	font-size: 13px;
+	align-self: flex-start;
+}
+.form__button-group_size_s .form__text_size_m {
+	min-width:139px;
+}
