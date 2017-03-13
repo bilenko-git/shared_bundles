@@ -1,5 +1,6 @@
 module.exports = {
 	block: 'page',
+	mix: [{ block: 'core', js: true }],
 	title: '[[*pagetitle]]',
 	favicon: '/favicon.ico',
 	head: [
@@ -197,7 +198,7 @@ module.exports = {
 							}, {
 								block: 'button',
 								mods: { view: 'main' },
-								mix: { block: 'c-balance', elem: 'button' },
+								mix: [{ block: 'action-main-user', js: { action: 'fillBalance' } }, { block: 'c-balance', elem: 'button' }],
 								content: 'Пополнить'
 							}]
 						}, {

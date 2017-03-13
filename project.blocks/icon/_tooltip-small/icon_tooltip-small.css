@@ -13,6 +13,7 @@
 .icon.icon_tooltip-small_warning {
 	width: 20px;
 	height: 20px;
+	min-width: 20px;
 	display: inline-block;
 	background-image: url(icon_toltip_small_warning.png);
 }

@@ -1,4 +1,4 @@
-modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dropdown', 'modal', 'popup', 'BEMHTML', 'jquery', 'next-tick' ], function(provide, bemDom, Button, Link, Input, Dropdown, Modal, Popup, bemHtml, $, nextTick) {
+modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dropdown', 'modal', 'popup', 'BEMHTML', 'jquery', 'next-tick', 'core' ], function(provide, bemDom, Button, Link, Input, Dropdown, Modal, Popup, bemHtml, $, nextTick, Core) {
 
 	provide(bemDom.declBlock(this.name, {
 		onSetMod: {
@@ -6,7 +6,12 @@ modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dro
 				inited: function() {
 					var action = this.params.action;
 					var actionParams = this.params.actionParams;
+					if (this.__self.prototype._Core === undefined) {
+						this.__self.prototype._Core = this.findParentBlock(Core);
+					}
+					// console.log(this._Core);
 					this._domEvents().on( 'click pointerpress', function(e) {
+						// debugger;
 						switch (action) {
 							case 'modalClose':	this._modalClose(e, Modal, actionParams);
 											break;
@@ -95,7 +100,8 @@ modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dro
 									content: 'тарифный план life:)'
 								}, {
 								block: 'button',
-								mix: { block: 'action-main-user', js: { action: 'redirect' , actionParams: { redirectUrl: 'https://issa.life.com.by/ru/'}} },
+								mix: { block: 'action-main-user', js: { action: 'changeTarifModal', actionParams: {}}},
+								// mix: { block: 'action-main-user', js: { action: 'redirect' , actionParams: { redirectUrl: 'https://issa.life.com.by/ru/'}} },
 								mods: { view: 'main' },
 								text: 'Перейти'
 							}]
@@ -111,13 +117,28 @@ modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dro
 							}
 						}, {
 							elem : 'button-group',
-							elemMods: { inner: true, wide: 'center' },
-							content: {
-								block: 'button',
-								mix: [{ block: 'action-main-user', js: { action: 'modalCancel', actionParams: {} } }, { block: 'form', elem: 'cancel', elemMods: { size: 'm' } }],
-								mods: { type: 'link' },
-								text: 'Отмена'
-							}
+							elemMods: { inner: true, wide: 'center', size: 's' },
+							content: [{
+								elem: 'button-group',
+								elemMods: { type: 'line' },
+								content: [{
+									block: 'icon',
+									mods: { 'tooltip-small': 'warning' },
+								}, {
+									elem: 'button-group',
+									elemMods: { type: 'list-lm' },
+									content: [{
+										elem: 'text',
+										elemMods: { size: 'm' },
+										content: 'После того, как вы смените тарифный план,'
+									}, {
+										elem: 'text',
+										elemMods: { size: 'm' },
+										content: 'все минуты и МБ у всех пользователей обнулятся'
+									}]
+
+								}]
+							}]
 						}]
 					}
 				},
@@ -128,25 +149,50 @@ modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dro
 			return bemHtml.apply(templates[template])
 		},
 		_modalClose: function(Modal, params) {
-
+			this._Core.findChildBlock(this._Core._returnBlock('button'),true);
 			console.log('_modalClose triggered');
 		},
 		_modalShow: function(Modal, content, params) {
+
+			var buttons = this._Core._returnBlock('button',true);
+			console.log(buttons);
+			debugger;
 				// if( !this._modalWindow) {
 			var modal = bemHtml.apply({
 				block: 'modal',
 				mods: { visible: false, theme: 'life-light', autoclosable: true, size: 'm' },
 				content: content
 			});
+			var ctx = this;
 				// debugger;
-			if (!this._modalWindow) {
+			if (!this.__self.prototype._modalWindow) {
 				// debugger;
-				this._modalWindow = bemDom.append(this.domElem, modal);
-				this.findChildBlock(Modal).toggleMod('visible');
+				this.__self.prototype._modalWindow = bemDom.append(this._Core.domElem, modal);
+				this._Core._returnBlock('modal').toggleMod('visible');
+				nextTick( function() {
+					ctx._Core._events(ctx._Core._returnBlock('modal')).on({
+						modName: 'visible',
+						modVal: ''
+					}, function() {
+						// debugger;
+							bemDom.destruct(ctx.__self.prototype._modalWindow)
+							ctx.__self.prototype._modalWindow = null;
+					});
+				});
 			} else {
-				this._modalWindow = bemDom.replace(this._modalWindow, modal);
 				// debugger;
-				this._modalWindow.bem(Modal).setMod('visible');
+				// this._modalWindow = bemDom.replace(this._modalWindow, modal);
+				nextTick(function() {
+
+
+					ctx._Core._returnBlock('modal').delMod('autoclosable').setContent(bemHtml.apply({ block: 'button', mods: { view: 'plain', theme: 'islands', size: 'xl' }, icon: {
+						block: 'spin',
+						mods: { visible: true, theme: 'islands', size: 's' },
+					}, text: 'Дождитесь окончания запроса...',}));
+					bemDom.destruct(ctx._Core._returnBlock('modal').findChildElem('close-button').domElem)
+				});
+				// debugger;
+				// this._modalWindow.bem(Modal).setMod('visible');
 			}
 				// Modal(mod)
 				// console.log(this.findChildBlock(Modal));
@@ -164,6 +210,17 @@ modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dro
 
 			});
 			this._modalShow(Modal, content, params);
+			var ctx = this;
+			// console.log(ctx._Core.);
+			// nextTick(function(){
+				// ctx._Core._events(ctx._Core._returnBlock('modal')).on({
+				// 	modName: 'visible',
+				// 	modVal: ''
+				// }, function(e) {
+				// 	bemDom.destruct(._returnBlock('modal').domElem);
+				// });
+			// });
+
 		},
 		_buyMore: function(params) {
 			console.log('_buyMore triggered');
@@ -178,6 +235,7 @@ modules.define('action-main-user', ['i-bem-dom', 'button', 'link', 'input', 'dro
 			console.log('_changeTarif triggered');
 		},
 		_fillBalance: function(params) {
+			// debugger;
 			console.log('_fillBalance triggered');
 		},
 		_changeUserName: function(params) {

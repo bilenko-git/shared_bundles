@@ -1,4 +1,5 @@
-.form__text_size_m {
+.form__text_size_m,
+.form__button-group.form__button-group_wide_center .form__text_size_m {
 	font-family: "life_medium";
 	font-size: 13px;
 	align-self: flex-start;
