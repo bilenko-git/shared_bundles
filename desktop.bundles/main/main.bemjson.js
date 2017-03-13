@@ -149,6 +149,15 @@ module.exports = {
                                                                 mix: { block: 'dropdown-with-content', js: true },
                                                                 js: { tooltip: 'main' },
                                                                 content: 'Личный кабинет',
+                                                            }, {
+                                                                block: 'button',
+                                                                mods: { type: 'link', 'std': true },
+                                                                mix: [
+                                                                    { block: 'action-main',  js: { 'action': 'exit', 'actionParams': { 'type' : ''}}},
+                                                                    { block: 'button-exit' },
+                                                                    { block: 'hide' }
+                                                                ], 
+                                                                content: 'Выйти'
                                                             }]
                                                         }
                                                     }, {
@@ -361,21 +370,16 @@ module.exports = {
                                     block: 'content',
                                     content: [{
                                         block: 'button-line',
+                                        mix: { block: 'hide'},
                                         content: [{
                                             elem: 'group',
                                             elemMods: { right: true },
                                             content: [{
                                                 block: 'button',
-                                                mods: { link: true, 'hidden': true},
-                                                mix: [
-                                                    { block: 'action-main',  js: { 'action': 'exit', 'actionParams': { 'type' : ''}}},
-                                                    { block: 'button-hidden' }
-                                                ],
-                                                content: 'Выйти'            
-                                            },{
-                                                block: 'button',
                                                 mods: { link: true  },
-                                                mix: { block: 'action-main',  js: { 'action': 'goToManagement', 'actionParams': { 'type' : ''}}},
+                                                mix: [
+                                                    { block: 'action-main',   js: { 'action': 'goToManagement', 'actionParams': { 'type' : ''}}}
+                                                ],
                                                 content: 'Перейти к управлению'            
                                             }, {
                                                 block : 'dropdown',
@@ -384,7 +388,6 @@ module.exports = {
                                                 popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
                                                 mix: { block: 'tooltip', js: true },
                                                 js: { tooltip: 'TXT-01' }
-                         
                                             }]
                                         
                                         }]
@@ -1136,5 +1139,11 @@ module.exports = {
                                     }]
                                 }]
                             }
+                        }, {
+                            block: 'spiner',
+                            mods: { 'hide' : true },
+                            content: [{
+                                elem: 'icon'
+                            }] 
                         }]
                 };
