@@ -1,0 +1,1 @@
+block('action-main-user').js()(true);

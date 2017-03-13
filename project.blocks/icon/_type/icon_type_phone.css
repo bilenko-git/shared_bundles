@@ -1,0 +1,9 @@
+.icon.icon_type_phone {
+	width: 10px;
+	height: 10px;
+	vertical-align: middle;
+	bottom: 2px;
+	position: relative;
+	background-size: contain;
+	background-image: url(icon_type_phone.png);
+}

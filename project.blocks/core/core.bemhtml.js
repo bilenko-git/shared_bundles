@@ -1,0 +1,3 @@
+block('core')(
+	js()(true)
+);

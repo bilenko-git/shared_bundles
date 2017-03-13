@@ -1,0 +1,37 @@
+.form__button-group {
+	position: relative;
+}
+
+.form__button-group_w-sep_both:before,
+.form__button-group_w-sep_both:after,
+.form__button-group_w-sep_right:after,
+.form__button-group_w-sep_left:after {
+	content: '';
+	position: absolute;
+	height: 100%;
+
+}
+
+.form__button-group_w-sep_right.form__button-group_type_list:first-child {
+	padding: 0 29px 0 0;
+}
+.form__button-group_w-sep.form__button-group_type_list:last-child {
+	padding: 0 0 0 29px;
+}
+.form__button-group_w-sep_both:before {
+	box-shadow: 1px 0 0 0 #939393;
+}
+
+.form__button-group_w-sep_both:after {
+	box-shadow: 1px 0 0 0 #939393;
+}
+
+.form__button-group_w-sep_right:after {
+	right: 0;
+	width: 1px;
+	box-shadow: 1px 0 0 0 #939393;
+}
+
+.form__button-group_w-sep_left:before {
+	box-shadow: 1px 0 0 0 #939393;
+}

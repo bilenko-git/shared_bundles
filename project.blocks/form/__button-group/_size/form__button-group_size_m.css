@@ -1,0 +1,7 @@
+.form__button-group.form__button-group_size_m {
+	width: 499px;
+}
+
+.form__button-group_size_m.form__button-group_type_list {
+	flex: 1 1 172px;
+}

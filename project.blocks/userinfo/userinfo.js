@@ -1,19 +1,29 @@
-modules.define('userinfo', ['i-bem-dom', 'BEMHTML', 'actions'], function(provide, bemDom, bemHtml, Actions) {
+modules.define('userinfo', ['i-bem-dom', 'BEMHTML', 'actions'], function(provide, bemDom, bemHtml, Actions, Status) {
 
 	provide(bemDom.declBlock(this.name, {
 		onSetMod: {
 			js: {
 				inited: function() {
 					console.log('userinfo inited');
-					this._domEvents('add-user').on('pointerpress', function(e) {
-						this._onClick(e, bemDom, bemHtml, Actions);
-					});
+					// debugger;
+					try {
+						console.log(this.findChildElem('status'));
+						console.log(this.findMixedElem('status'));
+						this.findChildElem('status')._domEvents().on('click pointerpress', function(e) {
+							// debugger;
+
+							this._onClick(e, bemDom, bemHtml, Actions);
+						});
+					} catch(e) {
+						console.log('no status');
+					}
 
 				}
 			}
 		},
 		_onClick: function(e, bemDom, bemHtml, Actions) {
 			console.log('user-add clicked');
+			// debugger;
 			// var actions = bemHtml.apply({
 			// 		block: 'actions',
 			// 		mods: { view: 'simple' },

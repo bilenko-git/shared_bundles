@@ -51,9 +51,7 @@
 	margin: 4px 0;
 	justify-content: flex-start;
 }
-.form__button-group.form__button-group_size_m {
-	width: 499px;
-}
+
 .form__button-group.form__button-group_size_l {
 	width: 609px;
 }
@@ -71,7 +69,7 @@
 }
 
 .form__button-group_inner .input:not(:last-child) {
-	margin: 0 12px 0 4px;
+	margin: 0 12px 0 0px;
 }
 
 .form__button-group_inner .tooltip {

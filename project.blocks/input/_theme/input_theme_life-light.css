@@ -36,7 +36,7 @@
 }
 
 .input_theme_life-light.input_size_s .input__box {
-	max-width: 170px;
+	max-width: 119px;
 }
 
 .input_theme_life-light .input__control {
@@ -171,6 +171,9 @@
 	font-weight: bold;
 	font-family: "life_text";
 }
+.input_theme_life-light.input_size_s .input__box {
+	height: 19px;
+}
 
 .input_theme_life-light.input_size_s.input_has-clear .input__control {
 	padding-right: 25px;
@@ -230,10 +233,14 @@
 	/*width: 100%;*/
 	min-width: 280px;
 }
-
+.input_theme_life-light.input_width_available.input_size_s .input__box {
+	/*width: 100%;*/
+	min-width: 166px;
+}
 .input_theme_life-light.input_type_password .input__control {
 	text-overflow: clip;
 }
+
 
 .control-group .input_theme_life-light:before {
 	right: 0;

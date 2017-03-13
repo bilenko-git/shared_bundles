@@ -1,5 +1,6 @@
 module.exports = {
 	block: 'page',
+	mix: [{ block: 'core', js: true }],
 	title: '[[*pagetitle]]',
 	favicon: '/favicon.ico',
 	head: [
@@ -197,7 +198,7 @@ module.exports = {
 							}, {
 								block: 'button',
 								mods: { view: 'main' },
-								mix: { block: 'c-balance', elem: 'button' },
+								mix: [{ block: 'action-main-user', js: { action: 'fillBalance' } }, { block: 'c-balance', elem: 'button' }],
 								content: 'Пополнить'
 							}]
 						}, {
@@ -211,7 +212,7 @@ module.exports = {
 								switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
 								popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
 								mix: { block: 'tooltip', js: true },
-								js: { tooltip: 'main' }
+								js: { tooltip: 'TXT-05' }
 							}]
 						}]
 					}
@@ -223,33 +224,37 @@ module.exports = {
 							block: 'c-info',
 							elem: 'action-group',
 							content: [{
-								block: 'link',
-								mix: { block: 'c-info', elem: 'action-link' },
-								url: '#',
-								content: ['Все мои услуги', {
+								elem: 'line',
+								content: [{
+									block: 'link',
+									js: true,
+									mix: [{ block: 'action-main-user', js: { action: 'redirect', actionParams: {}} }, { block: 'c-info', elem: 'action-link' }],
+									url: 'https://issa.life.com.by',
+									content: ['Все мои услуги']
+								}, {
 									block: 'dropdown',
 									mods: { switcher: 'button', theme: 'islands' },
 									switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
 									popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
 									mix: { block: 'tooltip', js: true },
-									js: { tooltip: 'main' }
+									js: { tooltip: 'TXT-06' }
 								}]
 							}, {
 								block: 'link',
-								mix: { block: 'c-info', elem: 'action-link' },
-								url: '#',
-								content: ['Сменить тариф', {
-									block: 'dropdown',
-									mods: { switcher: 'button', theme: 'islands' },
-									switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
-									popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
-									mix: { block: 'tooltip', js: true },
-									js: { tooltip: 'main' }
-								}]
-							}, {
-								block: 'link',
-								mix: { block: 'c-info', elem: 'action-text' },
 								mods: { pseudo: true },
+								mix: [{ block: 'action-main-user', js: { action: 'changeTarifModal', actionParams: {}} }, { block: 'c-info', elem: 'action-link' }],
+								url: '#',
+								content: ['Сменить тариф'/*, {
+									block: 'dropdown',
+									mods: { switcher: 'button', theme: 'islands' },
+									switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
+									popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
+									mix: { block: 'tooltip', js: true },
+									js: { tooltip: 'main' }
+								}*/]
+							}, {
+								block: 'c-info',
+								elem: 'action-text',
 								content: '1 уведомление'
 							}, {
 								block: 'button',
@@ -361,16 +366,12 @@ module.exports = {
 					content: [{
 						elem: 'info',
 						content: [{
+							block: 'icon',
+							mods: { 'tooltip-small': 'warning' }
+						}, {
 							elem: 'info',
 							elemMods: { text: true },
-							content: [{
-								block: 'dropdown',
-								mods: { switcher: 'button', theme: 'islands' },
-								switcher: { block: 'button', mods: { 'icon-only': true }, icon: { block: 'icon', mods: { 'tooltip-small': 'warning' } } },
-								popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
-								mix: { block: 'tooltip', js: true },
-								js: { tooltip: 'main' }
-							}, 'Все минуты и мегабайты начислены вам. Вы можете распределить их между пользователями тарифа']
+							content: ['Все минуты и мегабайты начислены вам. Вы можете распределить их между пользователями тарифа']
 						}]
 					}, {
 						block: 'c-chart',
@@ -485,6 +486,7 @@ module.exports = {
 					elem: 'group',
 					content: [{
 						block: 'userinfo',
+						mix: { elem: 'status', js: { id: 'userinfo-1' }},
 						content: [{
 							block: 'dropdown',
 							mods: { switcher: 'button', theme: 'life-light' },
@@ -591,24 +593,31 @@ module.exports = {
 									text: 'Отправить приглашение'
 								}, {
 									block: 'dropdown',
-									mods: { switcher: 'button', theme: 'islands' },
+									mods: { switcher: 'button', theme: 'islands', 'tooltipM': true },
 									switcher: { block: 'button', mods: { 'icon-only': true }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
-									popup: ['Пользователь получит SMS вида: &laquo;Абонент ИМЯ хочет добавить вас в свою группу. В течение 48 часов вы можете подтвердить вступление. Приняв приглашение, вы перейдете на тарифный план ', { block: 'link', url: '#', content: '&laquo;Семья&raquo;'}, 'Условия текущего тарифного плана будут аннулированы. Подключенные дополнительные услуги будут действовать согласно правилам на тарияном плане ', { block: 'link', url: '#', content: '&laquo;Семья&raquo;'}, 'Перейти к приглашению &mdash; USSD *555*1#',{ block: 'icon', mods: { type: 'phone' }}],
+									popup: ['Пользователь получит SMS вида: &laquo;Абонент ИМЯ хочет добавить вас в свою группу. В течение 48 часов вы можете подтвердить вступление. Приняв приглашение, вы перейдете на тарифный план ', { block: 'link', url: '#', content: '&laquo;Семья&raquo;.'}, ' Условия', { tag: 'br' }, 'текущего тарифного плана будут аннулированы.', { tag: 'br' }, 'Подключенные дополнительные услуги будут действовать согласно правилам на тарифном плане ', { block: 'link', url: '#', content: '&laquo;Семья&raquo;'}, { tag: 'br' }, 'Перейти к приглашению &mdash; USSD *555*1#', { block: 'icon', mods: { type: 'phone' }}, '&raquo;'],
 									mix: { block: 'tooltip', js: true },
-									js: { tooltip: 'main' }
+									js: { tooltip: 'TXT-07' }
 								}]
 							}]
 						}, {
 							elem: 'button-group',
 							elemMods: { type: 'list' },
 							content: [{
-								elem: 'text',
-								elemMods: { size: 's'},
-								content: 'Как только пользователь примет приглашение,',
-							}, {
-								elem: 'text',
-								elemMods: { size: 's'},
-								content: 'вы сможете распределить ему мин и МБ'
+								block: 'userinfo',
+								js: { id: 'userinfo-1'},
+								elem: 'status',
+								content: [{
+									block: 'form',
+									elem: 'text',
+									elemMods: { size: 's'},
+									content: 'Как только пользователь примет приглашение,',
+								}, {
+									block: 'form',
+									elem: 'text',
+									elemMods: { size: 's'},
+									content: 'вы сможете распределить ему мин и МБ'
+								}]
 							}]
 						}]
 					}]
@@ -644,7 +653,7 @@ module.exports = {
 							switcher: { block: 'button', mods: { 'icon-only': true }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
 							popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
 							mix: { block: 'tooltip', js: true },
-							js: { tooltip: 'main' }
+							js: { tooltip: 'TXT-08' }
 						}]
 					}, {
 						block: 'control-group',
