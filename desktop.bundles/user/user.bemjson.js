@@ -42,7 +42,7 @@ module.exports = {
                     content: [{
                         block: 'button',
                         mods: { theme: 'red', size: 's'},
-                        mix: { block: 'action-user',  js: { 'action': 'rechargeAccount'} },
+                        mix: { block: 'action-user',  js: { 'action': 'rechargeAccount' } },
                         text: 'Пополнить',
                     }, {
                         block: 'button',
@@ -87,21 +87,19 @@ module.exports = {
         }, {
             block: 'user',
             content: [{
-                elem: 'settings-button',
-                content: ['<svg width="29" height="29" viewBox="0 0 29 29" class="btn"><g transform="scale(0.03125 0.03125)"><path d="M64 192h896v192h-896zM64 448h896v192h-896zM64 704h896v192h-896z"></path></g></svg>',{
-                    tag: 'ul',
-                    elem: 'menu',
-                    content:  [{
-                        tag: 'li',
-                        content: 'Изменить имя'
-                    }, {
-                        tag: 'li',
-                        content: 'Добавить фото'
-                    }, {
-                        tag: 'li',
-                        content: 'Выбрать цвет профиля'
-                    }]
-                }]
+                block: 'dropdown',
+                mods: { switcher: 'button', theme: 'life-light' },
+                switcher: { block: 'button', mods: { 'icon-only': 'menu', theme: 'islands' }, icon: { block: 'icon', mods: { 'type': 'menu-toggle' } } },
+                popup: {
+                    block: 'menu',
+                    mods: { theme: 'life-light' },
+                    mix: { block: 'menu-on-page-user' },
+                    content: [
+                        { elem: 'item', val: 'change_name', content: 'Изменить имя' },
+                        { elem: 'item', val: 'add_photo', content: 'Добавить фото' },
+                        { elem: 'item', val: 'select_color', content: 'Выбрать цвет профиля' },
+                    ]
+                },
             }, {
                 block: 'icon',
                 mix: { block: 'user', elem: 'photo' },
@@ -123,11 +121,13 @@ module.exports = {
                 block: 'button',
                 cls: 'ask-min',
                 mods: { theme: 'red', size: 's' },
-                text: 'Попросить пополнить счет'
+                mix: { block: 'action-user',  js: { 'action': 'ask_minutes' } },
+                text: 'Попросить мин'
             }, {
                 block: 'button',
                 cls: 'ask-mb',
                 mods: { theme: 'red', size: 's',  },
+                mix: { block: 'action-user',  js: { 'action': 'ask_mb' } },
                 text: 'Попросить МБ'
             }]
         }, {
