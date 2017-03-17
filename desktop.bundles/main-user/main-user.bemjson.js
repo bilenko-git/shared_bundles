@@ -208,7 +208,7 @@ module.exports = {
 								content: 'Ваш баланс должен составлять не менее 35,90 руб, чтобы трафик по тарифу был начислен на следующий месяц.'
 							}, {
 								block: 'dropdown',
-								mods: { switcher: 'button', theme: 'islands' },
+								mods: { switcher: 'button', theme: 'islands', 'tooltipM': true },
 								switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
 								popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
 								mix: { block: 'tooltip', js: true },
@@ -233,7 +233,7 @@ module.exports = {
 									content: ['Все мои услуги']
 								}, {
 									block: 'dropdown',
-									mods: { switcher: 'button', theme: 'islands' },
+									mods: { switcher: 'button', theme: 'islands','tooltipM': true },
 									switcher: { block: 'button', mods: { 'icon-only': true, view: 'plain' }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
 									popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
 									mix: { block: 'tooltip', js: true },
@@ -255,9 +255,11 @@ module.exports = {
 							}, {
 								block: 'c-info',
 								elem: 'action-text',
+								elemMods: { hidden: true },
 								content: '1 уведомление'
 							}, {
 								block: 'button',
+								mix: { block: 'action-main-user', js: { action: 'userLogout', actionParams: { redirectUrl: 'http://multidev.life.com.by' } } },
 								mods: {
 									view: 'logout'
 								},
@@ -272,7 +274,7 @@ module.exports = {
 					elem: 'group',
 					content: {
 						block: 'button',
-						mix: { block: 'actions', elem: 'button' },
+						mix: [{ block: 'action-main-user', js: { action: 'buyMore', actionParams: { } } }, { block: 'actions', elem: 'button' }],
 						mods: { view: 'main' },
 						type: 'submit',
 						text: 'Докупить мин/Мб'
@@ -281,14 +283,10 @@ module.exports = {
 					elem: 'group',
 					content: [{
 						block: 'c-chart',
-						content: {
-							elem: 'item',
-							elemMods: { view: 'simple' },
-							content: {
-								tag: 'canvas',
-								attrs: { id: 'chartMin100', width: '280', height: '50' }
-							}
-						}
+						// content: {
+						// 	// elem: 'item',
+						// 	// elemMods: { view: 'simple' },
+						// }
 					}, {
 						block: 'c-chart',
 						content: {
@@ -304,6 +302,7 @@ module.exports = {
 			}, {
 				block: 'actions',
 				mods: { view: 'simple' },
+				innerMods: { 'w-sep': 'bottom' },
 				content: [{
 					elem: 'group',
 					content: [{
@@ -317,34 +316,9 @@ module.exports = {
 								mix: { block: 'userinfo', elem: 'menu' },
 								mods: { theme: 'life-light' },
 								content: [
-									{ elem: 'item', val: '1', content: 'Изменить имя' },
-									{ elem: 'item', val: '1', content: 'Добавить фото' },
-									{ elem: 'item', val: '1', content: 'Выбрать цвет профиля' },
-									{ elem: 'item', val: '1', content: [{
-										block: 'checkbox',
-										mods: {
-											theme: 'shared',
-											type: 'button',
-											view: 'plain'
-										},
-										icon: {
-											block: 'icon',
-											mods: { type: 'checkbox' }
-										},
-										name: 'get_notify',
-										val: '1',
-										text: [{
-												tag: 'span',
-												cls: 'checkbox-line',
-												content: 'Получать уведомление'
-											}, {
-												tag: 'span',
-												cls: 'checkbox-line',
-												content: 'об окончании мин/Мб'
-											}]
-										}]
-									},
-								]
+									{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'changeUserName', actionParams: { userId: 'main' } } }, val: '1', content: 'Изменить имя' },
+									{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'addUserPhoto', actionParams: { userId: 'main' } } }, val: '1', content: 'Добавить фото' },
+									{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'changeProfileColor', actionParams: { userId: 'main' } } },val: '1', content: 'Выбрать цвет профиля' }]
 							},
 						}, {
 							block: 'icon',
@@ -354,6 +328,7 @@ module.exports = {
 							elem: 'group',
 							content: [{
 								elem: 'name',
+								elemMods: { color: 'main' },
 								content: 'Моя SIM',
 							}, {
 								elem: 'phone',
@@ -398,6 +373,7 @@ module.exports = {
 			}, {
 				block: 'actions',
 				mods: { view: 'simple' },
+				innerMods: { 'w-sep': 'bottom' },
 				content: [{
 					elem: 'group',
 					content: [{
@@ -409,24 +385,26 @@ module.exports = {
 							popup: {
 								block: 'menu',
 								mix: { block: 'userinfo', elem: 'menu' },
-								mods: { theme: 'life-light' },
+								mods: { theme: 'life-light', focused: false, mode: 'radio-check' },
 								content: [
-									{ elem: 'item', val: '1', content: 'Изменить имя' },
-									{ elem: 'item', val: '1', content: 'Добавить фото' },
-									{ elem: 'item', val: '1', content: 'Выбрать цвет профиля' },
-									{ elem: 'item', val: '1', content: 'Удалить пользователя' },
-									{ elem: 'item', val: '1', content: [{
+									{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'changeUserName', actionParams: { userId: 'user-1' } } }, val: '1', content: 'Изменить имя' },
+									{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'addUserPhoto', actionParams: { userId: 'user-1' } } }, val: '1', content: 'Добавить фото' },
+									{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'changeProfileColor', actionParams: { userId: 'user-1' } } }, val: '1', content: 'Выбрать цвет профиля' },
+									{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'deleteUser', actionParams: { userId: 'user-1' } } }, val: '1', content: 'Удалить пользователя' },
+									{ elem: 'item', val: '1', mix: { block: 'action-main-user', js: { action: 'setMenuCheckBoxVal', actionParams: { userId: 'user-2' } } }, val: '1', content: [{
 										block: 'checkbox',
 										mods: {
 											theme: 'shared',
-											type: 'button',
-											view: 'plain'
+											// theme: 'islands',
+											size: 'l'
+											// type: 'button',
+											// view: 'plain'
 										},
 										icon: {
 											block: 'icon',
 											mods: { type: 'checkbox' }
 										},
-										name: 'get_notify',
+										name: 'need_send',
 										val: '1',
 										text: [{
 												tag: 'span',
@@ -444,14 +422,16 @@ module.exports = {
 						}, {
 							block: 'icon',
 							mix: { block: 'userinfo', elem: 'avatar' },
-							url: '/assets/img/user-avatar.png'
+							url: '/assets/img/user-avatar_1.png'
 						}, {
 							elem: 'group',
 							content: [{
-								block: 'button',
-								mix: { block: 'userinfo', elem: 'add-user' },
-								mods: { view: 'main' },
-								text: 'Пригласить пользователя'
+								elem: 'name',
+								elemMods: { color: '1'},
+								content: 'Сын',
+							}, {
+								elem: 'phone',
+								content: '+37525 909 00 01'
 							}]
 						}]
 					}]
@@ -482,6 +462,7 @@ module.exports = {
 			}, {
 				block: 'actions',
 				mods: { view: 'simple' },
+				innerMods: { 'w-sep': 'bottom' },
 				content: [{
 					elem: 'group',
 					content: [{
@@ -495,36 +476,34 @@ module.exports = {
 								block: 'menu',
 								mix: { block: 'userinfo', elem: 'menu' },
 								mods: { theme: 'life-light' },
-								content: [
-									{ elem: 'item', val: '1', content: 'Изменить имя' },
-									{ elem: 'item', val: '1', content: 'Добавить фото' },
-									{ elem: 'item', val: '1', content: 'Выбрать цвет профиля' },
-									{ elem: 'item', val: '1', content: 'Удалить пользователя' },
-									{ elem: 'item', val: '1', content: [{
-										block: 'checkbox',
-										mods: {
-											theme: 'shared',
-											type: 'button',
-											view: 'plain'
-										},
-										icon: {
-											block: 'icon',
-											mods: { type: 'checkbox' }
-										},
-										name: 'get_notify',
-										val: '1',
-										text: [{
-												tag: 'span',
-												cls: 'checkbox-line',
-												content: 'Получать уведомление'
-											}, {
-												tag: 'span',
-												cls: 'checkbox-line',
-												content: 'об окончании мин/Мб'
-											}]
-										}]
+								content: [{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'addUserPhoto', actionParams: { userId: 'user-2' } } }, val: '1', content: 'Добавить фото' },
+								{ elem: 'item', mix: { block: 'action-main-user', js: { action: 'changeProfileColor', actionParams: { userId: 'user-2' } } }, val: '1', content: 'Выбрать цвет профиля' },
+								{ elem: 'item', val: '1', mix: { block: 'action-main-user', js: { action: 'setMenuCheckBoxVal', actionParams: { userId: 'user-2' } } }, val: '1',  content: [{
+									block: 'checkbox',
+									mods: {
+										theme: 'shared',
+										size: 'l'
+										// type: 'button',
+										// view: 'plain'
 									},
-								]
+									icon: {
+										block: 'icon',
+										mods: { type: 'checkbox' }
+									},
+									name: 'need_send',
+									val: '1',
+									text: [{
+										tag: 'span',
+										cls: 'checkbox-line',
+										content: 'Получать уведомление'
+									}, {
+										tag: 'span',
+										cls: 'checkbox-line',
+										content: 'об окончании мин/Мб'
+									}]
+								}]
+							},
+							]
 							},
 						}, {
 							block: 'icon',
@@ -575,6 +554,8 @@ module.exports = {
 									]
 								}, {
 									block: 'input',
+									name: 'phone',
+									maxLength: 7,
 									mods: { theme: 'life-light', size: 's' },
 									placeholder: '123',
 									type: 'search',
@@ -589,6 +570,7 @@ module.exports = {
 								elemMods: { type: 'line' },
 								content: [{
 									block: 'button',
+									mix: { block: 'action-main-user', js: { 'action': 'sendInvite', 'actionParams': {} } },
 									mods: { view: 'main' },
 									text: 'Отправить приглашение'
 								}, {
@@ -629,7 +611,7 @@ module.exports = {
 					elem: 'group',
 					content: {
 						block: 'button',
-						mix: { block: 'actions', elem: 'add-user' },
+						mix: [{ block: 'actions', elem: 'add-user' }, { block: 'action-main-user', js: { 'action': 'addActionsBlock', actionParams: {} } }],
 						mods: { view: 'add' },
 						icon: {
 							block: 'icon',
@@ -639,23 +621,30 @@ module.exports = {
 					}
 				}, {
 					elem: 'group',
+					elemMods: { view: 'available' },
 					content: [{
+						block: 'form',
+						mods: { view: 'line-bottom' },
+						action: '',
+						method: 'post',
+						enctype: 'multipart/form-data',
+						content: [{
 						block: 'control-group',
 						mods: { type: 'line', size: 'l', theme: 'shared' },
 						content: [{
 							block: 'button',
-							mix: { block: 'actions', elem: 'button', elemMods: { save: 'profile', inactive: true } },
+							mix: { block: 'action-main-user', js: { action: 'redistribute', actionParams: {} } },
 							mods: { view: 'main' },
-							text: 'Сохранить изменения'
+							text: 'Перераспределить'
 						}, {
 							block: 'dropdown',
-							mods: { switcher: 'button', theme: 'islands' },
+							mods: { switcher: 'button', theme: 'islands', 'tooltipM': true },
 							switcher: { block: 'button', mods: { 'icon-only': true }, icon: { block: 'icon', mods: { 'tooltip-small': 'question' } } },
 							popup: 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
 							mix: { block: 'tooltip', js: true },
 							js: { tooltip: 'TXT-08' }
 						}]
-					}, {
+					}, /*{
 						block: 'control-group',
 						mods: { type: 'line', size: 'l', theme: 'shared' },
 						content: [{
@@ -696,6 +685,7 @@ module.exports = {
 								content: 'распределение в следующем месяце'
 							}]
 						}]
+					}*/]
 					}]
 				}]
 			}, {
@@ -726,23 +716,28 @@ module.exports = {
 								content: [{
 									icon_src: '/assets/img/prod_image_life.png',
 									title: 'APPS CLUB',
-									desc: 'Портал мобильных приложений для абонентов life:) &ndash; неограниченная загрузка премиум-приложений и игр за фиксированную низкую плату!'
+									desc: 'Сотни игр и приложений без рекламы со всеми бонусами внутри за 0,16 рублей в сутки! Первые 7 дней бесплатно!',
+									url: 'http://www.life.com.by/private/services/uslugi_dlya__razvlecheniy_a/appsclub'
 								}, {
 									icon_src: '/assets/img/prod_image_melo.png',
 									title: 'Мелоринг',
-									desc: 'ПРевратите скучные гудки в любимую музыку'
+									desc: 'Замените скучный гудок на любимую мелодию и дарите всем хорошее настроение!',
+									url: 'http://www.life.com.by/private/services/uslugi_dlya__razvlecheniy_a/appsclub'
 								}, {
 									icon_src: '/assets/img/prod_image_apps.png',
 									title: 'iTV',
-									desc: 'Смотри любимые каналы всегда и везде'
+									desc: 'Более 50-каналов, новые фильмы в высоком качестве и безлимитный интернет в одном пакете всего за 7,5 рублей в месяц. Первые 30 суток бесплатно!',
+									url: '#'
 								}, {
 									icon_src: '/assets/img/prod_image_roam.png',
 									title: 'Скидки на роуминг',
-									desc: 'Роуминг еще выгоднее! Скидки на входящие в роуминге в России, Украине, Польше...'
+									desc: 'Сниженные тарифы на звонки на границей: в России, Украине, Польше...',
+									url: 'http://www.life.com.by/private/roaming/lgotnyiy_rouming'
 								}, {
 									icon_src: '/assets/img/prod_image_phone.png',
 									title: 'ZTE A610',
-									desc: 'Android 6.0, 5" IPS, 720x1280 1.3ГГц, 4 ядра'
+									desc: 'Android 6.0, 5" IPS, 720x1280 1.3ГГц, 4 ядра',
+									url: '#'
 								}].map(function(item) {
 									return {
 										elem: 'item',
@@ -765,8 +760,8 @@ module.exports = {
 												elem: 'more',
 												content: {
 													block: 'link',
-													url: '#',
-													content: ['Подробнее >']
+													url: item.url,
+													content: ['Подробнее']
 												}
 											}]
 										}

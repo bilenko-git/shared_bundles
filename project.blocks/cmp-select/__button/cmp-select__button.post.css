@@ -1,0 +1,37 @@
+:block(cmp-select):elem(button) {
+    background: #fff;
+    width: 23px;
+    height: 23px;
+    border: none;
+    outline: none;
+    position: absolute;
+    border-radius: 20px;
+    z-index: 1000;
+    /* background: #ccc; */
+    top: 2px;
+    right: 0px;
+    & :block(icon) svg {
+        width: 23px;
+        height: 23px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        animation: svg_rotate_back .3s ease-out;
+    }
+}
+@keyframes svg_rotate_back {
+	0% {
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}

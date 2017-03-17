@@ -1,4 +1,4 @@
-modules.define('core', ['i-bem-dom', 'attach', 'button', 'checkbox', 'control', 'dropdown',/* 'icon', 'image',*/ 'input', 'link', 'menu', 'modal', 'popup', 'progressbar', 'radio', 'select', 'spin', 'textarea', 'form'], function(provide, bemDom, Attach, Button, Checkbox, Control, Dropdown,/* Icon, Image,*/ Input, Link, Menu, Modal, Popup, Progressbar, Radio, Select, Spin, Textarea, Form) {
+modules.define('core', ['i-bem-dom', 'attach', 'button', 'checkbox', 'control', 'dropdown',/* 'icon', 'image',*/ 'input', 'link', 'menu', 'modal', 'popup', 'progressbar', 'radio', 'select', 'spin', 'textarea', 'form', 'actions', 'userinfo' ], function(provide, bemDom, Attach, Button, Checkbox, Control, Dropdown,/* Icon, Image,*/ Input, Link, Menu, Modal, Popup, Progressbar, Radio, Select, Spin, Textarea, Form, Actions, Userinfo) {
 
 	provide(bemDom.declBlock(this.name, {
 		onSetMod: {
@@ -10,9 +10,7 @@ modules.define('core', ['i-bem-dom', 'attach', 'button', 'checkbox', 'control', 
 					this._checkboxBlock = Checkbox;
 					this._controlBlock = Control;
 					this._dropdownBlock = Dropdown;
-/*					this._iconBlock = Icon;
-					this._imageBlock = Image;
-*/					this._inputBlock = Input;
+					this._inputBlock = Input;
 					this._linkBlock = Link;
 					this._menuBlock = Menu;
 					this._modalBlock = Modal;
@@ -23,6 +21,8 @@ modules.define('core', ['i-bem-dom', 'attach', 'button', 'checkbox', 'control', 
 					this._spinBlock = Spin;
 					this._textareaBlock = Textarea;
 					this._formBlock = Form;
+					this._actionsBlock = Actions;
+					this._userinfoBlock = Userinfo;
 
 				}
 			}

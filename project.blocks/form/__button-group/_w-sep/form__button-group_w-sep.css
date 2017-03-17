@@ -11,7 +11,15 @@
 	height: 100%;
 
 }
-
+.form__button-group_w-sep_vert:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	height: 1px;
+	background: #cacaca;
+}
 .form__button-group_w-sep_right.form__button-group_type_list:first-child {
 	padding: 0 29px 0 0;
 }

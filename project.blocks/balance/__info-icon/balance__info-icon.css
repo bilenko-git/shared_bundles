@@ -1,25 +1,42 @@
 .balance__info-icon {
-    width: 19px;
-    height: 19px;
+	width: 19px;
+	height: 19px;
 }
 
 .balance__info-icon .icon,
 .balance__info-icon.icon_std {
-    background-size: 203px 109px;
-    margin: 0;
-    width: 19px;
-    min-width: 19px;
-    height: 19px;
+	background-size: 203px 109px;
+	margin: 0;
+	width: 19px;
+	min-width: 19px;
+	height: 19px;
+}
+
+.balance__info-icon.balance__info-icon_size_m {
+	width: 25px;
+	min-width: 25px;
+	height: 25px;
+	background-size: 267px 144px;
 }
 
 .balance__info-icon.icon_SMPN-lev1 {
-    background-position: 0px -82px;
+	background-position: 0px -82px;
 }
 
 .balance__info-icon.icon_SMPN-lev2 {
-    background-position: -20px -82px;
+	background-position: -20px -82px;
 }
 
 .balance__info-icon.icon_SMPN-lev3 {
-    background-position: -38px -82px;
+	background-position: -38px -82px;
+}
+
+.balance__info-icon.balance__info-icon_size_m.icon_SMPN-lev2 {
+	background-position: -26px -107px;
+}
+
+.balance__info-icon.balance__info-icon_size_m.icon_SMPN-lev3 {
+	background-position: -51px -106px;
+	width: 24px;
+	min-width: 24px;
 }

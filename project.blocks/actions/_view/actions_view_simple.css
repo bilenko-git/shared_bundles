@@ -1,10 +1,11 @@
-.actions_view_simple {
-    
-}
+.actions_view_simple {}
 
 .actions_view_simple .actions__inner {
-	border-bottom: solid 1px #cacaca;
 	border-radius: 0;
 	background-color: #fff;
 	box-shadow: none;
+}
+
+.actions_view_simple .actions__inner_w-sep_bottom {
+	border-bottom: solid 1px #cacaca;
 }

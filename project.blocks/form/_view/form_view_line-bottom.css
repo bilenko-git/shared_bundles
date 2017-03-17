@@ -1,0 +1,5 @@
+.form_view_line-bottom {
+	display: flex;
+	align-self: flex-end;
+	flex-flow: row wrap;
+}

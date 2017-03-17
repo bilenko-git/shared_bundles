@@ -1,0 +1,15 @@
+:block(cmp-select):elem(content):mod(closed) {
+    max-height: 0;
+    overflow: hidden;
+    padding-bottom: 25px;
+	-webkit-animation: menuSlideDown .3s ease-out;
+	animation: menuSlideDown .3s ease-out;
+}
+@keyframes menuSlideDown {
+	from {
+		max-height:500px;
+	}
+	to {
+		max-height: 25px;
+	}
+}

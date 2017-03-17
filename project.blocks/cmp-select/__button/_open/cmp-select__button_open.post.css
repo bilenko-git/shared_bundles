@@ -1,0 +1,25 @@
+:block(cmp-select):elem(button):mod(open) {
+    display: inline-block;
+    & :block(icon) svg {
+        position: absolute;
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+        animation: svg_rotate .3s ease-in;
+    }
+}
+@keyframes svg_rotate {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+}

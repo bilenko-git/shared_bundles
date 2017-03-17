@@ -5,3 +5,8 @@
     align-items: center;
     border-right: solid 1px #cacaca;
 }
+
+.product-list__item.menu__item_hovered {
+    box-shadow: -1px 0 0 0 #fff;
+    border-right-color: transparent;
+}

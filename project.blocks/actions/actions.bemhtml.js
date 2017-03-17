@@ -4,6 +4,7 @@ block('actions')(
 block('actions').content()(function() {
     return {
         elem: 'inner',
+        elemMods: this.ctx.innerMods,
         content: applyNext()
     };
 });

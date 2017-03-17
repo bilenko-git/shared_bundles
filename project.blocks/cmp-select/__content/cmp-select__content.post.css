@@ -1,0 +1,29 @@
+:block(cmp-select):elem(content) {
+	display: inline-block;
+	border-top-left-radius: 13px;
+	border-top-right-radius: 13px;
+	border-bottom-right-radius: 13px;
+	border-bottom-left-radius: 13px;
+	border: solid 1px #ddd;
+	background-color: #fff;
+	position: relative;
+	width: 72px;
+	height: 900%;
+	max-height: 500px;
+	background: transparent;
+	/* overflow:hidden; */
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 33px;
+	left: 0;
+    animation: menuSlideUp .3s ease-in;
+}
+
+@keyframes menuSlideUp {
+	from {
+		max-height:25px;
+	}
+	to {
+		max-height: 500px;
+	}
+}

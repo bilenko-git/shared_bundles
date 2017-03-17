@@ -1,0 +1,7 @@
+:block(cmp-select):elem(value) {
+    background: #fff;
+    position: absolute;
+    height: 25px;
+    top: 1px;
+    left: 1px;
+}

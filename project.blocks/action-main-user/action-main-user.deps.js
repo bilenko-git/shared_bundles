@@ -14,6 +14,8 @@
     ],
     shouldDeps: [
         { block: 'button', mods: { view: 'add' }, tech: 'css' },
+        { block: 'balance', elem: 'info-value', mods: { size: [ 'm', 's' ] } },
+        { block: 'c-balance', elem: 'info-value', mods: { size: [ 'm', 's' ] } },
         { block: 'button', mods : { theme : 'shared', togglable : 'check' } },
         { block: 'checkbox', mods: { theme: 'shared', type: 'button' } },
         { block: 'menu', mods: { theme: 'life-light' } }

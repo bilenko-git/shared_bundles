@@ -4,3 +4,6 @@
     line-height: 23px;
     color: #000;
 }
+.userinfo__phone_red {
+	background-color: #f00;
+}

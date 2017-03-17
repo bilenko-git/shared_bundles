@@ -4,7 +4,8 @@ modules.define('c-chart', ['i-bem-dom', 'chart', 'jquery', 'loader_type_js'], fu
         onSetMod: {
             js: {
                 inited: function() {
-var ctxArr = $.makeArray(document.querySelectorAll("canvas[id*=chartMin]"));
+                    debugger;
+                var ctxArr = $.makeArray(document.querySelectorAll("canvas[id*=chartMin]"));
             var data = [
                 { data: [400], backgroundColor: "#5f318f", label: "Вася-тесть" },
                 { data: [801], backgroundColor: "#53c841", label: "Доченька" },
@@ -57,7 +58,7 @@ var ctxArr = $.makeArray(document.querySelectorAll("canvas[id*=chartMin]"));
                             gridLines: {
                                 color: "#afacb0",
                                 lineWidth: 3,
-                                zeroLineColor: "#fff"
+                                zeroLineColor: 'rgba(0, 0, 0, 0.0)'
                             }
                         }],
                         xAxes: [{
