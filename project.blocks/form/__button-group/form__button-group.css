@@ -9,9 +9,12 @@
 	font-weight: normal;
 	font-size: 24px;
 }
+.form__question-tariff {
+    margin-top: 10px;
+}
 .form__button-group-center {
 	text-align: center;
-	padding: 42px 0 31px;
+	padding: 20px 0 31px;
 	font-family: 'life_text';
 	font-weight: normal;
 	font-size: 24px;

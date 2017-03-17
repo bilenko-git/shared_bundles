@@ -1,0 +1,43 @@
+.modal-recharge-account {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+
+	&__title {
+		align-self: flex-start;
+		font-family: 'life_text';
+		font-size: 24px;
+		font-weight: normal;
+		color: #b5b5b5;
+	}
+	&__message {
+		margin-top: 40px;
+		font-size: 21px;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		text-align: center;
+	}
+	&__button-group {
+		margin-top: 30px;
+	}
+	&__send {
+	    border: 0px;
+		color: white;
+		border-radius: 20px;
+		padding: 9px 19px;
+		margin: 26px 10px 0px 0px;
+		font-family: 'life_medium';
+		font-size: 13px;
+		background-color: #ff0000;
+		cursor: pointer;
+	    outline: none;
+	}
+	&__label {
+		font-size: 21px;
+		min-width: 174px;
+		line-height: 42px;
+		font-family: 'life_text';
+		margin-left: 5px;
+	}
+}

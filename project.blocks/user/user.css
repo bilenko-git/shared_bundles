@@ -44,10 +44,36 @@
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     padding: 10px;
+    z-index: 10;
 }
 .user__menu li:not(:last-child) {
     border-bottom: 1px solid #a1a1a1;
 }
 .user__menu li {
     padding: 10px 10px 1px 10px;
+}
+.menu-on-page-user {
+    padding: 20px 25px 20px 25px;
+}
+.menu-on-page-user .menu__item {
+    box-shadow: 0px 1px 0 0 #d3d3d3;
+    padding: 5px 0 9px 0;
+    cursor: pointer; 
+}
+.menu-on-page-user .menu__item:last-child {
+    box-shadow: none;
+    padding: 12px 0 0 0;
+    cursor: pointer; 
+}
+.user__phone {
+    font-family: "life_medium";
+    font-size: 16px;
+    line-height: 23px;
+    color: #000;
+}
+.user__name {
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "life_medium";
+    color: #593292;
 }

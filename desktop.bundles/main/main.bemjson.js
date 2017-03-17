@@ -149,6 +149,15 @@ module.exports = {
                                                                 mix: { block: 'dropdown-with-content', js: true },
                                                                 js: { tooltip: 'main' },
                                                                 content: 'Личный кабинет',
+                                                            }, {
+                                                                block: 'button',
+                                                                mods: { type: 'link', 'std': true },
+                                                                mix: [
+                                                                    { block: 'action-main',  js: { 'action': 'exit', 'actionParams': { 'type' : ''}}},
+                                                                    { block: 'button-exit' },
+                                                                    { block: 'hide' }
+                                                                ], 
+                                                                content: 'Выйти'
                                                             }]
                                                         }
                                                     }, {
@@ -361,21 +370,16 @@ module.exports = {
                                     block: 'content',
                                     content: [{
                                         block: 'button-line',
+                                        mix: { block: 'hide'},
                                         content: [{
                                             elem: 'group',
                                             elemMods: { right: true },
                                             content: [{
                                                 block: 'button',
-                                                mods: { link: true, 'hidden': true},
-                                                mix: [
-                                                    { block: 'action-main',  js: { 'action': 'exit', 'actionParams': { 'type' : ''}}},
-                                                    { block: 'button-hidden' }
-                                                ],
-                                                content: 'Выйти'            
-                                            },{
-                                                block: 'button',
                                                 mods: { link: true  },
-                                                mix: { block: 'action-main',  js: { 'action': 'goToManagement', 'actionParams': { 'type' : ''}}},
+                                                mix: [
+                                                    { block: 'action-main',   js: { 'action': 'goToManagement', 'actionParams': { 'type' : ''}}}
+                                                ],
                                                 content: 'Перейти к управлению'            
                                             }, {
                                                 block : 'dropdown',
@@ -384,7 +388,6 @@ module.exports = {
                                                 popup : 'Переход в личный кабинет на сайте в котором <br> можно управлять ...',
                                                 mix: { block: 'tooltip', js: true },
                                                 js: { tooltip: 'TXT-01' }
-                         
                                             }]
                                         
                                         }]
@@ -1007,6 +1010,7 @@ module.exports = {
                                             elem: 'content',
                                             content: [{
                                                  elem: 'content-text',
+                                                 mix: { block: 'question-main' },
                                                  content: '<span style="color:blue">Кто может подключить тарифный план?</span><span>Любой абонент life:), независимо от места проживания. В том числе тарифный план "Общий" доступен абонентам, которые перенесли свой номер на ife:). Исключение составляют абоненты, у которых есть обязательства. Организатор может добавить в свою группу как номера, оформленные на его паспортные данные, так и номер абонентов со своими собственными контрактами.</span>'
                                             }]                                        
                                         }]
@@ -1135,6 +1139,12 @@ module.exports = {
                                         content: '© 2004-2017 life:) ЗАО "БеСТ", ул. Красноармейская, 24, 220030, г. Минск, УНП 190579561, Лицензия Министерства связи и информатизации РБ №02140/1315, срок действия не ограничен'
                                     }]
                                 }]
-                            }
+                    }
+        } , {
+                            block: 'spiner',
+                            mods: { 'hide' : true },
+                            content: [{
+                                elem: 'icon'
+                            }] 
                         }]
-                };
+};
