@@ -44,11 +44,11 @@ module.exports = {
                         mods: { theme: 'red', size: 's'},
                         mix: { block: 'action-user',  js: { 'action': 'rechargeAccount' } },
                         text: 'Пополнить',
-                    }, {
+                    }/*, {
                         block: 'button',
                         mods: { theme: 'red', size: 's' },
                         text: 'Попросить пополнить счет'
-                    }]
+                    }*/]
                 }] 
             }, {
                 block: 'user-account',
@@ -94,11 +94,24 @@ module.exports = {
                     block: 'menu',
                     mods: { theme: 'life-light' },
                     mix: { block: 'menu-on-page-user' },
-                    content: [
-                        { elem: 'item', val: 'change_name', content: 'Изменить имя' },
-                        { elem: 'item', val: 'add_photo', content: 'Добавить фото' },
-                        { elem: 'item', val: 'select_color', content: 'Выбрать цвет профиля' },
-                    ]
+                    content: [{
+                        elem: 'item',
+                        val: 'change_name',
+                        mix: [
+                            { block: 'action-user',  js: { 'action': 'change_name' } }
+                        ],
+                        content: 'Изменить имя',
+
+                    }, {
+                        elem: 'item',
+                        val: 'add_photo',
+                        mix: { block: 'action-user',  js: { 'action': 'rechargeAccount' } },
+                        content: 'Добавить фото'
+                    }, {
+                        elem: 'item',
+                        val: 'select_color',
+                        content: 'Выбрать цвет профиля'
+                    }]
                 },
             }, {
                 block: 'icon',
@@ -108,7 +121,18 @@ module.exports = {
                 elem: 'inforamtion',
                 content:  [{
                     elem: 'name',
-                    content: 'Mоя SIM'
+                    mods: { 'hidden' : true },
+                    content: '1Mоя SIM'
+                }, {
+                    block: 'input',
+                    mix: [
+                        { block : 'inforamtion', elem : 'input-phone' }
+                    ],
+                    mods: { theme: 'life-light', size: 'a', 'hidden' : true },
+                    maxLength: '10',
+                    name: 'userName',
+                    autocomplete: false,
+                    js: true
                 }, {
                     elem: 'phone',
                     content: '+37525 909 00 00'
@@ -117,7 +141,7 @@ module.exports = {
                 elem: 'slider'
             }, {
                 elem: 'slider'
-            }, {
+            }/*, {
                 block: 'button',
                 cls: 'ask-min',
                 mods: { theme: 'red', size: 's' },
@@ -129,7 +153,7 @@ module.exports = {
                 mods: { theme: 'red', size: 's',  },
                 mix: { block: 'action-user',  js: { 'action': 'ask_mb' } },
                 text: 'Попросить МБ'
-            }]
+            }*/]
         }, {
             block: 'pc-block',
             js: true,

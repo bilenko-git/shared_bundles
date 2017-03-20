@@ -6,6 +6,7 @@
         { block: 'input', mods: { theme: 'life-light' }, tech: 'bemhtml' },
         { block: 'button', mods: { type: 'link' }, tech: 'bemhtml' },
         { block: 'userinfo', tech: 'bemhtml' },
+        { block: 'input2' },
     ]
 },{
     mustDeps: [
@@ -25,6 +26,7 @@
         { block: 'modal', mods: { theme: 'life-light' }, tech: 'css' },
         { block: 'info-modal', mods: { theme: 'islands' }, tech: 'css' },
         { block: 'menu', mods: { theme: 'life-light' }},
+        { block: 'input2' },
 
     ],
     shouldDeps: [

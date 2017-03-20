@@ -1,17 +1,25 @@
 (function() {
-    var profile = '';
     console.log('38');
-    if( sessionStorage.profile && (profile = JSON.parse(sessionStorage.profile)) && profile.status ) {
-        $('.my-tariff__phone').html( profile.data.msisdn );
-        $('.my-tariff__tariff').html( 'тариф '+ profile.data.tariff.name );
-        
-        $('.user-balance__price').html( profile.data.tariff.cost );
-        $('.user-balance__currency').html( '' );
+    var profile = '';
+
+    if (sessionStorage.profile && (profile = JSON.parse(sessionStorage.profile)) && profile.status) {
+/*        $('.my-tariff__phone, .user__phone').html(profile.data.msisdn);
+        $('.my-tariff__tariff').html('тариф ' + profile.data.tariff.name);
+
+        $('.user-balance__price').html(profile.data.tariff.cost);
+        $('.user__name').html(profile.data.name);
+        $('[name="userName"]').val(profile.data.name);*/
     }
+
+/*    $('[name="userName"]').on('keypress', function(e) {
+        if (e.which == 13) {
+            console.log($(this).val());
+        }
+    });*/
 })();
 
-modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input', 'next-tick', 'form'], function (provide, bemDom, Popup, bemHtml, $, InfoModal, input, nextTick, Form) {
-provide(bemDom.declBlock(this.name, {
+modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input', 'next-tick', 'form'], function(provide, bemDom, Popup, bemHtml, $, InfoModal, input, nextTick, Form) {
+    provide(bemDom.declBlock(this.name, {
         onSetMod: {
             js: {
                 inited: function() {
@@ -20,16 +28,14 @@ provide(bemDom.declBlock(this.name, {
 
                         this.Form = Form;
                         this.bemDom = bemDom;
-                        console.log('33');
-                        this[this.params.action]( this.params.actionParams, this );
+                        this.input = input;
+                        this[this.params.action](this.params.actionParams, this);
                     });
                 }
             }
         },
-        send_recharge_account: function( actionParams, _this ) {
-            var value = $('[name='+actionParams.input+']').val();
-
-            console.log( _this );
+        send_recharge_account: function() {
+            console.log(this);
         },
         rechargeAccount: function() {
             var ctx = this;
@@ -55,7 +61,20 @@ provide(bemDom.declBlock(this.name, {
                 'typeTariff': ''
             })));
         },
-        _template: function( modal, data ) {
+        change_name: function() {
+            //this._emit('change_name');
+            console.log(this);
+        
+            //this.input2.findMixedBlock().setMod('hidden', 'on');
+           // this.findMixedBlock(input).setMod('hidden', 'on');
+        },
+        add_photo: function() {
+            console.log('add_photo');
+        },
+        select_color: function() {
+            console.log('select_color');
+        },
+        _template: function(modal, data) {
             var modals = {
                 'recharge_account': {
                     block: 'wrapper',
@@ -72,30 +91,28 @@ provide(bemDom.declBlock(this.name, {
                             content: 'Введите необходимую сумму и отправьте запрос<br> пользователю, в группе которого вы состоите'
                         }, {
                             elem: 'button-group',
-                            elemMods: {inner: true},
+                            elemMods: { inner: true },
                             content: [{
-                                    block: 'input',
-                                    mods: { theme: 'life-light', size: 'a' },
-                                    maxLength: '10',
-                                    name: 'price',
-                                    autocomplete: false,
-                                    js: true
-                                }, {
-                                    elem: 'label',
-                                    tag: 'span',
-                                    content: 'руб'
-                                }]
+                                block: 'input',
+                                mods: { theme: 'life-light', size: 'a' },
+                                maxLength: '10',
+                                name: 'price',
+                                autocomplete: false
+                            }, {
+                                elem: 'label',
+                                tag: 'span',
+                                content: 'руб'
+                            }]
                         }, {
                             elem: 'text-error',
-                            elemMods: {hidden: true},
+                            elemMods: { hidden: true },
                             content: ''
-                        },  {
+                        }, {
                             block: 'button',
                             mix: [
                                 { block: 'modal-recharge-account', elem: 'send' },
-                                { block: 'action-user', js: {'action': 'send_recharge_account', 'actionParams': { 'input': 'price' }}},
+                                { block: 'action-main', js: { 'action': 'send_recharge_account', 'actionParams': 'data' } }
                             ],
-                            mods: {action: true},
                             text: 'Отправить запрос'
                         }]
                     }
@@ -115,27 +132,27 @@ provide(bemDom.declBlock(this.name, {
                             content: 'Введите необходимо количество минут и отправьте запрос<br> полозователю, в группе которого вы состоите'
                         }, {
                             elem: 'button-group',
-                            elemMods: {inner: true},
+                            elemMods: { inner: true },
                             content: [{
-                                    block: 'input',
-                                    mods: { theme: 'life-light', size: 'a' },
-                                    maxLength: '10',
-                                    name: 'minutes',
-                                    autocomplete: false
-                                }, {
-                                    elem: 'label',
-                                    tag: 'span',
-                                    content: 'мин'
-                                }]
+                                block: 'input',
+                                mods: { theme: 'life-light', size: 'a' },
+                                maxLength: '10',
+                                name: 'minutes',
+                                autocomplete: false
+                            }, {
+                                elem: 'label',
+                                tag: 'span',
+                                content: 'мин'
+                            }]
                         }, {
                             elem: 'text-error',
-                            elemMods: {hidden: true},
+                            elemMods: { hidden: true },
                             content: ''
-                        },  {
+                        }, {
                             block: 'button',
                             mix: [
                                 { block: 'modal-recharge-account', elem: 'send' },
-                                { block: 'action-user', js: {'action': 'send_recharge_account', 'actionParams': { 'input': 'minutes' }}}
+                                { block: 'action-main', js: { 'action': 'send_recharge_account', 'actionParams': 'data' } }
                             ],
                             text: 'Отправить запрос'
                         }]
@@ -156,27 +173,27 @@ provide(bemDom.declBlock(this.name, {
                             content: 'Введите необходимо количество МБ и отправьте запрос<br> полозователю, в группе которого вы состоите'
                         }, {
                             elem: 'button-group',
-                            elemMods: {inner: true},
+                            elemMods: { inner: true },
                             content: [{
-                                    block: 'input',
-                                    mods: { theme: 'life-light', size: 'a' },
-                                    maxLength: '10',
-                                    name: 'mb',
-                                    autocomplete: false
-                                }, {
-                                    elem: 'label',
-                                    tag: 'span',
-                                    content: 'МБ'
-                                }]
+                                block: 'input',
+                                mods: { theme: 'life-light', size: 'a' },
+                                maxLength: '10',
+                                name: 'mb',
+                                autocomplete: false
+                            }, {
+                                elem: 'label',
+                                tag: 'span',
+                                content: 'МБ'
+                            }]
                         }, {
                             elem: 'text-error',
-                            elemMods: {hidden: true},
+                            elemMods: { hidden: true },
                             content: ''
-                        },  {
+                        }, {
                             block: 'button',
                             mix: [
                                 { block: 'modal-recharge-account', elem: 'send' },
-                                { block: 'action-user', js: {'action': 'send_recharge_account', 'actionParams': { 'input': 'mb' }}}
+                                { block: 'action-main', js: { 'action': 'send_recharge_account', 'actionParams': 'data' } }
                             ],
                             text: 'Отправить запрос'
                         }]

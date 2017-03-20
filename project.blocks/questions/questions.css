@@ -12,8 +12,11 @@
     font-size: 18px;
 }
 .questions__question {
-    width: 230px;
-    margin: 10px 0px 10px 0px;
+    width: 195px;
+    margin: 10px 0px 1px 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: "life_regular";
 }
 .questions {
     display: flex;
@@ -32,15 +35,18 @@
 	color: #5b3293;
     text-align: center;
     margin: 10px 0px 15px 0px;
+    font-weight: bold;
 }
 .questions__desc {
-	width: 175px;
-    margin: auto;
-    text-align: -webkit-left;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0px 10px 20px 10px;
 }
 .questions__more {
-    margin-top: 20px;
+    margin: 0px 0px 30px 0px;
+    margin-top: auto;
     text-align: center;
+    font-weight: bold;
 }
 .questions__more a {
     color: red;
