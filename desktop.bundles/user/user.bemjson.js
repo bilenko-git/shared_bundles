@@ -138,9 +138,21 @@ module.exports = {
                     content: '+37525 909 00 00'
                 }]
             }, {
-                elem: 'slider'
-            }, {
-                elem: 'slider'
+                block: 'user-charts',
+                js: true,
+                content: [{
+                    elem: 'item',
+                    content: {
+                        tag: 'canvas',
+                        attrs: { id: 'userchart01', width: '280', height: '50' }
+                    }
+                }, {
+                    elem: 'item',
+                    content: {
+                        tag: 'canvas',
+                        attrs: { id: 'userchart02', width: '280', height: '50' }
+                    }
+                }]
             }/*, {
                 block: 'button',
                 cls: 'ask-min',
@@ -170,34 +182,41 @@ module.exports = {
             }, {
                 elem: 'content',
                 content: [{
-                    block: 'questions-description',
-                    content: 'Также вы можете выбрать дополнительные услуги и устройства'
-                }, {
-                    block: 'questions',
-                    content: ['APPS CLUB', 'Мелоринг', 'ItV', 'Скидки на роуминг'].map(function(service) {
-                        return {
-                            elem: 'question',
-                            content: [{
-                                elem: 'icon',
-                                content: '<img src="http://multidev.life.com.by/assets/img/question_icon.png">'
-                            }, {
-                                elem: 'title',
-                                content: service
-                            }, {
-                                elem: 'desc',
-                                content: 'Портал мобильных приложений для абонентов life:) неограниченная загрузка премиум-приложений и игр за фиксированную низкую плату!'
-                            }, {
-                                elem: 'more',
-                                content: [{
-                                    block: 'link',
-                                    url: '#',
-                                    content: 'Все мои услуги'
-                                }]
-                            }]
-                        }
-                    })
-                }]                                     
+                    elem: 'content-text',
+                    mix: { block: 'question-main' },
+                    content: '<span style="color:blue">Кто может подключить тарифный план?</span><span>Любой абонент life:), независимо от места проживания. В том числе тарифный план "Общий" доступен абонентам, которые перенесли свой номер на ife:). Исключение составляют абоненты, у которых есть обязательства. Организатор может добавить в свою группу как номера, оформленные на его паспортные данные, так и номер абонентов со своими собственными контрактами.</span>'
+                }]                                   
             }]
+        }, {
+            block: 'products',
+            content: [{
+                block: 'questions-description',
+                content: 'Также вы можете выбрать дополнительные услуги и устройства'
+            }, {
+                block: 'questions',
+                content: ['APPS CLUB', 'Мелоринг', 'ItV', 'Скидки на роуминг', 'ZTE A160'].map(function(service) {
+                    return {
+                        elem: 'question',
+                        content: [{
+                            elem: 'icon',
+                            content: '<img src="http://multidev.life.com.by/assets/img/question_icon.png">'
+                        }, {
+                            elem: 'title',
+                            content: service
+                        }, {
+                            elem: 'desc',
+                            content: 'Портал мобильных приложений для абонентов life:) неограниченная загрузка премиум-приложений и игр за фиксированную низкую плату!'
+                        }, {
+                            elem: 'more',
+                            content: [{
+                                block: 'link',
+                                url: '#',
+                                content: 'Все мои услуги'
+                            }]
+                        }]
+                    }
+                })
+            }]  
         }]
     }]
 };

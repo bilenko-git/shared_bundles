@@ -1,0 +1,8 @@
+.cmp-chart__info_desc {
+	display: block;
+	text-align: center;
+	width: 100%;
+	font-family: "life_text";
+	font-size: 12px;
+	font-weight: normal;
+}

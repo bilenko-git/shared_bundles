@@ -3,19 +3,13 @@
     var profile = '';
 
     if (sessionStorage.profile && (profile = JSON.parse(sessionStorage.profile)) && profile.status) {
-/*        $('.my-tariff__phone, .user__phone').html(profile.data.msisdn);
+        $('.my-tariff__phone, .user__phone').html(profile.data.msisdn);
         $('.my-tariff__tariff').html('тариф ' + profile.data.tariff.name);
 
         $('.user-balance__price').html(profile.data.tariff.cost);
         $('.user__name').html(profile.data.name);
-        $('[name="userName"]').val(profile.data.name);*/
+        $('[name="userName"]').val(profile.data.name);
     }
-
-/*    $('[name="userName"]').on('keypress', function(e) {
-        if (e.which == 13) {
-            console.log($(this).val());
-        }
-    });*/
 })();
 
 modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input', 'next-tick', 'form'], function(provide, bemDom, Popup, bemHtml, $, InfoModal, input, nextTick, Form) {
@@ -62,11 +56,51 @@ modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
             })));
         },
         change_name: function() {
-            //this._emit('change_name');
-            console.log(this);
-        
-            //this.input2.findMixedBlock().setMod('hidden', 'on');
-           // this.findMixedBlock(input).setMod('hidden', 'on');
+            var inputUserName = bemHtml.apply({
+                    block: 'input',
+                    mix: [
+                        { block : 'inforamtion', elem : 'input-phone' }
+                    ],
+                    mods: { theme: 'life-light', size: 's' },
+                    maxLength: '10',
+                    name: 'userName',
+                    autocomplete: false,
+                    js: true
+                });
+
+            var inp = $('.user__name')
+                .html(inputUserName)
+                .bind('keypress', function(e) {
+                    var _this = $(this),
+                        userName = _this.find('input').val();
+
+                    if ( e.which == 13 && (userName && userName.trim()) ) {
+                        _this.html(userName);
+
+                        $.ajax({
+                            type: "POST",
+                            url: "api/user_update",
+                            data: {
+                               'userIdTo' : '',
+                               'access_token' : ''
+                            },
+                            success: function(data) {
+                                var data = JSON.parse(data, _this);
+                                console.log(data);
+
+                                if (data['code'] && data['code'] === 'SUCCESS') {
+  
+                                } else {
+                      
+                                }
+                            }
+                        });
+                    }
+            });
+
+            $(function() {
+                $('[name="userName"]', inp).val('Nicholas').click().focus();
+            });
         },
         add_photo: function() {
             console.log('add_photo');

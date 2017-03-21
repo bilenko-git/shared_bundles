@@ -8,7 +8,7 @@
 }
 .toggle-block__description {
     color: #5b3293;
-    padding: 20px 25px 30px 25px;
+    padding: 40px 0px 15px 0px;
     font-size: 18px;
 }
 .questions__question {
@@ -34,16 +34,17 @@
 .questions__title {
 	color: #5b3293;
     text-align: center;
-    margin: 10px 0px 15px 0px;
+    margin: 10px 0px 10px 0px;
     font-weight: bold;
 }
 .questions__desc {
     text-align: center;
     box-sizing: border-box;
-    padding: 0px 10px 20px 10px;
+    padding: 0px 10px 10px 10px;
+    font-size: 12px;
 }
 .questions__more {
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 15px 0px;
     margin-top: auto;
     text-align: center;
     font-weight: bold;
