@@ -3,7 +3,6 @@ modules.define('user-charts', ['i-bem-dom', 'chart', 'jquery', 'loader_type_js']
         onSetMod: {
             js: {
                 inited: function() {
-
 		            $.makeArray(document.querySelectorAll("canvas[id*=userchart]")).
 	            		forEach(function(ctx) {
 
@@ -13,7 +12,7 @@ modules.define('user-charts', ['i-bem-dom', 'chart', 'jquery', 'loader_type_js']
                         if( typeChart == 'userchart01') {
                         	var value = profile ? profile.data.balances.bundleMocNatShared : '100',
                              	curr = 'минуты';
-                             	
+
                             var data = [{ 
                                 data: [value], 
                                 backgroundColor: "#5f318f", 

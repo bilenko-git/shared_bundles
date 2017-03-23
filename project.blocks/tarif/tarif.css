@@ -2,3 +2,18 @@
     display: inline-block;
     width: 100%;
 }
+.multinet .tarif__head-desc span {
+    margin-left: 50px;
+}
+
+.tarif-line__item {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px 0px 0px 0px !important;
+}
+
+.multinet .tarif__actions {
+    display: block;
+    margin-left: 70px;
+    text-align: initial;
+}

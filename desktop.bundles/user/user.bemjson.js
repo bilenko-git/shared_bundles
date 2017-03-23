@@ -86,6 +86,7 @@ module.exports = {
             }]
         }, {
             block: 'user',
+            js: true,
             content: [{
                 block: 'dropdown',
                 mods: { switcher: 'button', theme: 'life-light' },
@@ -96,20 +97,18 @@ module.exports = {
                     mix: { block: 'menu-on-page-user' },
                     content: [{
                         elem: 'item',
-                        val: 'change_name',
                         mix: [
-                            { block: 'action-user',  js: { 'action': 'change_name' } }
+                            { block: 'action-user',  js: { 'action': 'change_name'/*, 'id' : 'menu-1'*/ }}
                         ],
                         content: 'Изменить имя',
 
                     }, {
                         elem: 'item',
-                        val: 'add_photo',
-                        mix: { block: 'action-user',  js: { 'action': 'rechargeAccount' } },
+                        mix: { block: 'action-user',  js: { 'action': 'add_photo' } },
                         content: 'Добавить фото'
                     }, {
                         elem: 'item',
-                        val: 'select_color',
+                        mix: { block: 'action-user',  js: { 'action': 'select_color' } },
                         content: 'Выбрать цвет профиля'
                     }]
                 },
@@ -118,24 +117,28 @@ module.exports = {
                 mix: { block: 'user', elem: 'photo' },
                 url: '/assets/img/user-avatar.png'
             }, {
+                block: 'attach',
+                mods : { theme : 'islands', size : 'm' },
+                mix: { block: 'hide'},
+                name: 'photo',
+                button : 'f'
+            }, {
                 elem: 'inforamtion',
                 content:  [{
                     elem: 'name',
                     mods: { 'hidden' : true },
+                    /*mix: { block: 'action-user',  js: {'id' : 'menu-1' }},*/
                     content: '1Mоя SIM'
                 }, {
-                    block: 'input',
-                    mix: [
-                        { block : 'inforamtion', elem : 'input-phone' }
-                    ],
-                    mods: { theme: 'life-light', size: 'a', 'hidden' : true },
-                    maxLength: '10',
-                    name: 'userName',
-                    autocomplete: false,
-                    js: true
+                    block: 'colors',
                 }, {
                     elem: 'phone',
                     content: '+37525 909 00 00'
+                }, {
+                    block: 'button',
+                    mods: { theme: 'red-save', size: 's'},
+                    mix: { block: '',  js: { 'action': 'rechargeAccount' } },
+                    text: 'Сохранить',
                 }]
             }, {
                 block: 'user-charts',

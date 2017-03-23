@@ -1,4 +1,4 @@
-([{   
+([{ 
     tech: 'js',
     mustDeps: [
         { block: 'info-modal', tech: 'bemhtml' },
@@ -6,7 +6,7 @@
         { block: 'input', mods: { theme: 'life-light' }, tech: 'bemhtml' },
         { block: 'button', mods: { type: 'link' }, tech: 'bemhtml' },
         { block: 'userinfo', tech: 'bemhtml' },
-        { block: 'input2' },
+        { block: 'input2' }
     ]
 },{
     mustDeps: [
@@ -27,12 +27,15 @@
         { block: 'info-modal', mods: { theme: 'islands' }, tech: 'css' },
         { block: 'menu', mods: { theme: 'life-light' }},
         { block: 'input2' },
-
+        { block : 'croppie' },
+        { block: 'croppie', elems: [ { elem: 'plugins', mods:['jqanimate'] } ] }
     ],
     shouldDeps: [
         { block: 'button-hidden' },
         { elem: 'inner', techs: 'css' },
         { block: 'button', mods: { view: 'add' }, tech: 'css' },
         { block: 'button', mods : { theme : 'shared', togglable : 'check' } },
+        { block : 'croppie' },
+        { block: 'croppie', elems: [ { elem: 'plugins', mods:['jqanimate'] } ] }
     ]
 }]);

@@ -1,0 +1,15 @@
+.button_theme_red-save {
+    align-self: flex-start;
+    margin: 15px 0px 0px 0px;
+    border: 0px;
+    color: white;
+    border-radius: 20px;
+    padding: 9px 19px;
+    font-family: 'life_medium';
+    font-size: 13px;
+    background-color: #ff0000;
+    cursor: pointer;
+}
+.button_theme_red-save:focus {
+    outline: none;
+}

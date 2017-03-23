@@ -1,0 +1,16 @@
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0px 10px 0px;
+    width: 150px;
+}
+.colors div {
+    width: 20px;
+    height: 20px;
+    margin: 2px 0px 0px 2px;
+    border: 2px solid white;
+}
+
+.colors .active {
+    border: 2px solid black;
+}

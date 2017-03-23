@@ -12,7 +12,10 @@
     }
 })();
 
-modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-modal', 'input', 'next-tick', 'form'], function(provide, bemDom, Popup, bemHtml, $, InfoModal, input, nextTick, Form) {
+modules.define('action-user', [
+    'i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'croppie', 'loader_type_js', 'info-modal', 
+    'input', 'next-tick', 'form'
+    ], function(provide, bemDom, Popup, bemHtml, $, Croppie, Loader, InfoModal, input, nextTick, Form) {
     provide(bemDom.declBlock(this.name, {
         onSetMod: {
             js: {
@@ -23,6 +26,7 @@ modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
                         this.Form = Form;
                         this.bemDom = bemDom;
                         this.input = input;
+                        this.Croppie = Croppie;
                         this[this.params.action](this.params.actionParams, this);
                     });
                 }
@@ -56,6 +60,8 @@ modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
             })));
         },
         change_name: function() {
+            //this._emit('em');
+           
             var inputUserName = bemHtml.apply({
                     block: 'input',
                     mix: [
@@ -103,10 +109,82 @@ modules.define('action-user', ['i-bem-dom', 'popup', 'BEMHTML', 'jquery', 'info-
             });
         },
         add_photo: function() {
-            console.log('add_photo');
+            var _this = this;
+
+            $(function() {
+                var inputPhoto = $('[name="photo"]');
+                inputPhoto.click();
+
+                function popupResult(result) {
+                    var html;
+                    if (result.html) {
+                        html = result.html;
+                    }
+                    if (result.src) {
+                        html = '<img src="' + result.src + '" />';
+                    }
+                    return html;
+                }
+
+                function readFile(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        
+                        reader.onload = function (e) {
+                            $uploadCrop.bind({
+                                url: e.target.result,
+                            });
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+
+                    var el = $('.user__photo');
+                    el.html('');
+                    $uploadCrop = new  _this.Croppie(el[0], {
+                        viewport: { width: 60, height: 60, type: 'circle' },
+                        boundary: { width: 60, height: 60 },
+                        showZoomer: true,
+                        enableOrientation: true,
+                    });
+
+                    $('.upload-result').on('click', function (ev) {
+                        $uploadCrop._this.Croppie('result', {
+                            type: 'canvas',
+                            size: 'viewport'
+                        }).then(function (resp) {
+                            $uploadCrop.html(popupResult({
+                                src: resp
+                            }));
+                        });
+                    });
+                }
+
+                inputPhoto.on('change', function () { readFile(this); });
+            });
         },
         select_color: function() {
-            console.log('select_color');
+            var colorStr = '',
+                colorsObj = {"colors":[
+                    "#e23e97","#f390bc","#f7941d","#ffd231",
+                    "#8ec63f","#c9dc4f","#16b893","#89d0c8",
+                    "#2151a3","#5bb3e5","#50368f","#9484b5"
+                ]};
+            
+            $.each(colorsObj['colors'], function(key, val) {
+                var active = '';
+
+                if(val === '#e23e97') {
+                    active = 'active';
+                }
+                colorStr += '<div class="'+active+'" style="background-color: '+val+'"></div>';
+            });
+
+            var colors =  $('.colors').html(colorStr);
+
+            $('div', colors).bind('click', function(e) {
+                $('.active', colors).removeClass('active');
+                $(this).addClass('active');
+            });
         },
         _template: function(modal, data) {
             var modals = {
