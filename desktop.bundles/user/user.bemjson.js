@@ -128,17 +128,32 @@ module.exports = {
                     elem: 'name',
                     mods: { 'hidden' : true },
                     /*mix: { block: 'action-user',  js: {'id' : 'menu-1' }},*/
-                    content: '1Mоя SIM'
+                    content: ''
                 }, {
                     block: 'colors',
+                    mix: { block: 'hide'},
                 }, {
                     elem: 'phone',
-                    content: '+37525 909 00 00'
+                    content: ''
                 }, {
-                    block: 'button',
-                    mods: { theme: 'red-save', size: 's'},
-                    mix: { block: '',  js: { 'action': 'rechargeAccount' } },
-                    text: 'Сохранить',
+                    block: 'buttons-user',
+                    mix: { block: 'hide' },
+                    content: [{
+                        block: 'button',
+                        mods: { theme: 'gray', size: 's'},
+                        mix: [
+                            {block: 'action-user',  js: { 'action': 'cancelProfile' } },
+                        ],
+                        text: 'Отменить',
+                    }, {
+                       block: 'button',
+                        mods: { theme: 'red-save', size: 's'},
+                        mix: [
+                            {block: 'action-user',  js: { 'action': 'saveProfile' } },
+                        ],
+                        text: 'Сохранить', 
+                    }]
+
                 }]
             }, {
                 block: 'user-charts',
@@ -221,5 +236,11 @@ module.exports = {
                 })
             }]  
         }]
-    }]
+    },{
+    block: 'spiner',
+    mods: { 'hide' : true },
+    content: [{
+        elem: 'icon'
+    }] 
+}]
 };
